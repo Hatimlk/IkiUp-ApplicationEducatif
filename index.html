@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IkiUp - Gestion Scolaire Intelligente</title>
+    <meta name="description" content="Gérez votre vie scolaire, vos notes et vos révisions avec IkiUp." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Montserrat', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              background: 'var(--bg-background)',
+              surface: 'var(--bg-surface)',
+              text: 'var(--text-main)',
+              primary: '#5476FF', /* Bleu Roi */
+              secondary: '#FCD568', /* Jaune Soleil */
+              emerald: '#1CC48C', /* Vert Émeraude */
+              bronze: '#B45309', /* Bronze Doré */
+              teal: '#008080', /* Sarcelle */
+              rose: '#BC1E54', /* Rose Framboise */
+              indigo: '#4B0082', /* Indigo */
+              'surface-soft': 'var(--bg-surface-soft)',
+            },
+            borderRadius: {
+              '4xl': '2rem',
+              '5xl': '2.5rem',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        --bg-background: #F7FCFE; /* Bleu Glacé */
+        --bg-surface: #FFFFFF;
+        --bg-surface-soft: #F3F4F6;
+        --text-main: #0F172A; /* Bleu Nuit Profond for text */
+      }
+
+      .dark {
+        --bg-background: #0F172A; /* Bleu Nuit Profond */
+        --bg-surface: #1E293B; /* Slightly lighter for cards */
+        --bg-surface-soft: #334155;
+        --text-main: #F8FAFC;
+      }
+
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+        background-color: var(--bg-background);
+        color: var(--text-main);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(84, 118, 255, 0.5); /* Using Primary Blue */
+        border-radius: 20px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(84, 118, 255, 0.8);
+      }
+
+      /* Hide scrollbar classes */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-background text-text selection:bg-primary/20">
+    <div id="root"></div>
+  </body>
+</html>
