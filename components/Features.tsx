@@ -6,103 +6,125 @@ import {
   MessageSquare,
   BarChart3,
   Search,
-  BookOpen
+  BookOpen,
+  ArrowUpRight
 } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
-    <section id="features" className="py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
-            <Reveal>
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-text dark:text-white mb-6">
-                    L'application digitale <br />
-                    <span className="text-primary italic">dédiée à votre futur.</span>
-                </h2>
-            </Reveal>
+    <section id="features" className="py-32 md:py-48 relative overflow-hidden bg-white dark:bg-slate-950">
+      {/* Background Decorative Circles */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-20 dark:opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-24 max-w-3xl mx-auto">
+          <Reveal>
+            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+              Puissance de l'IA
+            </div>
+            <h2 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 dark:text-white mb-8 tracking-tight">
+              L'avenir se construit <br />
+              <span className="text-primary italic">avec clarté.</span>
+            </h2>
+            <p className="text-xl text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+              Une suite d'outils intelligents conçus pour transformer l'incertitude en parcours de réussite.
+            </p>
+          </Reveal>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
           
-          {/* Card 1: Personality Tests */}
-          <div className="md:col-span-2 row-span-1 md:row-span-2 bg-primary/5 dark:bg-slate-900 rounded-4xl p-8 relative overflow-hidden group hover:shadow-xl transition-all duration-300 border border-transparent dark:border-slate-800">
+          {/* Card 1: Main AI Tool */}
+          <div className="md:col-span-4 row-span-1 bg-slate-50 dark:bg-slate-900/50 rounded-[3rem] p-10 relative overflow-hidden group border border-slate-100 dark:border-slate-800 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
              <div className="relative z-10 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center mb-4 shadow-sm">
-                    <Search className="text-primary" />
+                <div className="flex justify-between items-start mb-12">
+                  <div className="w-16 h-16 rounded-[1.5rem] bg-white dark:bg-slate-800 shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    <Search size={32} />
+                  </div>
+                  <div className="p-2 bg-primary/10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                    <ArrowUpRight size={24} />
+                  </div>
                 </div>
-                <h3 className="text-2xl font-serif font-bold mb-2 text-slate-900 dark:text-slate-100">Tests de Personnalité</h3>
-                <p className="text-slate-500 dark:text-slate-400 max-w-sm">Mieux se connaître pour mieux choisir. Nos tests psychotechniques identifient vos forces naturelles et vos centres d'intérêt.</p>
                 
-                {/* Visual */}
-                <div className="mt-auto flex gap-4 translate-y-6 group-hover:translate-y-2 transition-transform duration-500">
-                    <div className="bg-white dark:bg-slate-950 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex-1">
-                        <div className="text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">Aptitudes</div>
-                        <div className="space-y-2">
-                            <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                                <div className="h-full w-[85%] bg-primary"></div>
-                            </div>
-                            <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                                <div className="h-full w-[60%] bg-emerald"></div>
-                            </div>
-                        </div>
+                <h3 className="text-3xl font-serif font-bold mb-4 text-slate-900 dark:text-white">Tests de Personnalité</h3>
+                <p className="text-slate-500 dark:text-slate-400 max-w-md text-lg leading-relaxed mb-12">
+                  Nos algorithmes identifient vos forces naturelles et vos aspirations pour vous proposer des voies où vous excellerez.
+                </p>
+                
+                {/* Visual Interface Mock */}
+                <div className="mt-auto grid grid-cols-2 gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+                  <div className="bg-white dark:bg-slate-950 p-6 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800">
+                    <div className="flex gap-2 mb-4">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+                      <div className="w-2 h-2 rounded-full bg-slate-200"></div>
                     </div>
-                    <div className="bg-primary text-white p-6 rounded-3xl shadow-xl flex-1 hidden sm:block">
-                        <Compass className="mb-2" size={24} />
-                        <div className="text-xs font-bold opacity-80 uppercase tracking-widest">Conseil IA</div>
-                        <div className="text-sm font-serif italic">"Votre profil indique une forte appétence pour les sciences humaines."</div>
-                    </div>
+                    <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full mb-3"></div>
+                    <div className="h-2 w-2/3 bg-slate-50 dark:bg-slate-900 rounded-full"></div>
+                  </div>
+                  <div className="bg-primary p-6 rounded-3xl shadow-xl flex flex-col justify-center">
+                    <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2">Recommandation</div>
+                    <div className="text-white font-serif italic text-sm leading-tight">"Architecte de Systèmes"</div>
+                  </div>
                 </div>
              </div>
           </div>
 
-          {/* Card 2: Orientation Paths */}
-          <div className="md:col-span-1 md:row-span-2 bg-emerald/5 dark:bg-emerald/10 rounded-4xl p-8 relative overflow-hidden group hover:shadow-xl transition-all duration-300 border border-transparent dark:border-emerald/20">
+          {/* Card 2: Personal Paths */}
+          <div className="md:col-span-2 row-span-1 bg-emerald/5 dark:bg-emerald/10 rounded-[3rem] p-10 relative overflow-hidden group border border-emerald/10 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald/10">
             <div className="relative z-10 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-emerald/20 flex items-center justify-center mb-4 shadow-sm">
-                    <Compass className="text-emerald" />
-                </div>
-                <h3 className="text-2xl font-serif font-bold mb-2 text-emerald dark:text-emerald-100">Parcours Personnalisés</h3>
-                <p className="text-emerald-800/70 dark:text-emerald-200/70 mb-8">Recevez des recommandations d'orientation sur-mesure en fonction de vos résultats et de vos aspirations.</p>
-                
-                <div className="mt-auto space-y-3">
-                    <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-emerald/20 flex items-center justify-between">
-                        <span className="text-sm font-medium">Ingénierie Aérospatiale</span>
-                        <div className="w-2 h-2 rounded-full bg-emerald"></div>
-                    </div>
-                    <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-emerald/20 opacity-50 flex items-center justify-between">
-                        <span className="text-sm font-medium">Design Graphique</span>
-                        <div className="w-2 h-2 rounded-full bg-emerald"></div>
-                    </div>
-                </div>
+              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-emerald mb-8">
+                <Compass size={28} />
+              </div>
+              <h3 className="text-2xl font-serif font-bold mb-4 text-emerald-900 dark:text-emerald-100">Parcours Sur-Mesure</h3>
+              <p className="text-emerald-800/60 dark:text-emerald-400 text-base leading-relaxed">
+                Plus de 500 fiches métiers et formations connectées à vos résultats réels.
+              </p>
+              
+              <div className="mt-12 space-y-3">
+                {[1,2,3].map(i => (
+                  <div key={i} className="h-12 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-emerald/5 flex items-center px-4 animate-pulse" style={{ animationDelay: `${i * 200}ms` }}>
+                    <div className="w-4 h-4 rounded-full bg-emerald/20 mr-3"></div>
+                    <div className="h-2 w-24 bg-emerald/10 rounded-full"></div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Card 3: School-Parent Link */}
-          <div className="md:col-span-1 bg-rose/5 dark:bg-rose/10 rounded-4xl p-8 group hover:shadow-xl transition-all duration-300 border border-transparent dark:border-rose/20">
-             <div className="w-12 h-12 rounded-2xl bg-white dark:bg-rose/20 flex items-center justify-center mb-4 shadow-sm">
-                <Layout className="text-rose" />
+          {/* Row 2 Smaller Cards */}
+          <div className="md:col-span-2 bg-rose/5 dark:bg-rose/10 rounded-[3rem] p-8 border border-rose/10 group transition-all duration-500 hover:shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-rose mb-6 group-hover:rotate-12 transition-transform">
+              <Layout size={24} />
             </div>
-            <h3 className="text-xl font-serif font-bold mb-2 text-rose-950 dark:text-rose-100">Agenda de Liaison</h3>
-            <p className="text-rose-800/70 dark:text-rose-200/70 text-sm">Le pont numérique entre l'école, les professeurs et les parents.</p>
+            <h4 className="text-xl font-bold mb-3 dark:text-white">Lien École-Famille</h4>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+              Un agenda de liaison intelligent qui centralise les communications cruciales.
+            </p>
           </div>
 
-          {/* Card 4: Parent Visibility */}
-          <div className="md:col-span-1 bg-secondary/10 dark:bg-bronze/10 rounded-4xl p-8 group hover:shadow-xl transition-all duration-300 border border-transparent dark:border-bronze/20">
-            <div className="w-12 h-12 rounded-2xl bg-white dark:bg-bronze/20 flex items-center justify-center mb-4 shadow-sm">
-                <BarChart3 className="text-bronze dark:text-secondary" />
+          <div className="md:col-span-2 bg-amber/5 dark:bg-amber/10 rounded-[3rem] p-8 border border-amber/10 group transition-all duration-500 hover:shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-amber-500 mb-6 group-hover:rotate-12 transition-transform">
+              <BarChart3 size={24} />
             </div>
-            <h3 className="text-xl font-serif font-bold mb-2 text-bronze dark:text-secondary">Vision Parentale</h3>
-            <p className="text-bronze/70 dark:text-secondary/70 text-sm">Une vision claire du suivi et de l'évolution de vos enfants.</p>
+            <h4 className="text-xl font-bold mb-3 dark:text-white">Vision Parentale</h4>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+              Tableaux de bord intuitifs pour suivre l'évolution sans micro-management.
+            </p>
           </div>
 
-          {/* Card 5: School Portal */}
-          <div className="md:col-span-1 bg-indigo/5 dark:bg-indigo/10 rounded-4xl p-8 group hover:shadow-xl transition-all duration-300 border border-transparent dark:border-indigo/20">
-            <div className="w-12 h-12 rounded-2xl bg-white dark:bg-indigo/20 flex items-center justify-center mb-4 shadow-sm">
-                <BookOpen className="text-indigo dark:text-indigo-300" />
+          <div className="md:col-span-2 bg-indigo/5 dark:bg-indigo/10 rounded-[3rem] p-8 border border-indigo/10 group transition-all duration-500 hover:shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-indigo mb-6 group-hover:rotate-12 transition-transform">
+              <BookOpen size={24} />
             </div>
-            <h3 className="text-xl font-serif font-bold mb-2 text-indigo dark:text-indigo-100">Portail École</h3>
-            <p className="text-indigo/70 dark:text-indigo-200/70 text-sm">Statistiques et gestion de classe pour les établissements.</p>
+            <h4 className="text-xl font-bold mb-3 dark:text-white">Portail Établissement</h4>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+              Outils d'analyse globale pour les directeurs et professeurs.
+            </p>
           </div>
 
         </div>

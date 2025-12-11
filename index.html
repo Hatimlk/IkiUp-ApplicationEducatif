@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -39,6 +39,7 @@
               'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
               'float': 'float 6s ease-in-out infinite',
               'float-delayed': 'float 6s ease-in-out 3s infinite',
+              'spin-slow': 'spin 8s linear infinite',
             },
             keyframes: {
               fadeInUp: {
@@ -93,6 +94,17 @@
       }
       ::-webkit-scrollbar-thumb:hover {
         background-color: rgba(84, 118, 255, 0.8);
+      }
+
+      /* Perspective & 3D Utilities */
+      .perspective-2000 {
+        perspective: 2000px;
+      }
+      .transform-3d {
+        transform-style: preserve-3d;
+      }
+      .rotate-y-15-neg {
+        transform: rotateY(-15deg);
       }
 
       /* Hide scrollbar classes */

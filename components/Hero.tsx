@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apple, Play, Sparkles } from 'lucide-react';
+import { Apple, Play, Sparkles, Star, ShieldCheck, Zap, TrendingUp, CheckCircle2, Target } from 'lucide-react';
 import { Button } from './Button';
 import { Reveal } from './Reveal';
 import { Language, translations } from '../translations';
@@ -12,94 +12,160 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
   const t = translations[lang].hero;
 
   return (
-    <section className="relative pt-32 pb-56 lg:pt-48 lg:pb-64 overflow-hidden">
-        {/* Abstract shapes background */}
+    <section className="relative pt-36 pb-32 lg:pt-52 lg:pb-48 overflow-hidden">
+      {/* Premium Background Layering */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose/20 dark:bg-rose/10 rounded-full blur-[120px] opacity-60 translate-x-1/3 -translate-y-1/4 transition-colors duration-500"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/20 dark:bg-primary/10 rounded-full blur-[100px] opacity-60 -translate-x-1/3 translate-y-1/4 transition-colors duration-500"></div>
+        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/10 dark:bg-primary/5 rounded-full blur-[160px] animate-pulse"></div>
+        <div className="absolute bottom-[0%] left-[-10%] w-[700px] h-[700px] bg-secondary/10 dark:bg-secondary/5 rounded-full blur-[140px] animate-float"></div>
+        
+        {/* Animated Noise Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none contrast-150" 
+             style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            <Reveal delay={0}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900/50 backdrop-blur-sm border border-slate-100 dark:border-slate-800 shadow-sm mb-8 hover:scale-105 transition-transform cursor-default">
-                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary">
-                    <Sparkles size={12} />
+        <div className="flex flex-col lg:flex-row items-center gap-20">
+          
+          {/* Text Content Area */}
+          <div className="flex-1 text-center lg:text-left">
+            <Reveal delay={0} scale>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50 shadow-sm mb-8 group transition-all hover:border-primary/30">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white">
+                  <Sparkles size={12} className="animate-spin-slow" />
                 </span>
-                <span className="text-sm font-medium text-slate-600 dark:text-slate-300">{t.badge}</span>
-            </div>
+                <span className="text-sm font-bold text-slate-600 dark:text-slate-300 tracking-wide uppercase">{t.badge}</span>
+              </div>
             </Reveal>
 
-            <Reveal delay={100}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight text-text dark:text-white mb-8 leading-[1.1]">
+            <Reveal delay={150}>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.05]">
                 {t.title} <br />
-                <span className="italic text-primary">{t.titleAccent}</span>
-            </h1>
-            </Reveal>
-
-            <Reveal delay={200}>
-            <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-                {t.description}
-            </p>
+                <span className="text-primary italic relative inline-block">
+                  {t.titleAccent}
+                  <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" />
+                  </svg>
+                </span>
+              </h1>
             </Reveal>
 
             <Reveal delay={300}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-                <Button size="lg" className="w-full sm:w-auto min-w-[180px] gap-2" href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-                    <Apple size={20} className="-mt-1" />
-                    {t.appStore}
-                </Button>
-                <Button size="lg" variant="white" className="w-full sm:w-auto min-w-[180px] gap-2 dark:bg-slate-800 dark:text-white dark:border dark:border-slate-700 dark:hover:bg-slate-700 dark:shadow-none" href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-                    <Play size={18} className="fill-current -mt-1" />
-                    {t.googlePlay}
-                </Button>
-            </div>
+              <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                {t.description}
+              </p>
             </Reveal>
-        </div>
 
-        {/* Floating Cards UI Mockup */}
-        <div className="relative mt-12 max-w-5xl mx-auto h-[400px] md:h-[600px]">
-             {/* Central Phone */}
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-20 w-[280px] md:w-[350px]">
-                 <div className="relative bg-white dark:bg-slate-950 rounded-[3rem] border-8 border-white dark:border-slate-800 shadow-2xl shadow-primary/10 dark:shadow-black/50 overflow-hidden aspect-[9/19] animate-float transition-colors duration-300 ring-1 ring-slate-900/5 dark:ring-white/10">
-                    <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-primary/10 dark:from-primary/20 to-transparent pointer-events-none"></div>
-                    
-                    {/* Mock UI Content */}
-                    <div className="p-6 pt-12 flex flex-col h-full bg-white dark:bg-slate-950">
-                        <div className="flex justify-between items-center mb-8">
-                             <div>
-                                <h3 className="text-2xl font-serif font-bold text-slate-800 dark:text-slate-100">{lang === 'fr' ? 'Test d\'Orientation' : 'Orientation Test'}</h3>
-                                <p className="text-sm text-slate-400">{lang === 'fr' ? 'Découvrez vos talents' : 'Discover your talents'}</p>
-                             </div>
-                        </div>
+            <Reveal delay={450}>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
+                <Button size="lg" className="w-full sm:w-auto min-w-[180px] gap-3 shadow-2xl shadow-primary/20 hover:scale-105 transition-transform" href="https://apps.apple.com" target="_blank">
+                  <Apple size={22} />
+                  <div className="flex flex-col items-start leading-none">
+                    <span className="text-[10px] uppercase font-bold tracking-widest opacity-70">App Store</span>
+                  </div>
+                </Button>
+                <Button size="lg" variant="white" className="w-full sm:w-auto min-w-[180px] gap-3 border border-slate-200 dark:border-slate-700 dark:bg-slate-900/50 dark:text-white hover:scale-105 transition-transform" href="https://play.google.com" target="_blank">
+                  <Play size={20} className="fill-current" />
+                  <div className="flex flex-col items-start leading-none">
+                    <span className="text-[10px] uppercase font-bold tracking-widest opacity-70">Google Play</span>
+                  </div>
+                </Button>
+              </div>
+            </Reveal>
 
-                        <div className="space-y-4">
-                            {/* Orientation Card */}
-                            <div className="p-4 rounded-3xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
-                                <p className="text-xs font-bold text-primary mb-2 uppercase">{lang === 'fr' ? 'Profil Psychologique' : 'Psychological Profile'}</p>
-                                <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3">{lang === 'fr' ? 'Dominante : Créatif' : 'Dominant: Creative'}</p>
-                                <div className="flex gap-2">
-                                    <div className="flex-1 h-1.5 bg-primary rounded-full"></div>
-                                    <div className="flex-1 h-1.5 bg-primary/30 rounded-full"></div>
-                                    <div className="flex-1 h-1.5 bg-primary/30 rounded-full"></div>
-                                </div>
-                            </div>
+            <Reveal delay={600}>
+              <div className="flex items-center justify-center lg:justify-start gap-6 opacity-50">
+                <div className="flex -space-x-3">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-slate-200 dark:bg-slate-800" />
+                  ))}
+                </div>
+                <div className="text-sm font-semibold text-slate-600 dark:text-slate-400">
+                  <span className="text-slate-900 dark:text-white font-black">+10k</span> utilisateurs actifs
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* 3D Visual Mockup Area */}
+          <div className="flex-1 relative perspective-2000 hidden lg:block">
+            <Reveal delay={400} direction="none" scale>
+              <div className="relative z-20 transform-3d rotate-y-[-15deg] rotate-x-[5deg] hover:rotate-y-[0deg] transition-all duration-1000 ease-out">
+                
+                {/* Main Phone */}
+                <div className="relative w-[340px] mx-auto bg-slate-950 rounded-[3.5rem] p-3 shadow-[20px_40px_80px_-15px_rgba(0,0,0,0.5)] dark:shadow-[20px_40px_80px_-15px_rgba(0,0,0,0.8)] ring-1 ring-white/10">
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-30"></div>
+                  
+                  <div className="relative aspect-[9/19] rounded-[2.8rem] overflow-hidden bg-white dark:bg-slate-950 flex flex-col">
+                    {/* App Internal UI */}
+                    <div className="pt-14 px-6 pb-6">
+                      <div className="flex justify-between items-center mb-10">
+                        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                          <Zap size={24} />
                         </div>
+                        <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">
+                           <Target size={18} />
+                        </div>
+                      </div>
+                      
+                      <h3 className="text-2xl font-serif font-black text-slate-900 dark:text-white mb-2">Bonjour, Sarah</h3>
+                      <p className="text-slate-400 text-sm mb-10">Voici ton objectif du jour.</p>
+                      
+                      <div className="space-y-4">
+                        <div className="p-5 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
+                          <div className="flex justify-between items-center mb-4">
+                            <span className="text-[10px] font-black text-primary uppercase tracking-widest">Maîtrise Math</span>
+                            <span className="text-[10px] font-black text-slate-400">82%</span>
+                          </div>
+                          <div className="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                            <div className="h-full bg-primary w-[82%] rounded-full shadow-[0_0_10px_rgba(84,118,255,0.5)]"></div>
+                          </div>
+                        </div>
+                        
+                        <div className="p-5 rounded-[2rem] bg-emerald/5 border border-emerald/10">
+                           <div className="flex items-center gap-3">
+                              <div className="w-8 h-8 rounded-xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-emerald">
+                                <CheckCircle2 size={16} />
+                              </div>
+                              <div className="text-xs font-bold text-emerald-800 dark:text-emerald-400">Révision Terminée</div>
+                           </div>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Bottom Nav */}
-                    <div className="absolute bottom-0 inset-x-0 h-20 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md flex justify-around items-center border-t border-slate-50 dark:border-slate-800">
-                        <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center">
-                            <Sparkles size={18} />
-                        </div>
-                        <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800"></div>
-                        <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800"></div>
+                    <div className="mt-auto p-6 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800/50 grid grid-cols-4 gap-4">
+                        {[1,2,3,4].map(i => (
+                          <div key={i} className={`h-1.5 rounded-full ${i === 1 ? 'bg-primary' : 'bg-slate-100 dark:bg-slate-800'}`}></div>
+                        ))}
                     </div>
-                 </div>
-            </div>
-        </div>
+                  </div>
+                  
+                  {/* Subtle Screen Reflection */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/10 pointer-events-none rounded-[3.5rem]"></div>
+                </div>
 
+                {/* Floating Elements for 3D depth */}
+                <div className="absolute -right-20 top-20 z-30 animate-float">
+                  <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-5 rounded-3xl shadow-2xl border border-white/20 flex flex-col gap-2 min-w-[160px]">
+                    <div className="flex items-center gap-2">
+                       <TrendingUp size={16} className="text-emerald" />
+                       <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Performance</span>
+                    </div>
+                    <div className="text-xl font-black text-slate-900 dark:text-white">+14%</div>
+                    <div className="text-[10px] font-bold text-slate-500">Cette semaine</div>
+                  </div>
+                </div>
+
+                <div className="absolute -left-16 bottom-1/4 z-10 animate-float-delayed">
+                   <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-bronze shadow-2xl rotate-12">
+                      <Star size={24} fill="currentColor" />
+                   </div>
+                </div>
+
+              </div>
+            </Reveal>
+          </div>
+
+        </div>
       </div>
     </section>
   );
