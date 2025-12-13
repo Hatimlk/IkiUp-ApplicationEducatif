@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 // Fix: Added Zap to the imported icons from lucide-react
@@ -107,12 +106,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer select-none group" onClick={(e) => handleLinkClick(e as any, '/')}>
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-6 transition-transform">
-              <Zap size={20} />
-            </div>
-            <span className="text-2xl font-serif font-black tracking-tighter text-slate-900 dark:text-white">
-              iki<span className="text-primary italic">up</span>
+          <div className="flex-shrink-0 flex items-center cursor-pointer select-none group" onClick={(e) => handleLinkClick(e as any, '/')}>
+            <span className="text-2xl font-serif font-black tracking-tighter text-slate-900 dark:text-white transition-opacity hover:opacity-80">
+              Iki<span className="text-primary italic">Up</span>
             </span>
           </div>
 
