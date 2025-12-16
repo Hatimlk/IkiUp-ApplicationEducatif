@@ -1,16 +1,17 @@
-
 import React from 'react';
 import { Page } from '../App';
 import { Language } from '../translations';
 
-// Fix: Added lang to FooterProps to resolve the type mismatch in App.tsx
 interface FooterProps {
     onNavigate: (page: Page, targetId?: string) => void;
     lang: Language;
 }
 
+// Latest logo URL provided
+const LOGO_URL = "https://res.cloudinary.com/duwqjda9j/image/upload/v1765907016/logo-IkiUp_o54cmh.png";
+
 export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, page: Page, targetId?: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>, page: Page, targetId?: string) => {
     e.preventDefault();
     onNavigate(page, targetId);
   };
@@ -22,9 +23,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-12 mb-20">
             <div className="col-span-2 md:col-span-4">
-                <span className="text-3xl font-serif font-bold tracking-tight text-text block mb-6 cursor-pointer" onClick={(e) => { e.preventDefault(); onNavigate('home'); window.scrollTo({top:0, behavior:'smooth'})}}>
-                  iki<span className="text-primary italic">up</span>
-                </span>
+                <div 
+                  className="mb-6 cursor-pointer inline-block" 
+                  onClick={(e) => { e.preventDefault(); onNavigate('home'); window.scrollTo({top:0, behavior:'smooth'})}}
+                >
+                  <img 
+                    src={LOGO_URL} 
+                    alt="IkiUp Logo" 
+                    className="h-10 w-auto object-contain transition-opacity hover:opacity-80"
+                    onError={(e) => {
+                      (e.target as any).style.display = 'none';
+                      (e.target as any).nextSibling.style.display = 'block';
+                    }}
+                  />
+                  <span className="hidden text-3xl font-serif font-bold tracking-tight text-text">
+                    iki<span className="text-primary italic">up</span>
+                  </span>
+                </div>
                 <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-sm">
                     {isFr ? "Rendre la gestion de l'éducation fluide, intelligente et connectée pour tous." : "Making education management smooth, intelligent and connected for everyone."}
                 </p>
@@ -33,16 +48,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
             <div className="md:col-start-7 md:col-span-2">
                 <h4 className="font-bold text-text mb-6">{isFr ? "Produit" : "Product"}</h4>
                 <ul className="space-y-4 text-slate-500 dark:text-slate-400">
-                    <li><a href="#features" onClick={(e) => handleLinkClick(e, 'home', '#features')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Fonctionnalités" : "Features"}</a></li>
-                    <li><a href="#howitworks" onClick={(e) => handleLinkClick(e, 'home', '#features')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Agent Kaïa" : "Kaïa Agent"}</a></li>
-                    <li><a href="#pricing" onClick={(e) => handleLinkClick(e, 'home', '#pricing')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Tarifs" : "Pricing"}</a></li>
+                    <li><a href="#features" onClick={(e) => handleLinkClick(e as any, 'home', '#features')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Fonctionnalités" : "Features"}</a></li>
+                    <li><a href="#howitworks" onClick={(e) => handleLinkClick(e as any, 'home', '#features')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Agent Kaïa" : "Kaïa Agent"}</a></li>
+                    <li><a href="#pricing" onClick={(e) => handleLinkClick(e as any, 'home', '#pricing')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Tarifs" : "Pricing"}</a></li>
                 </ul>
             </div>
 
             <div className="md:col-span-2">
                 <h4 className="font-bold text-text mb-6">{isFr ? "Entreprise" : "Company"}</h4>
                 <ul className="space-y-4 text-slate-500 dark:text-slate-400">
-                    <li><a href="/about" onClick={(e) => handleLinkClick(e, 'about')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "À propos" : "About"}</a></li>
+                    <li><a href="/about" onClick={(e) => handleLinkClick(e as any, 'about')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "À propos" : "About"}</a></li>
                     <li><a href="#" className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Blog" : "Blog"}</a></li>
                     <li><a href="#" className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Carrières" : "Careers"}</a></li>
                     <li><a href="#" className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Contact" : "Contact"}</a></li>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-// Fix: Added Zap to the imported icons from lucide-react
-import { Menu, X, Sun, Moon, Languages, Zap } from 'lucide-react';
+import { Menu, X, Sun, Moon, Zap } from 'lucide-react';
 import { Page } from '../App';
 import { Language, translations } from '../translations';
 
@@ -11,6 +10,9 @@ interface NavbarProps {
   currentLang: Language;
   onLangChange: (lang: Language) => void;
 }
+
+// Latest logo URL provided
+const LOGO_URL = "https://res.cloudinary.com/duwqjda9j/image/upload/v1765907016/logo-IkiUp_o54cmh.png";
 
 export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, currentLang, onLangChange }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
     }
   };
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>, href: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
 
@@ -105,9 +107,22 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer select-none group" onClick={(e) => handleLinkClick(e as any, '/')}>
-            <span className="text-2xl font-serif font-black tracking-tighter text-slate-900 dark:text-white transition-opacity hover:opacity-80">
+          {/* Logo with Image Support */}
+          <div 
+            className="flex-shrink-0 flex items-center cursor-pointer select-none group" 
+            onClick={(e) => handleLinkClick(e, '/')}
+          >
+            <img 
+              src={LOGO_URL} 
+              alt="IkiUp Logo" 
+              className="h-8 md:h-10 w-auto object-contain transition-opacity hover:opacity-80"
+              onError={(e) => {
+                // Fallback to text if image fails to load
+                (e.target as any).style.display = 'none';
+                (e.target as any).nextSibling.style.display = 'block';
+              }}
+            />
+            <span className="hidden text-2xl font-serif font-black tracking-tighter text-slate-900 dark:text-white">
               Iki<span className="text-primary italic">Up</span>
             </span>
           </div>
