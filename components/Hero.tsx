@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
               </div>
             </Reveal>
 
-            <Reveal delay={150}>
+            <Reveal delay={150} direction="up" className="animate-fade-in-up">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.05]">
                 {t.title} <br />
                 <span className="text-primary italic relative inline-block">
@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
               </h1>
             </Reveal>
 
-            <Reveal delay={300}>
+            <Reveal delay={300} direction="up" className="animate-fade-in-up">
               <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
                 {t.description}
               </p>
