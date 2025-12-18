@@ -9,10 +9,10 @@ export const translations = {
       download: "Télécharger"
     },
     hero: {
-      badge: "L'orientation scolaire guidée par l'IA",
-      title: "Tracez votre voie,",
-      titleAccent: "maîtrisez votre suivi.",
-      description: "IKIUP aide les élèves à se découvrir et offre aux parents une vision claire de leur évolution scolaire au quotidien.",
+      badge: "Orientation, suivi scolaire et communication réunis sur une seule plateforme.",
+      title: "Avancer ensemble vers un parcours scolaire",
+      titleAccent: "plus serein",
+      description: "IkiUp est une application d’orientation et d’accompagnement qui connecte les élèves, parents et écoles dans un même espace, pour mieux comprendre, mieux suivre et mieux accompagner les parcours scolaires.",
       appStore: "App Store",
       googlePlay: "Google Play"
     },
@@ -47,10 +47,10 @@ export const translations = {
       download: "Download"
     },
     hero: {
-      badge: "AI-powered school orientation",
-      title: "Shape your future,",
-      titleAccent: "master your progress.",
-      description: "IKIUP helps students discover themselves and offers parents a clear view of their daily academic evolution.",
+      badge: "Orientation, school monitoring, and communication on one platform.",
+      title: "Moving together toward a more peaceful",
+      titleAccent: "educational journey",
+      description: "IkiUp is an orientation and support app that connects students, parents, and schools in one space, to better understand, track, and support academic paths.",
       appStore: "App Store",
       googlePlay: "Google Play"
     },
