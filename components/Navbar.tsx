@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import { Menu, X, Sun, Moon, Zap } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Page } from '../App';
 import { Language, translations } from '../translations';
 
@@ -11,7 +11,6 @@ interface NavbarProps {
   onLangChange: (lang: Language) => void;
 }
 
-// Latest logo URL provided
 const LOGO_URL = "https://res.cloudinary.com/duwqjda9j/image/upload/v1765907016/logo-IkiUp_o54cmh.png";
 
 export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, currentLang, onLangChange }) => {
@@ -101,13 +100,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled || isMobileMenuOpen
-          ? 'bg-white/70 dark:bg-slate-950/70 backdrop-blur-2xl border-b border-black/5 dark:border-white/5 py-4' 
+          ? 'bg-[#FAFAFA]/90 dark:bg-[#0F172A]/90 backdrop-blur-2xl border-b border-gray-ui dark:border-white/5 py-4' 
           : 'bg-transparent py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo with Image Support */}
           <div 
             className="flex-shrink-0 flex items-center cursor-pointer select-none group" 
             onClick={(e) => handleLinkClick(e, '/')}
@@ -115,29 +113,20 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
             <img 
               src={LOGO_URL} 
               alt="IkiUp Logo" 
-              className="h-8 md:h-10 w-auto object-contain transition-opacity hover:opacity-80"
-              onError={(e) => {
-                // Fallback to text if image fails to load
-                (e.target as any).style.display = 'none';
-                (e.target as any).nextSibling.style.display = 'block';
-              }}
+              className="h-9 md:h-11 w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <span className="hidden text-2xl font-serif font-black tracking-tighter text-slate-900 dark:text-white">
-              Iki<span className="text-primary italic">Up</span>
-            </span>
           </div>
 
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-2 bg-slate-500/5 dark:bg-white/5 backdrop-blur-md px-2 py-1.5 rounded-2xl border border-black/5 dark:border-white/5 shadow-inner">
+          <div className="hidden lg:flex items-center gap-1 bg-gray-ui/40 dark:bg-white/5 backdrop-blur-md p-1.5 rounded-2xl border border-gray-ui dark:border-white/5">
             {navLinks.map((link) => (
               <a 
                 key={link.name}
                 href={link.href} 
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-xl transition-all duration-300 cursor-pointer ${
+                className={`text-[11px] font-black uppercase tracking-widest px-6 py-2.5 rounded-xl transition-all duration-300 cursor-pointer ${
                   (link.href === '/about' && currentPage === 'about')
-                    ? 'bg-primary text-white shadow-xl shadow-primary/20' 
-                    : 'text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white dark:hover:bg-slate-800 shadow-sm hover:shadow-md'
+                    ? 'bg-primary text-white shadow-lg shadow-primary/20' 
+                    : 'text-[#111111]/70 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white dark:hover:bg-slate-800'
                 }`}
               >
                 {link.name}
@@ -146,17 +135,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-             {/* Language Switcher */}
-             <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-black/5 dark:border-white/10">
+             <div className="flex items-center bg-gray-ui/40 dark:bg-white/5 rounded-xl p-1 border border-gray-ui dark:border-white/10">
                 <button 
                   onClick={() => onLangChange('fr')}
-                  className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-wider rounded-lg transition-all ${currentLang === 'fr' ? 'bg-white dark:bg-slate-800 text-primary shadow-sm' : 'text-slate-400 hover:text-slate-600 dark:hover:text-slate-200'}`}
+                  className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-wider rounded-lg transition-all ${currentLang === 'fr' ? 'bg-white dark:bg-slate-800 text-primary shadow-sm' : 'text-slate-400 hover:text-[#111111]'}`}
                 >
                   FR
                 </button>
                 <button 
                   onClick={() => onLangChange('en')}
-                  className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-wider rounded-lg transition-all ${currentLang === 'en' ? 'bg-white dark:bg-slate-800 text-primary shadow-sm' : 'text-slate-400 hover:text-slate-600 dark:hover:text-slate-200'}`}
+                  className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-wider rounded-lg transition-all ${currentLang === 'en' ? 'bg-white dark:bg-slate-800 text-primary shadow-sm' : 'text-slate-400 hover:text-[#111111]'}`}
                 >
                   EN
                 </button>
@@ -164,20 +152,18 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
 
              <button 
                onClick={toggleTheme}
-               className="p-3 text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary rounded-xl transition-all focus:outline-none cursor-pointer border border-transparent hover:border-primary/20"
+               className="p-3 text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary rounded-xl transition-all border border-transparent hover:border-primary/20"
                aria-label="Toggle Dark Mode"
              >
-               {isDark ? <Sun size={20} /> : <Moon size={20} />}
+               {isDark ? <Sun size={20} /> : <Sun size={20} className="fill-current" />}
              </button>
-             <Button size="md" className="shadow-lg shadow-primary/10" onClick={scrollToDownload}>{t.download}</Button>
+             <Button size="md" onClick={scrollToDownload}>{t.download}</Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-3">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-3 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white rounded-xl transition-colors focus:outline-none border border-slate-200 dark:border-slate-800"
-              aria-label="Toggle Menu"
+              className="p-3 bg-gray-ui/40 dark:bg-slate-900 text-[#111111] dark:text-white rounded-xl border border-gray-ui dark:border-slate-800"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -185,35 +171,34 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-4 right-4 mt-4 p-6 bg-white/95 dark:bg-slate-950/95 backdrop-blur-3xl rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] animate-fade-in-up origin-top md:hidden">
-          <div className="flex flex-col gap-3">
+        <div className="absolute top-full left-4 right-4 mt-4 p-6 bg-[#FAFAFA] dark:bg-slate-950 border border-gray-ui dark:border-slate-800 rounded-3xl shadow-2xl animate-fade-in-up origin-top md:hidden">
+          <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a 
                 key={link.name}
                 href={link.href} 
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-xl font-serif font-bold p-5 rounded-2xl transition-all cursor-pointer ${
+                className={`text-lg font-bold p-4 rounded-xl transition-all ${
                   (link.href === '/about' && currentPage === 'about')
                     ? 'bg-primary/10 text-primary' 
-                    : 'text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-900'
+                    : 'text-[#111111] dark:text-slate-200 hover:bg-gray-ui/40 dark:hover:bg-slate-900'
                 }`}
               >
                 {link.name}
               </a>
             ))}
-            <div className="h-px bg-slate-100 dark:bg-slate-800 my-4"></div>
-            <div className="flex items-center justify-between px-5 mb-4">
+            <div className="h-px bg-gray-ui dark:bg-slate-800 my-4"></div>
+            <div className="flex items-center justify-between px-4 mb-4">
                <div className="flex gap-2">
-                  <button onClick={() => onLangChange('fr')} className={`px-4 py-2 text-xs font-bold rounded-xl transition-all ${currentLang === 'fr' ? 'bg-primary text-white' : 'bg-slate-50 dark:bg-slate-900 text-slate-500'}`}>FR</button>
-                  <button onClick={() => onLangChange('en')} className={`px-4 py-2 text-xs font-bold rounded-xl transition-all ${currentLang === 'en' ? 'bg-primary text-white' : 'bg-slate-50 dark:bg-slate-900 text-slate-500'}`}>EN</button>
+                  <button onClick={() => onLangChange('fr')} className={`px-4 py-2 text-xs font-bold rounded-xl transition-all ${currentLang === 'fr' ? 'bg-primary text-white' : 'bg-gray-ui text-slate-500'}`}>FR</button>
+                  <button onClick={() => onLangChange('en')} className={`px-4 py-2 text-xs font-bold rounded-xl transition-all ${currentLang === 'en' ? 'bg-primary text-white' : 'bg-gray-ui text-slate-500'}`}>EN</button>
                </div>
-               <button onClick={toggleTheme} className="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl text-slate-500">
+               <button onClick={toggleTheme} className="p-3 bg-gray-ui rounded-xl text-slate-500">
                   {isDark ? <Sun size={20} /> : <Moon size={20} />}
                </button>
             </div>
-            <Button className="w-full h-16 text-lg shadow-xl shadow-primary/20" onClick={scrollToDownload}>{t.download}</Button>
+            <Button className="w-full h-14" onClick={scrollToDownload}>{t.download}</Button>
           </div>
         </div>
       )}

@@ -1,130 +1,120 @@
 import React from 'react';
 import { Reveal } from './Reveal';
-import { Search, Compass, MessageSquare, Smartphone, Check, ChevronDown, Clock, Settings, User } from 'lucide-react';
+import { UserCircle2, Compass, GraduationCap, Users2, Check } from 'lucide-react';
 
 export const HowItWorks: React.FC = () => {
+  const steps = [
+    {
+      title: "Comprendre son profil",
+      description: "Des tests basés sur les sciences cognitives pour identifier vos forces et talents naturels.",
+      icon: <UserCircle2 size={32} />,
+      color: "bg-primary text-white",
+      shadow: "shadow-primary/30",
+    },
+    {
+      title: "Explorer des parcours",
+      description: "Connectez votre profil à plus de 500 métiers et formations certifiées adaptées à vos aspirations.",
+      icon: <Compass size={32} />,
+      color: "bg-secondary text-[#111111]",
+      shadow: "shadow-secondary/30",
+    },
+    {
+      title: "Suivre la scolarité",
+      description: "Une vue centralisée sur les notes, devoirs et progrès pour une gestion quotidienne sans stress.",
+      icon: <GraduationCap size={32} />,
+      color: "bg-primary text-white",
+      shadow: "shadow-primary/30",
+    },
+    {
+      title: "Avancer ensemble",
+      description: "Le pont parfait entre élèves, parents et école pour un accompagnement bienveillant.",
+      icon: <Users2 size={32} />,
+      color: "bg-[#111111] text-white",
+      shadow: "shadow-black/20",
+    }
+  ];
+
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
-      {/* Background grain/glow effects */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 dark:bg-primary/20 rounded-full blur-[120px] opacity-30 translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
-      
+    <section className="py-32 md:py-48 bg-[#FDFDFF] dark:bg-[#0B1121] transition-colors duration-500 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <div className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px]"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-16 text-slate-900 dark:text-white">
-            Votre parcours avec IKIUP
-          </h2>
+          <div className="text-center mb-24 md:mb-32">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-ui/40 dark:bg-white/5 border border-gray-ui dark:border-white/10 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
+              Le Parcours IkiUp
+            </div>
+            <h2 className="text-5xl md:text-7xl font-serif font-black text-[#111111] dark:text-white mb-8 tracking-tight">
+              Comment ça <span className="text-primary italic">marche ?</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-light max-w-2xl mx-auto leading-relaxed opacity-80">
+              Quatre étapes clés pour transformer l'expérience scolaire en une aventure sereine et réussie.
+            </p>
+          </div>
         </Reveal>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
-          {/* Left Column: Steps Grid */}
-          <div className="w-full lg:w-1/2 relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              
-              {/* Step 1 */}
-              <Reveal delay={100}>
-                <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-800 border-2 border-primary relative group transition-all h-full shadow-xl shadow-primary/5 z-10">
-                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-                      <User size={20} />
-                   </div>
-                   <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Découverte de soi</h3>
-                   <p className="text-slate-500 dark:text-slate-400 text-sm">Réalisez vos tests de personnalité pour identifier vos forces.</p>
-                </div>
-              </Reveal>
+        <div className="relative">
+          {/* Vertical Timeline Line (Desktop) */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-ui/50 dark:via-white/10 to-transparent -translate-x-1/2"></div>
 
-              {/* Step 2 */}
-              <Reveal delay={200}>
-                <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-all h-full shadow-lg z-10">
-                   <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-white mb-4">
-                      <Compass size={20} />
-                   </div>
-                   <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Orientation guidée</h3>
-                   <p className="text-slate-500 dark:text-slate-400 text-sm">Explorez les parcours personnalisés recommandés par l'IA.</p>
-                </div>
-              </Reveal>
-
-              {/* Step 3 */}
-              <Reveal delay={300}>
-                <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-all h-full shadow-lg z-10">
-                   <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-white mb-4">
-                      <MessageSquare size={20} />
-                   </div>
-                   <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Lien Famille-École</h3>
-                   <p className="text-slate-500 dark:text-slate-400 text-sm">Simplifiez la communication via l'agenda de liaison intelligent.</p>
-                </div>
-              </Reveal>
-
-              {/* Step 4 */}
-              <Reveal delay={400}>
-                <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-all h-full shadow-lg z-10">
-                   <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-white mb-4">
-                      <Smartphone size={20} />
-                   </div>
-                   <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Suivi quotidien</h3>
-                   <p className="text-slate-500 dark:text-slate-400 text-sm">Les parents suivent l'évolution de leurs enfants en un coup d'œil.</p>
-                </div>
-              </Reveal>
-
-            </div>
-          </div>
-
-          {/* Right Column: Phone Mockup */}
-          <Reveal delay={500} className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-             <div className="relative w-[320px] h-[650px] bg-white dark:bg-slate-950 rounded-[3rem] border-4 border-slate-100 dark:border-slate-800 shadow-2xl overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/10 transition-colors duration-300">
-                {/* Status Bar */}
-                <div className="h-8 px-6 flex items-center justify-between text-[10px] font-medium text-slate-400 dark:text-slate-500 mt-2">
-                    <span>9:41</span>
-                    <div className="flex gap-1">
-                        <div className="w-4 h-2.5 bg-current rounded-[1px] opacity-80"></div>
-                        <div className="w-0.5 h-2.5 bg-current rounded-[1px] opacity-80"></div>
-                    </div>
-                </div>
+          <div className="space-y-24 md:space-y-32">
+            {steps.map((step, index) => (
+              <div key={index} className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-0 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                 
-                {/* Dynamic Island */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-20"></div>
-
-                {/* App Content */}
-                <div className="p-6 pt-8 text-slate-900 dark:text-white h-full flex flex-col">
-                    <div className="flex justify-between items-center mb-6">
-                        <h3 className="text-lg font-medium">Test de Personnalité</h3>
+                {/* Content Side */}
+                <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                  <Reveal direction={index % 2 === 0 ? 'left' : 'right'}>
+                    <div className="group cursor-default">
+                      <div className={`inline-flex items-center justify-center w-20 h-20 rounded-[2.2rem] ${step.color} ${step.shadow} mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}>
+                        {step.icon}
+                      </div>
+                      <h3 className="text-3xl md:text-4xl font-serif font-black text-[#111111] dark:text-white mb-6">
+                        {step.title}
+                      </h3>
+                      <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                        {step.description}
+                      </p>
                     </div>
+                  </Reveal>
+                </div>
 
-                    {/* Question Card */}
-                    <div className="bg-primary/5 p-5 rounded-[2rem] border border-primary/20 mb-6">
-                        <p className="text-sm font-medium mb-4 italic">"Dans un projet de groupe, je préfère m'occuper de l'organisation plutôt que de la création."</p>
-                        <div className="flex gap-2">
-                            <div className="flex-1 h-1 bg-primary rounded-full"></div>
-                            <div className="flex-1 h-1 bg-primary rounded-full"></div>
-                            <div className="flex-1 h-1 bg-slate-200 rounded-full"></div>
-                            <div className="flex-1 h-1 bg-slate-200 rounded-full"></div>
-                        </div>
-                    </div>
-
-                    <div className="space-y-3 mb-8">
-                        <div className="flex items-center justify-between p-4 rounded-2xl bg-primary text-white shadow-lg">
-                            <span className="text-sm font-bold">Pas du tout d'accord</span>
-                        </div>
-                        <div className="flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
-                             <span className="text-sm font-medium">D'accord</span>
-                        </div>
-                        <div className="flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
-                             <span className="text-sm font-medium">Tout à fait d'accord</span>
-                        </div>
-                    </div>
-
-                    {/* Bottom Controls */}
-                    <div className="mt-auto space-y-3 pb-8">
-                        <button className="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl text-sm font-bold flex items-center justify-center gap-2">
-                            Suivant
-                        </button>
+                {/* Center Circle Indicator */}
+                <div className="hidden lg:flex w-2/12 items-center justify-center relative z-20">
+                    <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border-4 border-gray-ui dark:border-slate-800 flex items-center justify-center text-primary group-hover:border-primary transition-colors">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
                     </div>
                 </div>
 
-                {/* Home Bar */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
-             </div>
-          </Reveal>
-          
+                {/* Visual Side */}
+                <div className="w-full lg:w-5/12 flex justify-center">
+                  <Reveal direction={index % 2 === 0 ? 'right' : 'left'} delay={200}>
+                    <div className="relative group">
+                      {/* Decorative Background for the step number */}
+                      <div className="absolute -inset-4 bg-gray-ui/20 dark:bg-white/5 rounded-[3rem] blur-2xl group-hover:bg-primary/5 transition-all duration-700"></div>
+                      
+                      <div className="relative bg-white dark:bg-slate-900 p-8 rounded-[3.5rem] border border-gray-ui dark:border-white/5 shadow-sm overflow-hidden min-w-[300px] flex items-center gap-6">
+                        <div className="text-8xl font-black text-gray-ui/40 dark:text-white/5 select-none leading-none">
+                          0{index + 1}
+                        </div>
+                        <div className="flex-1">
+                          <div className="h-2 w-3/4 bg-gray-ui/50 dark:bg-slate-800 rounded-full mb-3"></div>
+                          <div className="h-2 w-1/2 bg-gray-ui/30 dark:bg-slate-800 rounded-full"></div>
+                        </div>
+                        <div className="w-12 h-12 rounded-full bg-emerald/10 flex items-center justify-center text-emerald">
+                          <Check size={20} />
+                        </div>
+                      </div>
+                    </div>
+                  </Reveal>
+                </div>
+
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

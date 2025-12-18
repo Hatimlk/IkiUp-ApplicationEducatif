@@ -22,17 +22,17 @@ export const translations = {
       description: "IKIUP connecte intelligemment tous les acteurs de la réussite éducative.",
       students: {
         title: "Les Élèves",
-        desc: "Un guide interactif pour vous aider dans vos choix d'avenir.",
+        desc: "Se comprendre, s’orienter, s’organiser",
         items: ["Tests de personnalité", "Parcours personnalisés", "Aide à l'orientation"]
       },
       parents: {
         title: "Les Parents",
-        desc: "Accompagnez sereinement vos enfants grâce à un suivi clair.",
+        desc: "Suivre, comprendre, accompagner",
         items: ["Evolution scolaire", "Agenda de liaison", "Alerte de progression"]
       },
       schools: {
-        title: "Les Écoles",
-        desc: "Optimisez la gestion de vos classes via un portail dédié.",
+        title: "Les Écoles & Enseignants",
+        desc: "Communiquer, suivre, adapter l’accompagnement",
         items: ["Stats de réussite", "Gestion de classe", "Outils de communication"]
       }
     }
@@ -60,17 +60,17 @@ export const translations = {
       description: "IKIUP intelligently connects all key players in educational success.",
       students: {
         title: "Students",
-        desc: "An interactive guide to help you choose your future career path.",
+        desc: "Understand yourself, find your way, get organized",
         items: ["Personality tests", "Personalized paths", "Orientation help"]
       },
       parents: {
         title: "Parents",
-        desc: "Support your children peacefully with clear progress tracking.",
+        desc: "Track, understand, support",
         items: ["Academic evolution", "Communication log", "Progress alerts"]
       },
       schools: {
-        title: "Schools",
-        desc: "Optimize classroom management through a dedicated portal.",
+        title: "Schools & Teachers",
+        desc: "Communicate, track, adapt support",
         items: ["Success stats", "Class management", "Communication tools"]
       }
     }
