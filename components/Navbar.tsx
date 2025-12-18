@@ -25,12 +25,17 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
     };
     window.addEventListener('scroll', handleScroll);
 
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Default to light theme. Only apply dark mode if explicitly saved in localStorage.
+    // This ignores system preferences (prefers-color-scheme: dark) by default to satisfy the "light by default" requirement.
+    if (localStorage.theme === 'dark') {
       setIsDark(true);
       document.documentElement.classList.add('dark');
     } else {
       setIsDark(false);
       document.documentElement.classList.remove('dark');
+      if (!('theme' in localStorage)) {
+        localStorage.theme = 'light';
+      }
     }
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -153,9 +158,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
              <button 
                onClick={toggleTheme}
                className="p-3 text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary rounded-xl transition-all border border-transparent hover:border-primary/20"
-               aria-label="Toggle Dark Mode"
+               aria-label="Toggle Theme"
              >
-               {isDark ? <Sun size={20} /> : <Sun size={20} className="fill-current" />}
+               {isDark ? <Sun size={20} /> : <Moon size={20} />}
              </button>
              <Button size="md" onClick={scrollToDownload}>{t.download}</Button>
           </div>
