@@ -20,7 +20,7 @@ export const Home: React.FC<HomeProps> = ({ lang }) => {
       <Hero lang={lang} />
       <Audience lang={lang} />
       <HowItWorks />
-      <Features />
+      <Features lang={lang} />
       <Showcase />
       <Pricing />
       <Testimonials />

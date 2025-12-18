@@ -2,7 +2,7 @@ export const translations = {
   fr: {
     nav: {
       about: "À propos",
-      features: "Fonctionnalités",
+      features: "Solution",
       showcase: "Aperçu",
       pricing: "Tarifs",
       faq: "FAQ",
@@ -15,6 +15,26 @@ export const translations = {
       description: "IkiUp est une application d’orientation et d’accompagnement qui connecte les élèves, parents et écoles dans un même espace, pour mieux comprendre, mieux suivre et mieux accompagner les parcours scolaires.",
       appStore: "App Store",
       googlePlay: "Google Play"
+    },
+    features: {
+      title: "LA SOLUTION IKIUP",
+      intro: "IkiUp réunit en une seule plateforme les outils essentiels pour accompagner les parcours scolaires.",
+      orientation: {
+        title: "Orientation personnalisée",
+        desc: "Tests, profils, pistes de métiers"
+      },
+      tracking: {
+        title: "Agenda & suivi scolaire",
+        desc: "Emplois du temps, notes, absences, remarques"
+      },
+      feed: {
+        title: "Fil d’actualité éducatif",
+        desc: "Publications, échanges, informations scolaires"
+      },
+      schools: {
+        title: "Recherche d’écoles",
+        desc: "Explorer les établissements et les parcours"
+      }
     },
     audience: {
       title: "Une plateforme pour",
@@ -40,7 +60,7 @@ export const translations = {
   en: {
     nav: {
       about: "About",
-      features: "Features",
+      features: "Solution",
       showcase: "Showcase",
       pricing: "Pricing",
       faq: "FAQ",
@@ -53,6 +73,26 @@ export const translations = {
       description: "IkiUp is an orientation and support app that connects students, parents, and schools in one space, to better understand, track, and support academic paths.",
       appStore: "App Store",
       googlePlay: "Google Play"
+    },
+    features: {
+      title: "THE IKIUP SOLUTION",
+      intro: "IkiUp brings together the essential tools for supporting academic journeys on a single platform.",
+      orientation: {
+        title: "Personalized Orientation",
+        desc: "Tests, profiles, career paths"
+      },
+      tracking: {
+        title: "Schedule & School Tracking",
+        desc: "Schedules, grades, absences, remarks"
+      },
+      feed: {
+        title: "Educational News Feed",
+        desc: "Publications, exchanges, school info"
+      },
+      schools: {
+        title: "School Search",
+        desc: "Explore institutions and academic paths"
+      }
     },
     audience: {
       title: "A platform for",
