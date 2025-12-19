@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -39,7 +38,7 @@
               '6xl': '3.5rem',
             },
             animation: {
-              'fade-in-up': 'fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
               'float': 'float 6s ease-in-out infinite',
               'float-delayed': 'float 6s ease-in-out 3s infinite',
               'spin-slow': 'spin 12s linear infinite',
@@ -47,12 +46,12 @@
             },
             keyframes: {
               fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
               float: {
                 '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                '50%': { transform: 'translateY(-15px) rotate(1deg)' },
               },
               shine: {
                 '0%': { transform: 'translateX(-100%)' },
@@ -68,14 +67,14 @@
         --bg-background: #FAFAFA;
         --bg-surface: #FFFFFF;
         --bg-surface-soft: #E6E8EF;
-        --text-main: #111111;
+        --text-main: #1E293B;
       }
 
       .dark {
         --bg-background: #0F172A;
         --bg-surface: #1E293B;
         --bg-surface-soft: #334155;
-        --text-main: #FAFAFA;
+        --text-main: #F1F5F9;
       }
 
       body {
@@ -84,11 +83,16 @@
         scroll-behavior: smooth;
         background-color: var(--bg-background);
         color: var(--text-main);
-        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 0.4s ease, color 0.4s ease;
+        line-height: 1.6;
       }
       
+      h1, h2, h3, h4 {
+        letter-spacing: -0.02em;
+      }
+
       ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
       }
       ::-webkit-scrollbar-track {
         background: transparent;
@@ -96,7 +100,7 @@
       ::-webkit-scrollbar-thumb {
         background-color: #5A73E8;
         border-radius: 20px;
-        border: 3px solid var(--bg-background);
+        border: 2px solid var(--bg-background);
         background-clip: padding-box;
       }
 
@@ -117,14 +121,18 @@
 
       /* Premium Card Effects */
       .glass-card {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
       }
       .dark .glass-card {
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(20px);
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .text-balance {
+        text-wrap: balance;
       }
     </style>
 <script type="importmap">

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 type ButtonBaseProps = {
@@ -19,24 +18,24 @@ export const Button: React.FC<ButtonProps> = ({
   href,
   ...props 
 }) => {
-  const baseStyles = "relative inline-flex items-center justify-center font-bold transition-all duration-500 focus:outline-none disabled:opacity-50 disabled:pointer-events-none rounded-2xl active:scale-95 cursor-pointer select-none overflow-hidden group";
+  const baseStyles = "relative inline-flex items-center justify-center font-bold transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30 disabled:opacity-50 disabled:pointer-events-none rounded-2xl active:scale-95 cursor-pointer select-none overflow-hidden group";
   
   const variants = {
-    primary: "bg-primary text-white hover:shadow-[0_20px_40px_-10px_rgba(90,115,232,0.4)]",
-    secondary: "bg-secondary text-[#111111] hover:shadow-[0_20px_40px_-10px_rgba(246,222,122,0.4)]",
-    outline: "border-2 border-gray-ui dark:border-slate-700 hover:border-primary dark:hover:border-primary bg-transparent text-text hover:text-primary dark:hover:text-primary",
-    ghost: "hover:bg-primary/5 dark:hover:bg-white/10 text-[#111111]/60 dark:text-slate-300 hover:text-primary dark:hover:text-white",
-    white: "bg-white text-[#111111] shadow-xl hover:shadow-2xl hover:-translate-y-1"
+    primary: "bg-primary text-white hover:bg-primary/90 hover:shadow-[0_12px_24px_-8px_rgba(90,115,232,0.4)]",
+    secondary: "bg-secondary text-slate-900 hover:bg-secondary/90 hover:shadow-[0_12px_24px_-8px_rgba(246,222,122,0.4)]",
+    outline: "border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary bg-transparent text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary",
+    ghost: "hover:bg-primary/10 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white",
+    white: "bg-white text-slate-900 shadow-lg hover:shadow-xl hover:-translate-y-0.5 border border-slate-100"
   };
 
   const sizes = {
-    sm: "h-10 px-6 text-sm",
-    md: "h-14 px-8 text-base",
-    lg: "h-16 px-10 text-lg",
+    sm: "h-10 px-5 text-sm",
+    md: "h-12 px-7 text-base",
+    lg: "h-14 px-9 text-lg",
   };
 
   const shineEffect = (
-    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shine_1.5s_infinite] pointer-events-none"></span>
+    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shine_1.5s_infinite] pointer-events-none"></span>
   );
 
   const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
@@ -45,7 +44,7 @@ export const Button: React.FC<ButtonProps> = ({
     return (
       <a href={href} className={classes} {...(props as any)}>
         {shineEffect}
-        <span className="relative z-10">{children}</span>
+        <span className="relative z-10 flex items-center gap-2">{children}</span>
       </a>
     );
   }
@@ -56,7 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {shineEffect}
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 flex items-center gap-2">{children}</span>
     </button>
   );
 };
