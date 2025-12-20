@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Check, Sparkles } from 'lucide-react';
+import { Check, Sparkles, Send } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { translations, Language } from '../translations';
 
 interface PricingPlan {
   name: string;
@@ -50,6 +51,8 @@ const plans: PricingPlan[] = [
 
 export const Pricing: React.FC = () => {
   const [isYearly, setIsYearly] = useState(false);
+  const lang: Language = 'fr'; // Ideally passed as prop, defaulting for now
+  const t = translations[lang].pricing;
 
   const scrollToDownload = () => {
     const element = document.getElementById('download');
@@ -66,13 +69,13 @@ export const Pricing: React.FC = () => {
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-black text-slate-900 dark:text-white mb-6">
               Investir dans <span className="text-primary italic">leur futur.</span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 font-normal max-w-2xl mx-auto mb-10">
-              Une tarification transparente pour s'adapter à votre rythme familial.
+            <p className="text-lg text-slate-600 dark:text-slate-400 font-normal max-w-2xl mx-auto mb-10 text-balance">
+              {t.intro}
             </p>
 
             <div className="flex items-center justify-center gap-4 mb-10">
               <span className={`text-xs font-bold uppercase tracking-widest ${!isYearly ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>Mensuel</span>
-              <button 
+              <button
                 onClick={() => setIsYearly(!isYearly)}
                 className="relative w-14 h-7 rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-all focus:outline-none ring-offset-2 focus:ring-2 focus:ring-primary shadow-inner"
               >
@@ -88,15 +91,14 @@ export const Pricing: React.FC = () => {
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-20">
           {plans.map((plan, index) => (
             <Reveal key={plan.name} delay={index * 100} direction="up">
-              <div className={`relative h-full p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border-2 transition-all duration-300 flex flex-col ${
-                plan.popular 
-                ? 'border-primary shadow-xl shadow-primary/5' 
-                : 'border-slate-100 dark:border-slate-800 shadow-lg'
-              }`}>
-                
+              <div className={`relative h-full p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border-2 transition-all duration-300 flex flex-col ${plan.popular
+                  ? 'border-primary shadow-xl shadow-primary/5'
+                  : 'border-slate-100 dark:border-slate-800 shadow-lg'
+                }`}>
+
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md flex items-center gap-1.5">
                     <Sparkles size={12} />
@@ -133,13 +135,12 @@ export const Pricing: React.FC = () => {
                   ))}
                 </ul>
 
-                <button 
+                <button
                   onClick={scrollToDownload}
-                  className={`w-full py-4 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all active:scale-[0.98] ${
-                    plan.popular
-                    ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary/90'
-                    : 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:opacity-90'
-                  }`}
+                  className={`w-full py-4 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all active:scale-[0.98] ${plan.popular
+                      ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary/90'
+                      : 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:opacity-90'
+                    }`}
                 >
                   Choisir ce plan
                 </button>
@@ -148,10 +149,23 @@ export const Pricing: React.FC = () => {
           ))}
         </div>
 
-        <p className="text-center mt-12 text-slate-400 text-xs font-bold uppercase tracking-widest">
-          Offre pour établissements ? 
-          <a href="#" className="text-primary ml-1.5 hover:underline">Contactez-nous</a>
-        </p>
+        <Reveal delay={200}>
+          <div className="max-w-3xl mx-auto text-center bg-slate-50 dark:bg-slate-800/50 rounded-[2rem] p-8 md:p-12 border border-slate-100 dark:border-slate-700/50">
+            <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-4">
+              {t.contactTitle}
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto">
+              {t.contactText}
+            </p>
+            <a
+              href="mailto:contact@ikiup.com"
+              className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+            >
+              Contactez-nous
+              <Send size={16} />
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

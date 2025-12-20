@@ -1,8 +1,9 @@
 import React from 'react';
 import { Hero } from './Hero';
+import { Context } from './Context';
+import { Features } from './Features';
 import { Audience } from './Audience';
 import { HowItWorks } from './HowItWorks';
-import { Features } from './Features';
 import { Showcase } from './Showcase';
 import { Pricing } from './Pricing';
 import { Testimonials } from './Testimonials';
@@ -18,9 +19,10 @@ export const Home: React.FC<HomeProps> = ({ lang }) => {
   return (
     <>
       <Hero lang={lang} />
+      <Context />
+      <Features lang={lang} />
       <Audience lang={lang} />
       <HowItWorks />
-      <Features lang={lang} />
       <Showcase />
       <Pricing />
       <Testimonials />
