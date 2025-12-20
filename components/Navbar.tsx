@@ -79,9 +79,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
 
   const navLinks = [
     { name: t.about, href: '/about' },
+    { name: t.howitworks, href: '#howitworks' },
     { name: t.features, href: '#features' },
-    { name: t.showcase, href: '#showcase' },
     { name: t.pricing, href: '#pricing' },
+    { name: t.faq, href: '#faq' },
   ];
 
   return (
@@ -111,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
                 key={link.name}
                 href={link.href} 
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-[11px] font-bold uppercase tracking-widest px-5 py-2 rounded-xl transition-all duration-200 ${
+                className={`text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-xl transition-all duration-200 ${
                   (link.href === '/about' && currentPage === 'about')
                     ? 'bg-primary text-white shadow-md' 
                     : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white dark:hover:bg-slate-800'

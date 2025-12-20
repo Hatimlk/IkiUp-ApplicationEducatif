@@ -35,7 +35,7 @@ export const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section className="py-32 md:py-48 bg-[#FDFDFF] dark:bg-[#0B1121] transition-colors duration-500 relative overflow-hidden">
+    <section id="howitworks" className="py-32 md:py-48 bg-[#FDFDFF] dark:bg-[#0B1121] transition-colors duration-500 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <div className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>

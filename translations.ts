@@ -1,7 +1,10 @@
+export type Language = 'fr' | 'en';
+
 export const translations = {
   fr: {
     nav: {
       about: "À propos",
+      howitworks: "Concept",
       features: "Solution",
       showcase: "Aperçu",
       pricing: "Tarifs",
@@ -72,6 +75,7 @@ export const translations = {
   en: {
     nav: {
       about: "About",
+      howitworks: "Concept",
       features: "Solution",
       showcase: "Showcase",
       pricing: "Pricing",
@@ -140,5 +144,3 @@ export const translations = {
     }
   }
 };
-
-export type Language = 'fr' | 'en';
