@@ -6,7 +6,7 @@ import { Audience } from './Audience';
 import { HowItWorks } from './HowItWorks';
 import { Showcase } from './Showcase';
 import { Pricing } from './Pricing';
-import { Testimonials } from './Testimonials';
+// import { Testimonials } from './Testimonials';
 import { FAQ } from './FAQ';
 import { CTA } from './CTA';
 import { Language } from '../translations';
@@ -25,7 +25,7 @@ export const Home: React.FC<HomeProps> = ({ lang }) => {
       <HowItWorks />
       <Showcase />
       <Pricing />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FAQ />
       <CTA />
     </>
