@@ -23,14 +23,14 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
       title: t.parents.title,
       description: t.parents.desc,
       icon: <Users size={32} />,
-      theme: { bg: 'bg-emerald-600', text: 'text-emerald-600', light: 'bg-emerald-50', border: 'border-emerald-100' }
+      theme: { bg: 'bg-amber-400', text: 'text-amber-700', light: 'bg-amber-50', border: 'border-amber-100' }
     },
     {
       key: 'schools',
       title: t.schools.title,
       description: t.schools.desc,
       icon: <School size={32} />,
-      theme: { bg: 'bg-indigo-600', text: 'text-indigo-600', light: 'bg-indigo-50', border: 'border-indigo-100' }
+      theme: { bg: 'bg-slate-800', text: 'text-slate-800', light: 'bg-slate-100', border: 'border-slate-200' }
     }
   ];
 
@@ -49,7 +49,7 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
             <Reveal key={index} delay={index * 100} direction="up" className="h-full">
-              <div className={`group h-full flex flex-col p-8 rounded-[2rem] bg-white dark:bg-slate-900 border-2 ${card.theme.border} dark:border-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
+              <div className={`group h-full flex flex-col p-8 rounded-[2rem] ${card.theme.light} dark:bg-slate-900 border-2 ${card.theme.border} dark:border-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
 
                 {/* Colored Header Bar */}
                 <div className={`h-2 w-full absolute top-0 left-0 ${card.theme.bg}`}></div>
