@@ -97,22 +97,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px]"></div>
       </div>
 
-      {/* Hero Section */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-32 text-center relative z-10">
-        <Reveal scale>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black text-slate-900 dark:text-white mb-8 leading-tight tracking-tight">
-            {c.title} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-sec italic relative inline-block pb-2">
-              {c.titleAccent}
-              <svg className="absolute bottom-0 left-0 w-full h-3 text-primary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 25 10, 50 5 T 100 5" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
-          </h1>
-
-        </Reveal>
-      </section>
 
       {/* Story Section - Centered Glass Card */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-40">
