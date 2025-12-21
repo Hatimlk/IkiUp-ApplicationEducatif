@@ -90,8 +90,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
             © {new Date().getFullYear()} IkiUp Inc. {isFr ? "Tous droits réservés." : "All rights reserved."}
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">{isFr ? "Mentions Légales" : "Legal"}</a>
-            <a href="#" className="hover:text-white transition-colors">{isFr ? "Confidentialité" : "Privacy"}</a>
+            <a href="/legal" onClick={(e) => handleLinkClick(e as any, 'legal')} className="hover:text-white transition-colors cursor-pointer">{isFr ? "Mentions Légales" : "Legal"}</a>
+            <a href="/privacy" onClick={(e) => handleLinkClick(e as any, 'privacy')} className="hover:text-white transition-colors cursor-pointer">{isFr ? "Confidentialité" : "Privacy"}</a>
           </div>
         </div>
       </div>
