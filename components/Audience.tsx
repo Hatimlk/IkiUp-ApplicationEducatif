@@ -49,12 +49,12 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
             <Reveal key={index} delay={index * 100} direction="up" className="h-full">
-              <div className={`group h-full flex flex-col pt-0 p-8 rounded-[2rem] bg-white dark:bg-slate-900 border-2 ${card.theme.border} dark:border-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
+              <div className={`group h-full flex flex-col p-8 rounded-[2rem] bg-white dark:bg-slate-900 border-2 ${card.theme.border} dark:border-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
 
                 {/* Colored Header Bar */}
-                <div className={`h-3 w-full absolute top-0 left-0 ${card.theme.bg}`}></div>
+                <div className={`h-2 w-full absolute top-0 left-0 ${card.theme.bg}`}></div>
 
-                <div className={`w-20 h-20 -mt-10 mb-6 rounded-3xl ${card.theme.bg} text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-16 h-16 mb-6 rounded-2xl ${card.theme.bg} text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
                   {card.icon}
                 </div>
 
