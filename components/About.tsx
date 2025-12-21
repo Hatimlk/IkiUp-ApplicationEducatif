@@ -100,10 +100,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-32 text-center relative z-10">
         <Reveal scale>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-slate-700 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-8 shadow-sm">
-            <Sparkles size={14} />
-            {c.tag}
-          </div>
+
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black text-slate-900 dark:text-white mb-8 leading-tight tracking-tight">
             {c.title} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-sec italic relative inline-block pb-2">
