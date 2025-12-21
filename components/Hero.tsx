@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apple, Play, Sparkles, Star, Zap, TrendingUp, CheckCircle2, BookOpen, Calendar, Bell } from 'lucide-react';
+import { Apple, Play, Sparkles, Star, Zap, TrendingUp, CheckCircle2, BookOpen, Calendar, Bell, Users, Clock } from 'lucide-react';
 import { Button } from './Button';
 import { Reveal } from './Reveal';
 import { Language, translations } from '../translations';
@@ -101,95 +101,92 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
           <Reveal delay={400} direction="left" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
             {/* Main Device */}
             {/* Main Device */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] bg-slate-900 rounded-[3.5rem] p-4 shadow-2xl shadow-slate-400/20 dark:shadow-black/50 skew-y-[-2deg] hover:skew-y-0 transition-transform duration-700 ease-out z-20 ring-1 ring-slate-800/50">
-              {/* Power Button */}
-              <div className="absolute top-24 -right-[2px] w-[2px] h-10 bg-slate-800 rounded-r-md"></div>
-              {/* Volume Buttons */}
-              <div className="absolute top-24 -left-[2px] w-[2px] h-16 bg-slate-800 rounded-l-md"></div>
-
-              {/* Screen */}
-              <div className="relative h-full bg-white dark:bg-slate-900 rounded-[3rem] overflow-hidden border-[8px] border-slate-900 shadow-inner">
-
-                {/* Dynamic Island / Notch */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-50 flex items-center justify-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-slate-800/50 blur-[0.5px]"></div>
-                </div>
-
-                {/* App Screen Content */}
-                <div className="w-full h-full bg-slate-50 dark:bg-slate-800 relative flex flex-col">
-                  {/* Header Background */}
-                  <div className="h-32 bg-primary/5 rounded-b-[2.5rem] pt-12 px-6 flex justify-between items-start">
-                    <div className="h-1 w-1"></div> {/* Spacer for alignment */}
+            {/* Central Hub: Dashboard Card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[380px] bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-[2.5rem] p-6 shadow-2xl shadow-slate-200/50 dark:shadow-black/50 border border-white/40 dark:border-slate-800 ring-1 ring-slate-200/50 dark:ring-slate-800 z-20 animate-float-slow">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl shadow-sm">👋</div>
+                  <div>
+                    <div className="text-xs text-slate-500 font-bold uppercase tracking-wide">Bonjour,</div>
+                    <div className="text-lg font-bold text-slate-800 dark:text-white">Thomas</div>
                   </div>
+                </div>
+                <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-xl relative border border-slate-100 dark:border-slate-700">
+                  <Bell size={20} className="text-slate-400" />
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white dark:ring-slate-800"></div>
+                </div>
+              </div>
 
-                  <div className="flex-1 px-5 -mt-16 space-y-6">
-                    {/* User Profile Hook */}
-                    <div className="bg-white dark:bg-slate-700 rounded-3xl p-5 shadow-lg shadow-slate-200/50 dark:shadow-none flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl">👋</div>
-                      <div>
-                        <div className="h-3 w-24 bg-slate-200 dark:bg-slate-600 rounded-full mb-2"></div>
-                        <div className="h-2 w-16 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
-                      </div>
+              {/* Activity Graph Placeholder */}
+              <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-5 mb-6 border border-slate-100 dark:border-slate-700">
+                <div className="flex justify-between items-end h-24 gap-2 px-1">
+                  {[40, 60, 45, 75, 50, 85, 65].map((h, i) => (
+                    <div key={i} className="w-full bg-indigo-100 dark:bg-indigo-900/30 rounded-t-md relative group overflow-hidden">
+                      <div style={{ height: `${h}%` }} className="absolute bottom-0 w-full bg-indigo-500 rounded-t-md transition-all duration-1000 group-hover:bg-indigo-600"></div>
                     </div>
+                  ))}
+                </div>
+                <div className="flex justify-between mt-3 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                  <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+                </div>
+              </div>
 
-                    {/* List Items */}
-                    <div className="space-y-3">
-                      <div className="bg-white dark:bg-slate-750 p-4 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">MA</div>
-                        <div className="flex-1">
-                          <div className="h-2.5 w-20 bg-slate-200 dark:bg-slate-600 rounded-full mb-1.5"></div>
-                          <div className="h-2 w-12 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
-                        </div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-750 p-4 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xs">FR</div>
-                        <div className="flex-1">
-                          <div className="h-2.5 w-24 bg-slate-200 dark:bg-slate-600 rounded-full mb-1.5"></div>
-                          <div className="h-2 w-16 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Nav Hint */}
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-slate-300 dark:bg-slate-700 rounded-full mb-2"></div>
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/20 transition-transform hover:scale-105 duration-300">
+                  <div className="text-emerald-600 dark:text-emerald-400 font-bold text-2xl mb-1">16.5</div>
+                  <div className="text-emerald-600/60 dark:text-emerald-400/60 text-[10px] font-bold uppercase tracking-wide">Moyenne</div>
+                </div>
+                <div className="p-4 rounded-2xl bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/20 transition-transform hover:scale-105 duration-300">
+                  <div className="text-blue-600 dark:text-blue-400 font-bold text-2xl mb-1">-2h</div>
+                  <div className="text-blue-600/60 dark:text-blue-400/60 text-[10px] font-bold uppercase tracking-wide">Absences</div>
                 </div>
               </div>
             </div>
 
-            {/* Floating Element 1: Calendar */}
-            <div className="absolute top-[20%] right-[5%] p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float z-30">
+            {/* Satellite 1: Top Right - Grade Notification */}
+            <div className="absolute top-[12%] -right-[2%] p-3 pl-4 pr-6 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float z-30 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shadow-sm">
+                <CheckCircle2 size={24} />
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-800 dark:text-white">Note reçue</div>
+                <div className="text-xs text-slate-500 font-medium">Mathématiques: <span className="text-emerald-600 font-bold">18/20</span></div>
+              </div>
+            </div>
+
+            {/* Satellite 2: Bottom Left - Next Class */}
+            <div className="absolute bottom-[18%] -left-[5%] p-3 pl-4 pr-6 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed z-30 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center shadow-sm">
+                <Clock size={24} />
+              </div>
+              <div>
+                <div className="text-[10px] uppercase font-bold text-orange-500 tracking-wide">Dans 15 min</div>
+                <div className="font-bold text-slate-800 dark:text-white">Histoire-Geo</div>
+              </div>
+            </div>
+
+            {/* Satellite 3: Mid Right - Parent Message */}
+            <div className="absolute top-[65%] -right-[8%] p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700 animate-float z-10 scale-90 rotate-3 transition-transform hover:rotate-0 hover:scale-100 duration-300">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center">
-                  <Calendar size={20} />
+                <div className="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                  <Users size={18} />
                 </div>
-                <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-400">Next Class</div>
-                  <div className="font-bold text-slate-800 dark:text-white">History</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Element 2: Success Notification */}
-            <div className="absolute bottom-[25%] left-[0%] p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed z-30">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
-                  <CheckCircle2 size={20} />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-slate-800 dark:text-white">Devoir rendu !</div>
-                  <div className="text-[10px] text-slate-400">Il y a 2 min</div>
+                <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 pr-2">
+                  Réunion parents-profs...
                 </div>
               </div>
             </div>
 
-            {/* Floating Element 3: Books/Abstract */}
-            <div className="absolute top-[15%] left-[10%] w-16 h-16 bg-blue-500 rounded-2xl rotate-12 opacity-80 blur-sm -z-10 animate-pulse"></div>
-            <div className="absolute bottom-[20%] right-[15%] w-24 h-24 bg-purple-500 rounded-full opacity-60 blur-xl -z-10"></div>
+            {/* Background Glows */}
+            <div className="absolute top-[20%] left-[20%] w-72 h-72 bg-indigo-500/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
+            <div className="absolute bottom-[20%] right-[20%] w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
+
           </Reveal>
         </div>
 
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
