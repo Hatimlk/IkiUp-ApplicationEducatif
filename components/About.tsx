@@ -110,9 +110,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
               </svg>
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
-            {c.description}
-          </p>
+
         </Reveal>
       </section>
 
@@ -142,66 +140,78 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         </Reveal>
       </section>
 
-      {/* Philosophy & Vision - Symmetric Layout */}
+      {/* Bento Grid: Philosophy & Vision */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-40">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
 
-        {/* Philosophy Header - Centered */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <Reveal>
-            <div className="w-20 h-20 bg-primary/10 rounded-[2rem] flex items-center justify-center text-primary mb-8 mx-auto rotate-3 hover:rotate-12 transition-transform duration-500">
-              <Compass size={40} />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-slate-900 dark:text-white">{c.philosophyTitle}</h2>
-            <p className="text-slate-500 dark:text-slate-400 text-xl font-light leading-relaxed">
-              {c.philosophyDesc}
-            </p>
-            {/* Simple visual separator */}
-            <div className="mt-10 flex items-center justify-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-primary/20"></div>
-              <div className="w-24 h-1.5 rounded-full bg-gradient-to-r from-primary/20 via-primary to-primary/20"></div>
-              <div className="w-3 h-3 rounded-full bg-primary/20"></div>
-            </div>
-          </Reveal>
-        </div>
+          {/* Philosophy - Spans 2 cols (or full on mobile) */}
+          <div className="md:col-span-2 row-span-2">
+            <Reveal className="h-full">
+              <div className="h-full bg-slate-900 text-white p-10 md:p-14 rounded-[3rem] relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-700"></div>
 
-        {/* Vision Grid - 3 Columns Symmetric */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Item 1 */}
-          <Reveal delay={100} direction="up">
-            <div className="h-full bg-white dark:bg-slate-950 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-emerald/10 flex items-center justify-center text-emerald mb-6">
-                <Lightbulb size={32} />
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-8 rotate-3 group-hover:rotate-12 transition-transform duration-500">
+                      <Compass size={32} />
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight">{c.philosophyTitle}</h2>
+                    <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-md">
+                      {c.philosophyDesc}
+                    </p>
+                  </div>
+                  {/* Decorative lines at bottom */}
+                  <div className="mt-12 flex items-center gap-2 opacity-50">
+                    <div className="h-1 w-12 bg-white/20 rounded-full"></div>
+                    <div className="h-1 w-24 bg-primary rounded-full"></div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Orientation Prédictive</h3>
-              <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP1}</p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
-          {/* Item 2 */}
-          <Reveal delay={200} direction="up">
-            <div className="h-full bg-white dark:bg-slate-950 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center relative z-10">
-              {/* Highlight central element slightly */}
-              <div className="absolute inset-x-0 -top-12 flex justify-center pointer-events-none -z-10 opacity-50">
-                <div className="w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
+          {/* Vision Item 1: Orientation - Vertical block */}
+          <div className="md:col-span-1 row-span-2">
+            <Reveal delay={100} className="h-full" direction="left">
+              <div className="h-full bg-emerald/5 dark:bg-emerald/10 p-10 rounded-[3rem] flex flex-col items-center text-center justify-center border border-emerald/10 hover:border-emerald/30 transition-colors duration-500 relative group overflow-hidden">
+                <div className="absolute inset-0 bg-emerald/5 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-[3rem] origin-center"></div>
+                <div className="w-20 h-20 bg-white dark:bg-slate-900 rounded-full shadow-lg shadow-emerald/10 flex items-center justify-center text-emerald mb-8 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                  <Lightbulb size={36} />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 relative z-10">Orientation Prédictive</h3>
+                <p className="text-slate-500 dark:text-slate-400 font-light relative z-10">{c.visionP1}</p>
               </div>
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-secondary/10 flex items-center justify-center text-amber-600">
-                <Users size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Harmonie Familiale</h3>
-              <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP2}</p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
-          {/* Item 3 */}
-          <Reveal delay={300} direction="up">
-            <div className="h-full bg-white dark:bg-slate-950 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-indigo/10 flex items-center justify-center text-indigo">
-                <GraduationCap size={32} />
+          {/* Vision Item 2: Harmonie - Large horizonal or small square - keeping neat square */}
+          <div className="md:col-span-1">
+            <Reveal delay={200} className="h-full" direction="up">
+              <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl flex flex-col justify-center items-start hover:-translate-y-1 transition-transform duration-300 group">
+                <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-xl flex items-center justify-center text-amber-500 mb-4 group-hover:rotate-6 transition-transform">
+                  <Users size={24} />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Harmonie</h3>
+                <p className="text-sm text-slate-500 font-light line-clamp-3">{c.visionP2}</p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Écosystème Circulaire</h3>
-              <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP3}</p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
+
+          {/* Vision Item 3: Ecosystem - Fill remaining */}
+          <div className="md:col-span-2">
+            <Reveal delay={300} className="h-full" direction="up">
+              <div className="h-full bg-gradient-to-r from-indigo/5 to-purple-500/5 dark:from-indigo/10 dark:to-purple-900/10 p-8 rounded-[2.5rem] border border-indigo/10 flex items-center gap-8 group hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors">
+                <div className="shrink-0 w-20 h-20 bg-indigo text-white rounded-2xl flex items-center justify-center shadow-lg shadow-indigo/30 group-hover:scale-110 transition-transform duration-300">
+                  <GraduationCap size={40} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Écosystème Circulaire</h3>
+                  <p className="text-slate-500 dark:text-slate-400 font-light">{c.visionP3}</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
         </div>
       </section>
 
