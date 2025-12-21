@@ -24,6 +24,9 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       visionP3: "En connectant élèves, parents et écoles, nous créons un écosystème de réussite circulaire.",
       philosophyTitle: "La Philosophie IkiUp",
       philosophyDesc: "Inspiré du concept d'Ikigai, notre nom symbolise l'ascension vers sa raison d'être.",
+      storyTag: "À PROPOS",
+      storyTitle: "IkiUp est née d’un besoin réel.",
+      storyText: "Comme beaucoup de parents, j’ai cherché comment mieux accompagner mon enfant dans son parcours scolaire et ses choix d’orientation. Les solutions que j’ai trouvées étaient peu accessibles, contraignantes ou proposées trop tard.\n\nC’est ainsi qu’est née l’idée d’IkiUp : une application pensée pour être simple, accessible à tout moment et à portée de main. Elle accompagne les enfants dans leur réflexion, aide les parents à les soutenir avec plus de justesse, et permet aux écoles de mieux comprendre les besoins des élèves afin d’adapter leur accompagnement pédagogique. IkiUp a été conçue pour structurer le parcours scolaire, offrir des repères clairs et avancer pas à pas, ensemble, dans un cadre serein et humain.",
       commitments: "Nos Engagements Piliers",
       pillars: [
         {
@@ -57,6 +60,9 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       visionP3: "By connecting students, parents, and schools, we create a circular success ecosystem.",
       philosophyTitle: "The IkiUp Philosophy",
       philosophyDesc: "Inspired by the concept of Ikigai, our name symbolizes the ascent towards one's reason for being.",
+      storyTag: "ABOUT US",
+      storyTitle: "IkiUp was born from a real need.",
+      storyText: "Like many parents, I looked for how to better support my child in their school journey and orientation choices. The solutions I found were inaccessible, restrictive, or proposed too late.\n\nThus was born the idea of IkiUp: an application designed to be simple, accessible at any time, and at hand. It supports children in their reflection, helps parents support them with greater accuracy, and allows schools to better understand the needs of students to adapt their pedagogical support. IkiUp was designed to structure the school journey, offer clear benchmarks, and move forward step by step, together, in a serene and human framework.",
       commitments: "Our Core Commitments",
       pillars: [
         {
@@ -99,7 +105,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
             {c.tag}
           </div>
           <h1 className="text-6xl md:text-8xl font-serif font-black text-slate-900 dark:text-white mb-10 leading-tight">
-            {c.title} <br/>
+            {c.title} <br />
             <span className="text-primary italic relative inline-block">
               {c.titleAccent}
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -113,103 +119,127 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         </Reveal>
       </section>
 
+      {/* Story Section */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mb-32">
+        <Reveal>
+          <div className="bg-white dark:bg-slate-900 rounded-[3rem] p-8 md:p-12 border border-slate-100 dark:border-slate-800 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
+              <Sparkles size={200} />
+            </div>
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+                {c.storyTag}
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-white mb-6">
+                {c.storyTitle}
+              </h2>
+              <div className="prose prose-lg dark:prose-invert text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                {c.storyText.split('\n\n').map((paragraph, idx) => (
+                  <p key={idx} className="mb-4 last:mb-0">{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* Philosophy Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-40">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-             <Reveal direction="left">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-primary/20 rounded-[4rem] blur-3xl group-hover:bg-primary/30 transition-colors duration-700"></div>
-                  <div className="relative bg-white dark:bg-slate-900 p-12 rounded-[4rem] shadow-2xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
-                      <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center text-primary mb-8 group-hover:rotate-12 transition-transform duration-500">
-                        <Compass size={48} />
-                      </div>
-                      <h2 className="text-3xl font-serif font-bold mb-6 text-slate-900 dark:text-white">{c.philosophyTitle}</h2>
-                      <p className="text-slate-500 dark:text-slate-400 text-lg font-light leading-relaxed">
-                        {c.philosophyDesc}
-                      </p>
-                      
-                      {/* Abstract Visual representation of IkiUp */}
-                      <div className="mt-12 flex items-center gap-4">
-                        <div className="w-12 h-1.5 rounded-full bg-slate-200 dark:bg-slate-800"></div>
-                        <div className="w-24 h-1.5 rounded-full bg-primary shadow-[0_0_15px_rgba(84,118,255,0.4)]"></div>
-                        <div className="w-12 h-1.5 rounded-full bg-slate-200 dark:bg-slate-800"></div>
-                      </div>
-                  </div>
+          <Reveal direction="left">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-primary/20 rounded-[4rem] blur-3xl group-hover:bg-primary/30 transition-colors duration-700"></div>
+              <div className="relative bg-white dark:bg-slate-900 p-12 rounded-[4rem] shadow-2xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+                <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center text-primary mb-8 group-hover:rotate-12 transition-transform duration-500">
+                  <Compass size={48} />
                 </div>
-             </Reveal>
-             <Reveal direction="right" delay={200}>
-                <div className="space-y-10">
-                  <div className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-emerald/10 flex items-center justify-center text-emerald">
-                      <Lightbulb size={24} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Orientation Prédictive</h3>
-                      <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP1}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-bronze">
-                      <Users size={24} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Harmonie Familiale</h3>
-                      <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP2}</p>
-                    </div>
-                  </div>
+                <h2 className="text-3xl font-serif font-bold mb-6 text-slate-900 dark:text-white">{c.philosophyTitle}</h2>
+                <p className="text-slate-500 dark:text-slate-400 text-lg font-light leading-relaxed">
+                  {c.philosophyDesc}
+                </p>
 
-                  <div className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-indigo/10 flex items-center justify-center text-indigo">
-                      <GraduationCap size={24} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Écosystème Circulaire</h3>
-                      <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP3}</p>
-                    </div>
-                  </div>
+                {/* Abstract Visual representation of IkiUp */}
+                <div className="mt-12 flex items-center gap-4">
+                  <div className="w-12 h-1.5 rounded-full bg-slate-200 dark:bg-slate-800"></div>
+                  <div className="w-24 h-1.5 rounded-full bg-primary shadow-[0_0_15px_rgba(84,118,255,0.4)]"></div>
+                  <div className="w-12 h-1.5 rounded-full bg-slate-200 dark:bg-slate-800"></div>
                 </div>
-             </Reveal>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal direction="right" delay={200}>
+            <div className="space-y-10">
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-emerald/10 flex items-center justify-center text-emerald">
+                  <Lightbulb size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Orientation Prédictive</h3>
+                  <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP1}</p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-bronze">
+                  <Users size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Harmonie Familiale</h3>
+                  <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP2}</p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-indigo/10 flex items-center justify-center text-indigo">
+                  <GraduationCap size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Écosystème Circulaire</h3>
+                  <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{c.visionP3}</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Commitments Grid */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Reveal>
-             <div className="text-center mb-20">
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 dark:text-white mb-4">{c.commitments}</h2>
-                <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-             </div>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 dark:text-white mb-4">{c.commitments}</h2>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-8">
-            {c.pillars.map((pillar, i) => (
-              <Reveal key={i} delay={i * 150} scale>
-                <div className="p-10 rounded-[3rem] bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/20 dark:shadow-black/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full group">
-                    <div className={`w-14 h-14 rounded-2xl bg-${pillar.color}/10 dark:bg-${pillar.color}/20 flex items-center justify-center text-${pillar.color} mb-8 group-hover:scale-110 transition-transform`}>
-                        {pillar.icon}
-                    </div>
-                    <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 dark:text-white">{pillar.title}</h3>
-                    <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">
-                        {pillar.desc}
-                    </p>
+          {c.pillars.map((pillar, i) => (
+            <Reveal key={i} delay={i * 150} scale>
+              <div className="p-10 rounded-[3rem] bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/20 dark:shadow-black/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full group">
+                <div className={`w-14 h-14 rounded-2xl bg-${pillar.color}/10 dark:bg-${pillar.color}/20 flex items-center justify-center text-${pillar.color} mb-8 group-hover:scale-110 transition-transform`}>
+                  {pillar.icon}
                 </div>
-              </Reveal>
-            ))}
+                <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 dark:text-white">{pillar.title}</h3>
+                <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">
+                  {pillar.desc}
+                </p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
       {/* Closing Quote */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mt-40 text-center">
-         <Reveal delay={400}>
-            <div className="text-slate-200 dark:text-slate-800 absolute -translate-y-20 left-1/2 -translate-x-1/2 pointer-events-none">
-              <Zap size={200} strokeWidth={1} />
-            </div>
-            <p className="text-3xl md:text-4xl font-serif italic font-medium text-slate-900 dark:text-slate-100 mb-8 leading-relaxed relative z-10">
-              "L'éducation n'est pas la préparation à la vie ; <br/>
-              l'éducation est la vie même."
-            </p>
-            <div className="font-bold text-primary tracking-widest uppercase text-sm">John Dewey</div>
-         </Reveal>
+        <Reveal delay={400}>
+          <div className="text-slate-200 dark:text-slate-800 absolute -translate-y-20 left-1/2 -translate-x-1/2 pointer-events-none">
+            <Zap size={200} strokeWidth={1} />
+          </div>
+          <p className="text-3xl md:text-4xl font-serif italic font-medium text-slate-900 dark:text-slate-100 mb-8 leading-relaxed relative z-10">
+            "L'éducation n'est pas la préparation à la vie ; <br />
+            l'éducation est la vie même."
+          </p>
+          <div className="font-bold text-primary tracking-widest uppercase text-sm">John Dewey</div>
+        </Reveal>
       </section>
     </div>
   );
