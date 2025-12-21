@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-400/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
         {/* Left: Content */}
         <div className="flex-1 text-center lg:text-left relative z-20">
@@ -98,9 +98,8 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
         {/* Right: The Educational Composition */}
         <div className="hidden lg:block flex-1 relative w-full h-[600px]">
-          <Reveal delay={400} direction="left" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
-            {/* Main Device */}
-            {/* Main Device */}
+          <Reveal delay={400} direction="left" className="absolute top-[45%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-full h-full">
+
             {/* Central Hub: Dashboard Card */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[380px] bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-[2.5rem] p-6 shadow-2xl shadow-slate-200/50 dark:shadow-black/50 border border-white/40 dark:border-slate-800 ring-1 ring-slate-200/50 dark:ring-slate-800 z-20 animate-float-slow">
               {/* Header */}
@@ -157,7 +156,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             </div>
 
             {/* Satellite 2: Bottom Left - Next Class */}
-            <div className="absolute bottom-[18%] -left-[5%] p-3 pl-4 pr-6 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed z-30 flex items-center gap-4">
+            <div className="absolute bottom-[20%] left-[0%] p-3 pl-4 pr-6 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed z-30 flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center shadow-sm">
                 <Clock size={24} />
               </div>
