@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apple, Play, Sparkles, Star, Zap, TrendingUp, CheckCircle2, Target } from 'lucide-react';
+import { Apple, Play, Sparkles, Star, Zap, TrendingUp, CheckCircle2, BookOpen, Calendar, Bell } from 'lucide-react';
 import { Button } from './Button';
 import { Reveal } from './Reveal';
 import { Language, translations } from '../translations';
@@ -12,153 +12,155 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
   const t = translations[lang].hero;
 
   return (
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-background">
-      {/* Symmetric Background Mesh */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[140px] animate-pulse"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px]"></div>
+    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-slate-50 dark:bg-slate-950">
+      {/* Educational Grid Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]" 
+           style={{ backgroundImage: 'linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      {/* Soft Ambient Blobs */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-400/10 rounded-full blur-[100px] pointer-events-none"></div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+        
         {/* Left: Content */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="flex-1 text-center lg:text-left relative z-20">
           {/* Badge */}
           <Reveal delay={0} scale>
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg mb-8 group hover:-translate-y-1 transition-transform cursor-default">
-              <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white shadow-md shadow-primary/20">
-                <Sparkles size={12} className="group-hover:rotate-12 transition-transform" />
-              </span>
-              <span className="text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">
-                {t.badge}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm mb-8 transition-transform hover:scale-105 cursor-default">
+              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+              <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
+                {lang === 'fr' ? 'La référence scolaire' : 'The School Standard'}
               </span>
             </div>
           </Reveal>
 
-          {/* Title */}
+          {/* Title - Clean Academic Serif */}
           <Reveal delay={100} direction="up">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-black tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1] text-balance">
-              {t.title} <br />
-              <span className="text-primary italic relative inline-block group px-2">
-                {t.titleAccent}
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-primary/10 -z-10 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-700"></span>
-                <svg className="absolute -bottom-3 left-0 w-full h-3 text-primary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" />
-                </svg>
-              </span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1]">
+              {lang === 'fr' ? (
+                <>
+                  L'école, <br/>
+                  <span className="relative inline-block text-primary">
+                    réinventée.
+                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <path d="M0 5 Q 50 10, 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
+                    </svg>
+                  </span>
+                </>
+              ) : (
+                <>
+                  School, <br/>
+                  <span className="text-primary">Reimagined.</span>
+                </>
+              )}
             </h1>
           </Reveal>
 
           {/* Description */}
           <Reveal delay={200} direction="up">
-            <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed font-normal">
+            <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-medium">
               {t.description}
             </p>
           </Reveal>
 
-          {/* Buttons */}
+          {/* Action Buttons - Solid & Clear */}
           <Reveal delay={300}>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-16 lg:mb-20">
-              <Button variant="primary" size="lg" className="w-full sm:w-auto px-8 py-4 gap-3 shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30" href="https://apps.apple.com" target="_blank">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <Button variant="primary" size="lg" className="w-full sm:w-auto px-8 py-4 rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all" href="https://apps.apple.com" target="_blank">
                 <Apple size={22} className="mb-1" />
-                <div className="flex flex-col items-start leading-tight text-left">
-                  <span className="text-[8px] uppercase font-black tracking-widest opacity-80">App Store</span>
-                  <span className="text-base font-bold">Télécharger</span>
+                <div className="flex flex-col items-start leading-none ml-2">
+                  <span className="text-[9px] uppercase font-bold opacity-80">Download on</span>
+                  <span className="text-base font-bold">App Store</span>
                 </div>
               </Button>
-              <Button variant="white" size="lg" className="w-full sm:w-auto px-8 py-4 gap-3 border border-slate-200 dark:border-slate-800 shadow-lg" href="https://play.google.com" target="_blank">
-                <Play size={20} className="fill-current mb-1" />
-                <div className="flex flex-col items-start leading-tight text-left">
-                  <span className="text-[8px] uppercase font-black tracking-widest opacity-70">Google Play</span>
-                  <span className="text-base font-bold">Installer</span>
+              <Button variant="white" size="lg" className="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 hover:border-slate-300 transition-all text-slate-700 dark:text-white" href="https://play.google.com" target="_blank">
+                <Play size={20} className="fill-current mb-0.5" />
+                <div className="flex flex-col items-start leading-none ml-2">
+                  <span className="text-[9px] uppercase font-bold opacity-70">Get it on</span>
+                  <span className="text-base font-bold">Google Play</span>
                 </div>
               </Button>
             </div>
           </Reveal>
+
+          {/* Trust Indicators */}
+          <div className="mt-12 flex items-center justify-center lg:justify-start gap-4 text-sm font-medium text-slate-500">
+             <div className="flex -space-x-2">
+                {[1,2,3,4].map(i => (
+                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-950 bg-slate-200 dark:bg-slate-800"></div>
+                ))}
+             </div>
+             <p>Utilisé par +50 établissements</p>
+          </div>
         </div>
 
-        {/* Right: Phone Mockup */}
-        <div className="hidden lg:block flex-1 relative perspective-2000 w-full max-w-[500px] lg:max-w-none">
-          <Reveal delay={400} direction="none" scale>
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-primary/10 to-transparent blur-3xl -z-10"></div>
-
-            <div className="relative transform-3d lg:rotate-y-[-10deg] hover:rotate-y-[0deg] transition-all duration-1000 ease-out p-4">
-              {/* Mockup Container - Centered Phone */}
-              <div className="relative w-[300px] sm:w-[340px] mx-auto bg-slate-950 rounded-[3.5rem] p-3 shadow-2xl border border-slate-800 overflow-hidden ring-1 ring-white/10 ring-offset-0">
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-950 rounded-full z-40 flex items-center justify-center gap-1.5 pointer-events-none">
-                  <div className="w-16 h-4 bg-black rounded-full grid place-items-center">
-                    <div className="w-10 h-1 rounded-full bg-slate-900/50"></div>
+        {/* Right: The Educational Composition */}
+        <div className="hidden lg:block flex-1 relative w-full h-[600px]">
+           <Reveal delay={400} direction="left" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
+              {/* Main Device */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] bg-slate-900 rounded-[3rem] p-3 shadow-2xl skew-y-[-2deg] hover:skew-y-0 transition-transform duration-700 ease-out z-20">
+                  <div className="relative aspect-[9/19] bg-white dark:bg-slate-900 rounded-[2.5rem] overflow-hidden border-[6px] border-slate-900">
+                      {/* App Screen Placeholder */}
+                      <div className="w-full h-full bg-slate-50 dark:bg-slate-800 relative">
+                         <div className="h-40 bg-primary/10 rounded-b-[3rem]"></div>
+                         <div className="px-6 -mt-12">
+                            <div className="w-24 h-24 rounded-3xl bg-white dark:bg-slate-700 shadow-xl flex items-center justify-center text-4xl mb-6">👋</div>
+                            <div className="h-4 w-32 bg-slate-200 dark:bg-slate-700 rounded-full mb-3"></div>
+                            <div className="h-3 w-20 bg-slate-100 dark:bg-slate-800 rounded-full mb-8"></div>
+                            
+                            <div className="space-y-3">
+                               <div className="h-20 w-full bg-white dark:bg-slate-700 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-600 p-4 flex items-center gap-3">
+                                  <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50"></div>
+                                  <div className="flex-1">
+                                     <div className="h-3 w-24 bg-slate-200 dark:bg-slate-600 rounded-full mb-2"></div>
+                                     <div className="h-2 w-16 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+                                  </div>
+                               </div>
+                               <div className="h-20 w-full bg-white dark:bg-slate-700 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-600 p-4 flex items-center gap-3">
+                                  <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/50"></div>
+                                  <div className="flex-1">
+                                     <div className="h-3 w-24 bg-slate-200 dark:bg-slate-600 rounded-full mb-2"></div>
+                                     <div className="h-2 w-16 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
                   </div>
-                </div>
-
-                <div className="relative aspect-[9/19.5] rounded-[2.8rem] overflow-hidden bg-white dark:bg-slate-900 flex flex-col">
-                  {/* App Internal UI Sim */}
-                  <div className="pt-16 px-6 pb-6 flex-1 bg-gradient-to-b from-primary/5 via-white to-white dark:via-slate-900 dark:to-slate-900">
-                    <div className="flex justify-between items-center mb-10">
-                      <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-700 dark:text-white">
-                        <div className="w-6 h-0.5 bg-current rounded-full mb-1"></div>
-                        <div className="w-4 h-0.5 bg-current rounded-full"></div>
-                      </div>
-                      <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-md shadow-primary/20 font-bold text-sm">
-                        S
-                      </div>
-                    </div>
-
-                    <div className="mb-8 text-left">
-                      <p className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-1">Bon retour,</p>
-                      <h3 className="text-3xl font-serif font-black text-slate-900 dark:text-white">Sarah</h3>
-                    </div>
-
-                    <div className="space-y-4">
-                      {/* Card 1 */}
-                      <div className="p-5 rounded-3xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-black/20">
-                        <div className="flex justify-between items-center mb-3">
-                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Moyenne Générale</span>
-                          <TrendingUp size={16} className="text-emerald" />
-                        </div>
-                        <div className="flex items-end gap-2">
-                          <span className="text-4xl font-black text-slate-900 dark:text-white">14.8</span>
-                          <span className="text-xs font-bold text-emerald mb-1.5">+0.5</span>
-                        </div>
-                      </div>
-
-                      {/* Card 2 */}
-                      <div className="p-5 rounded-3xl bg-primary text-white shadow-xl shadow-primary/30 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
-                        <div className="relative z-10 flex gap-4 items-center">
-                          <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
-                            <Zap size={24} className="fill-current" />
-                          </div>
-                          <div>
-                            <div className="text-[10px] font-bold opacity-80 uppercase tracking-widest mb-1">Prochain Cours</div>
-                            <div className="font-bold text-lg">Mathématiques</div>
-                            <div className="text-sm opacity-90">14:00 - Salle B2</div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                  {/* Navbar Simulated */}
-                  <div className="h-20 px-8 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-slate-300">
-                    <div className="text-primary"><div className="w-2 h-2 rounded-full bg-current mx-auto mb-1"></div></div>
-                    <div className="w-6 h-6 rounded-full border-2 border-slate-200 dark:border-slate-700"></div>
-                    <div className="w-6 h-6 rounded-full border-2 border-slate-200 dark:border-slate-700"></div>
-                  </div>
-                </div>
               </div>
 
-              {/* Floating Elements (Decorations) */}
-              <div className="hidden lg:block absolute top-[20%] right-[10%] p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float">
-                <Star className="text-amber-400 fill-current" size={24} />
+              {/* Floating Element 1: Calendar */}
+              <div className="absolute top-[20%] right-[5%] p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float z-30">
+                  <div className="flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center">
+                        <Calendar size={20} />
+                     </div>
+                     <div>
+                        <div className="text-[10px] uppercase font-bold text-slate-400">Next Class</div>
+                        <div className="font-bold text-slate-800 dark:text-white">History</div>
+                     </div>
+                  </div>
               </div>
-              <div className="hidden lg:block absolute bottom-[20%] left-[10%] p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed">
-                <CheckCircle2 className="text-emerald fill-emerald/20" size={24} />
+
+              {/* Floating Element 2: Success Notification */}
+              <div className="absolute bottom-[25%] left-[0%] p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed z-30">
+                  <div className="flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                        <CheckCircle2 size={20} />
+                     </div>
+                     <div>
+                        <div className="text-sm font-bold text-slate-800 dark:text-white">Devoir rendu !</div>
+                        <div className="text-[10px] text-slate-400">Il y a 2 min</div>
+                     </div>
+                  </div>
               </div>
-            </div>
-          </Reveal>
+
+              {/* Floating Element 3: Books/Abstract */}
+              <div className="absolute top-[15%] left-[10%] w-16 h-16 bg-blue-500 rounded-2xl rotate-12 opacity-80 blur-sm -z-10 animate-pulse"></div>
+              <div className="absolute bottom-[20%] right-[15%] w-24 h-24 bg-purple-500 rounded-full opacity-60 blur-xl -z-10"></div>
+           </Reveal>
         </div>
 
       </div>
