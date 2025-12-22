@@ -63,8 +63,6 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
                 <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-8 flex-grow">
                   {card.description}
                 </p>
-
-                
               </div>
             </Reveal>
           ))}
