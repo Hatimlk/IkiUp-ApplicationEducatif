@@ -3,56 +3,33 @@ import { Check, Sparkles, Send } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { translations, Language } from '../translations';
 
-interface PricingPlan {
-  name: string;
-  description: string;
-  accounts: string;
-  monthlyPrice: number;
-  yearlyPrice: number;
-  features: string[];
-  color: string;
-  popular?: boolean;
+interface PricingProps {
+  lang?: Language;
 }
 
-const plans: PricingPlan[] = [
+const pricingConfig = [
   {
-    name: "IkiUp Famille",
-    description: "L'essentiel pour un foyer serein.",
-    accounts: "1 Parent + 2 Enfants",
     monthlyPrice: 149,
     yearlyPrice: 1490,
     color: "primary",
-    features: [
-      "Tests de personnalité illimités",
-      "Tableau de bord partagé",
-      "Suivi des notes & devoirs",
-      "Orientation assistée par IA",
-      "Support standard"
-    ]
+    popular: false
   },
   {
-    name: "IkiUp Famille XL",
-    description: "Le pack complet pour toute la tribu.",
-    accounts: "2 Parents + 4 Enfants",
     monthlyPrice: 199,
     yearlyPrice: 1990,
     color: "secondary",
-    popular: true,
-    features: [
-      "Toutes les fonctions Famille",
-      "Profils IA personnalisés",
-      "Analytics avancés par élève",
-      "Agenda de liaison prioritaire",
-      "Conseils d'experts mensuels",
-      "Support VIP 24/7"
-    ]
+    popular: true
   }
 ];
 
-export const Pricing: React.FC = () => {
+export const Pricing: React.FC<PricingProps> = ({ lang = 'fr' }) => {
   const [isYearly, setIsYearly] = useState(false);
-  const lang: Language = 'fr'; // Ideally passed as prop, defaulting for now
   const t = translations[lang].pricing;
+
+  const plans = t.plans.map((plan, index) => ({
+    ...plan,
+    ...pricingConfig[index]
+  }));
 
   const scrollToDownload = () => {
     const element = document.getElementById('download');
@@ -74,7 +51,7 @@ export const Pricing: React.FC = () => {
             </p>
 
             <div className="flex items-center justify-center gap-4 mb-10">
-              <span className={`text-xs font-bold uppercase tracking-widest ${!isYearly ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>Mensuel</span>
+              <span className={`text-xs font-bold uppercase tracking-widest ${!isYearly ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>{t.monthly}</span>
               <button
                 onClick={() => setIsYearly(!isYearly)}
                 className="relative w-14 h-7 rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-all focus:outline-none ring-offset-2 focus:ring-2 focus:ring-primary shadow-inner"
@@ -82,9 +59,9 @@ export const Pricing: React.FC = () => {
                 <div className={`w-5 h-5 rounded-full bg-primary shadow-md transform transition-transform duration-200 ${isYearly ? 'translate-x-7' : 'translate-x-0'}`}></div>
               </button>
               <div className="flex items-center gap-2">
-                <span className={`text-xs font-bold uppercase tracking-widest ${isYearly ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>Annuel</span>
+                <span className={`text-xs font-bold uppercase tracking-widest ${isYearly ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>{t.yearly}</span>
                 <span className="bg-emerald/10 text-emerald text-[9px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
-                  -2 mois
+                  -2 {t.perMonth}
                 </span>
               </div>
             </div>
@@ -93,16 +70,16 @@ export const Pricing: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-20">
           {plans.map((plan, index) => (
-            <Reveal key={plan.name} delay={index * 100} direction="up">
+            <Reveal key={index} delay={index * 100} direction="up">
               <div className={`relative h-full p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border-2 transition-all duration-300 flex flex-col ${plan.popular
-                  ? 'border-primary shadow-xl shadow-primary/5'
-                  : 'border-slate-100 dark:border-slate-800 shadow-lg'
+                ? 'border-primary shadow-xl shadow-primary/5'
+                : 'border-slate-100 dark:border-slate-800 shadow-lg'
                 }`}>
 
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md flex items-center gap-1.5">
                     <Sparkles size={12} />
-                    Le plus populaire
+                    {t.mostPopular}
                   </div>
                 )}
 
@@ -118,7 +95,7 @@ export const Pricing: React.FC = () => {
                       {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                     </span>
                     <span className="text-base font-bold text-slate-400 uppercase tracking-wider">MAD</span>
-                    <span className="text-slate-400 text-xs ml-1 font-bold">/{isYearly ? 'an' : 'mois'}</span>
+                    <span className="text-slate-400 text-xs ml-1 font-bold">/{isYearly ? t.perYear : t.perMonth}</span>
                   </div>
                 </div>
 
@@ -138,11 +115,11 @@ export const Pricing: React.FC = () => {
                 <button
                   onClick={scrollToDownload}
                   className={`w-full py-4 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all active:scale-[0.98] ${plan.popular
-                      ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary/90'
-                      : 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:opacity-90'
+                    ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary/90'
+                    : 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:opacity-90'
                     }`}
                 >
-                  Choisir ce plan
+                  {t.choosePlan}
                 </button>
               </div>
             </Reveal>

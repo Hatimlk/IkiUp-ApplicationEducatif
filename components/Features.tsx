@@ -166,7 +166,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
                 <div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center">
                   <Search size={14} />
                 </div>
-                <div className="text-sm font-bold text-slate-400 truncate">Rechercher une école...</div>
+                <div className="text-sm font-bold text-slate-400 truncate">{t.schools.searchPlaceholder}</div>
               </div>
             </div>
           </Reveal>

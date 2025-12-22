@@ -22,12 +22,12 @@ export const Home: React.FC<HomeProps> = ({ lang }) => {
       <Context />
       <Features lang={lang} />
       <Audience lang={lang} />
-      <HowItWorks />
-      <Showcase />
-      <Pricing />
+      <HowItWorks lang={lang} />
+      <Showcase lang={lang} />
+      <Pricing lang={lang} />
       {/* <Testimonials /> */}
 
-      <CTA />
+      <CTA lang={lang} />
     </>
   );
 };

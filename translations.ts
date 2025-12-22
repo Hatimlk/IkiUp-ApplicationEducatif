@@ -48,13 +48,47 @@ export const translations = {
       },
       schools: {
         title: "Explorer les établissements et les parcours scolaires",
-        text: "IkiUp permet de rechercher des écoles et des établissements selon différents critères (ville, type de formation, niveau). Les élèves peuvent explorer les parcours disponibles et les intégrer dans leur réflexion d’orientation."
+        text: "IkiUp permet de rechercher des écoles et des établissements selon différents critères (ville, type de formation, niveau). Les élèves peuvent explorer les parcours disponibles et les intégrer dans leur réflexion d’orientation.",
+        searchPlaceholder: "Rechercher une école..."
       }
     },
     pricing: {
       intro: "IkiUp propose différentes formules pour les familles et les établissements, afin de rendre l'accompagnement éducatif accessible et évolutif. Les détails des offres sont disponibles directement dans l'application.",
       contactTitle: "Envie d'en savoir plus ?",
-      contactText: "Vous êtes parent, élève ou établissement et souhaitez découvrir IkiUp ? Contactez-nous pour échanger."
+      contactText: "Vous êtes parent, élève ou établissement et souhaitez découvrir IkiUp ? Contactez-nous pour échanger.",
+      monthly: "Mensuel",
+      yearly: "Annuel",
+      perMonth: "mois",
+      perYear: "an",
+      choosePlan: "Choisir ce plan",
+      mostPopular: "Le plus populaire",
+      plans: [
+        {
+          name: "IkiUp Famille",
+          description: "L'essentiel pour un foyer serein.",
+          accounts: "1 Parent + 2 Enfants",
+          features: [
+            "Tests de personnalité illimités",
+            "Tableau de bord partagé",
+            "Suivi des notes & devoirs",
+            "Orientation assistée par IA",
+            "Support standard"
+          ]
+        },
+        {
+          name: "IkiUp Famille XL",
+          description: "Le pack complet pour toute la tribu.",
+          accounts: "2 Parents + 4 Enfants",
+          features: [
+            "Toutes les fonctions Famille",
+            "Profils IA personnalisés",
+            "Analytics avancés par élève",
+            "Agenda de liaison prioritaire",
+            "Conseils d'experts mensuels",
+            "Support VIP 24/7"
+          ]
+        }
+      ]
     },
     about: {
       tag: "Notre ADN",
@@ -106,6 +140,54 @@ export const translations = {
         desc: "Communiquer, suivre, adapter l’accompagnement",
         items: ["Stats de réussite", "Gestion de classe", "Outils de communication"]
       }
+    },
+    howitworks: {
+      tag: "Le Parcours IkiUp",
+      title: "Comment ça",
+      titleAccent: "marche ?",
+      subtitle: "Quatre étapes clés pour transformer l'expérience scolaire en une aventure sereine et réussie.",
+      steps: [
+        {
+          title: "Comprendre son profil",
+          description: "Des tests basés sur les sciences cognitives pour identifier vos forces et talents naturels."
+        },
+        {
+          title: "Explorer des parcours",
+          description: "Connectez votre profil à plus de 500 métiers et formations certifiées adaptées à vos aspirations."
+        },
+        {
+          title: "Suivre la scolarité",
+          description: "Une vue centralisée sur les notes, devoirs et progrès pour une gestion quotidienne sans stress."
+        },
+        {
+          title: "Avancer ensemble",
+          description: "Le pont parfait entre élèves, parents et école pour un accompagnement bienveillant."
+        }
+      ]
+    },
+    showcase: {
+      tag: "Interface Intuitive",
+      title: "Une expérience",
+      titleAccent: "fluide.",
+      description: "Chaque écran a été conçu pour simplifier le quotidien scolaire et favoriser la sérénité.",
+      screens: [
+        { title: "Tableau de Bord", tag: "Aperçu" },
+        { title: "Orientation IA", tag: "Conseil" },
+        { title: "Suivi Parents", tag: "Stats" },
+        { title: "Agenda Partagé", tag: "Planning" },
+        { title: "Espace Social", tag: "Vie Scolaire" }
+      ],
+      active: "ACTIF"
+    },
+    cta: {
+      tag: "Application & Établissements",
+      title: "Ouvrez la porte à leur",
+      titleAccent: "futur.",
+      description: "IkiUp propose différentes formules pour les familles et les établissements. Les détails des offres sont accessibles directement dans l’application.",
+      questionTitle: "Des questions ?",
+      questionText: "Parent, élève ou établissement scolaire : contactez-nous pour découvrir comment IkiUp peut vous accompagner.",
+      contactBtn: "Nous écrire",
+      email: "contact@ikiup.com"
     }
   },
   en: {
@@ -155,13 +237,47 @@ export const translations = {
       },
       schools: {
         title: "Explore institutions and academic paths",
-        text: "IkiUp allows searching for schools and institutions based on various criteria (city, training type, level). Students can explore available tracks and integrate them into their orientation thinking."
+        text: "IkiUp allows searching for schools and institutions based on various criteria (city, training type, level). Students can explore available tracks and integrate them into their orientation thinking.",
+        searchPlaceholder: "Search for a school..."
       }
     },
     pricing: {
       intro: "IkiUp offers different packages for families and schools to make educational support accessible and scalable. Plan details are available directly in the app.",
       contactTitle: "Want to know more?",
-      contactText: "Are you a parent, student, or school wanting to discover IkiUp? Contact us to chat."
+      contactText: "Are you a parent, student, or school wanting to discover IkiUp? Contact us to chat.",
+      monthly: "Monthly",
+      yearly: "Yearly",
+      perMonth: "month",
+      perYear: "year",
+      choosePlan: "Choose plan",
+      mostPopular: "Most Popular",
+      plans: [
+        {
+          name: "IkiUp Family",
+          description: "Essentials for a peaceful home.",
+          accounts: "1 Parent + 2 Children",
+          features: [
+            "Unlimited personality tests",
+            "Shared dashboard",
+            "Grades & homework tracking",
+            "AI-assisted orientation",
+            "Standard support"
+          ]
+        },
+        {
+          name: "IkiUp Family XL",
+          description: "The complete pack for the whole tribe.",
+          accounts: "2 Parents + 4 Children",
+          features: [
+            "All Family features",
+            "Personalized AI profiles",
+            "Advanced student analytics",
+            "Priority liaison agenda",
+            "Monthly expert advice",
+            "24/7 VIP Support"
+          ]
+        }
+      ]
     },
     about: {
       tag: "Our DNA",
@@ -213,6 +329,54 @@ export const translations = {
         desc: "Communicate, track, adapt support",
         items: ["Success stats", "Class management", "Communication tools"]
       }
+    },
+    howitworks: {
+      tag: "The IkiUp Journey",
+      title: "How it",
+      titleAccent: "works",
+      subtitle: "Four key steps to transform the school experience into a serene and successful adventure.",
+      steps: [
+        {
+          title: "Understand your profile",
+          description: "Cognitive science-based tests to identify your natural strengths and talents."
+        },
+        {
+          title: "Explore paths",
+          description: "Connect your profile to over 500 professions and certified courses adapted to your aspirations."
+        },
+        {
+          title: "Track schooling",
+          description: "A centralized view of grades, homework, and progress for stress-free daily management."
+        },
+        {
+          title: "Move forward together",
+          description: "The perfect bridge between students, parents, and schools for caring support."
+        }
+      ]
+    },
+    showcase: {
+      tag: "Intuitive Interface",
+      title: "A fluid",
+      titleAccent: "experience.",
+      description: "Every screen has been designed to simplify school life and promote serenity.",
+      screens: [
+        { title: "Dashboard", tag: "Overview" },
+        { title: "AI Orientation", tag: "Advice" },
+        { title: "Parent Tracking", tag: "Stats" },
+        { title: "Shared Agenda", tag: "Planning" },
+        { title: "Social Space", tag: "School Life" }
+      ],
+      active: "ACTIVE"
+    },
+    cta: {
+      tag: "App & Institutions",
+      title: "Open the door to their",
+      titleAccent: "future.",
+      description: "IkiUp offers different packages for families and schools. Offer details are available directly in the app.",
+      questionTitle: "Questions?",
+      questionText: "Parent, student, or school: contact us to discover how IkiUp can support you.",
+      contactBtn: "Write to us",
+      email: "contact@ikiup.com"
     }
   }
 };
