@@ -43,7 +43,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
   ];
 
   return (
-    <section id="howitworks" className="py-24 md:py-32 bg-[#FDFDFF] dark:bg-[#0B1121] transition-colors duration-500 relative overflow-hidden">
+    <section id="howitworks" className="py-24 md:py-32 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <div className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>

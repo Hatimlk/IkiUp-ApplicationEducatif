@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Check, Sparkles, Send } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { translations, Language } from '../translations';
@@ -23,7 +23,7 @@ const pricingConfig = [
 ];
 
 export const Pricing: React.FC<PricingProps> = ({ lang = 'fr' }) => {
-  const [isYearly, setIsYearly] = useState(false);
+
   const t = translations[lang].pricing;
 
   const plans = t.plans.map((plan, index) => ({
@@ -50,21 +50,7 @@ export const Pricing: React.FC<PricingProps> = ({ lang = 'fr' }) => {
               {t.intro}
             </p>
 
-            <div className="flex items-center justify-center gap-4 mb-10">
-              <span className={`text-xs font-bold uppercase tracking-widest ${!isYearly ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>{t.monthly}</span>
-              <button
-                onClick={() => setIsYearly(!isYearly)}
-                className="relative w-14 h-7 rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-all focus:outline-none ring-offset-2 focus:ring-2 focus:ring-primary shadow-inner"
-              >
-                <div className={`w-5 h-5 rounded-full bg-primary shadow-md transform transition-transform duration-200 ${isYearly ? 'translate-x-7' : 'translate-x-0'}`}></div>
-              </button>
-              <div className="flex items-center gap-2">
-                <span className={`text-xs font-bold uppercase tracking-widest ${isYearly ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>{t.yearly}</span>
-                <span className="bg-emerald/10 text-emerald text-[9px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
-                  -2 {t.perMonth}
-                </span>
-              </div>
-            </div>
+
           </div>
         </Reveal>
 
@@ -90,13 +76,7 @@ export const Pricing: React.FC<PricingProps> = ({ lang = 'fr' }) => {
                     {plan.accounts}
                   </div>
 
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-5xl font-serif font-black text-slate-900 dark:text-white">
-                      {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
-                    </span>
-                    <span className="text-base font-bold text-slate-400 uppercase tracking-wider">MAD</span>
-                    <span className="text-slate-400 text-xs ml-1 font-bold">/{isYearly ? t.perYear : t.perMonth}</span>
-                  </div>
+
                 </div>
 
                 <ul className="space-y-4 mb-10 flex-1">

@@ -40,7 +40,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       {/* Story Section - Centered Glass Card */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-40">
         <Reveal>
-          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[3rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden text-center">
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden text-center">
 
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 to-transparent pointer-events-none -z-10"></div>
 
@@ -48,7 +48,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
               {t.storyTag}
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 dark:text-white mb-8">
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mb-8">
               {t.storyTitle}
             </h2>
 
@@ -70,7 +70,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
           {/* Philosophy - Spans 2 cols (or full on mobile) */}
           <div className="md:col-span-2 row-span-2">
             <Reveal className="h-full">
-              <div className="h-full bg-slate-900 text-white p-10 md:p-14 rounded-[3rem] relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+              <div className="h-full bg-slate-900 text-white p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-700"></div>
 
                 <div className="relative z-10 flex flex-col h-full justify-between">
@@ -78,7 +78,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                     <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-8 rotate-3 group-hover:rotate-12 transition-transform duration-500">
                       <Compass size={32} />
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight">{t.philosophyTitle}</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-black mb-6 leading-tight">{t.philosophyTitle}</h2>
                     <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-md">
                       {t.philosophyDesc}
                     </p>
@@ -96,7 +96,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
           {/* Vision Item 1: Orientation - Vertical block */}
           <div className="md:col-span-1 row-span-2">
             <Reveal delay={100} className="h-full" direction="left">
-              <div className="h-full bg-emerald/5 dark:bg-emerald/10 p-10 rounded-[3rem] flex flex-col items-center text-center justify-center border border-emerald/10 hover:border-emerald/30 transition-colors duration-500 relative group overflow-hidden">
+              <div className="h-full bg-emerald/5 dark:bg-emerald/10 p-10 rounded-[2.5rem] flex flex-col items-center text-center justify-center border border-emerald/10 hover:border-emerald/30 transition-colors duration-500 relative group overflow-hidden">
                 <div className="absolute inset-0 bg-emerald/5 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-[3rem] origin-center"></div>
                 <div className="w-20 h-20 bg-white dark:bg-slate-900 rounded-full shadow-lg shadow-emerald/10 flex items-center justify-center text-emerald mb-8 relative z-10 group-hover:scale-110 transition-transform duration-300">
                   <Lightbulb size={36} />
@@ -146,7 +146,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
               <Shield size={12} />
               Valeurs
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 dark:text-white mb-6">{t.commitments}</h2>
+            <h2 className="text-4xl md:text-6xl font-serif font-black text-slate-900 dark:text-white mb-6">{t.commitments}</h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
               Des principes inébranlables pour construire un futur de confiance.
             </p>
@@ -157,7 +157,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
             const config = pillarsConfig[i];
             return (
               <Reveal key={i} delay={i * 150} scale>
-                <div className="p-10 rounded-[3rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-100 dark:border-slate-800 shadow-xl shadow-indigo/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full group relative overflow-hidden">
+                <div className="p-10 rounded-[2.5rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-100 dark:border-slate-800 shadow-xl shadow-indigo/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full group relative overflow-hidden">
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-${config.color}/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-150`}></div>
 
                   <div className={`w-16 h-16 rounded-2xl bg-${config.color}/10 dark:bg-${config.color}/20 flex items-center justify-center text-${config.color} mb-8 group-hover:rotate-6 transition-transform duration-300`}>

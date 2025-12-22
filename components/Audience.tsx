@@ -35,11 +35,11 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
   ];
 
   return (
-    <section id="audience" className="py-24 bg-white dark:bg-slate-950">
+    <section id="audience" className="py-24 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mb-6">
               Pensé pour <br />
               <span className="text-primary decoration-4 underline decoration-primary/20 underline-offset-4">chacun de vous.</span>
             </h2>
@@ -49,7 +49,7 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
             <Reveal key={index} delay={index * 100} direction="up" className="h-full">
-              <div className={`group h-full flex flex-col p-8 rounded-[2rem] ${card.theme.light} dark:bg-slate-900 border-2 ${card.theme.border} dark:border-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
+              <div className={`group h-full flex flex-col p-8 rounded-[2.5rem] ${card.theme.light} dark:bg-slate-900 border-2 ${card.theme.border} dark:border-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
 
                 {/* Colored Header Bar */}
                 <div className={`h-2 w-full absolute top-0 left-0 ${card.theme.bg}`}></div>

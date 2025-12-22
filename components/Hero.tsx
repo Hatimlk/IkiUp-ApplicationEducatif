@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
           {/* Title - Clean Academic Serif */}
           <Reveal delay={100} direction="up">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1]">
               {lang === 'fr' ? (
                 <>
                   L'école, <br />
