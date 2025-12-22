@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reveal } from './Reveal';
-import { UserCircle2, Compass, GraduationCap, Users2 } from 'lucide-react';
+import { UserCircle2, Compass, GraduationCap, Users2, ArrowRight } from 'lucide-react';
 import { translations, Language } from '../translations';
 
 interface HowItWorksProps {
@@ -36,8 +36,9 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
       title: t.steps[3].title,
       description: t.steps[3].description,
       icon: <Users2 size={32} />,
-      color: "bg-slate-800 text-white",
-      shadow: "shadow-slate-900/20",
+      // Changed to secondary (Yellow) to maintain visual rhythm and visibility in dark mode
+      color: "bg-secondary text-slate-900",
+      shadow: "shadow-secondary/30",
     }
   ];
 
@@ -71,7 +72,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
           {/* Central Line - Mobile (Left Side) */}
           <div className="absolute left-8 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 lg:hidden"></div>
 
-          <div className="space-y-20 relative">
+          <div className="space-y-24 relative">
             {steps.map((step, index) => (
               <div key={index} className={`relative flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
 
@@ -80,13 +81,13 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
                   <Reveal direction={index % 2 === 0 ? 'right' : 'left'} delay={100}>
                     <div className={`relative group`}>
                       {/* Decorative Number */}
-                      <div className={`absolute -top-12 text-[8rem] font-black text-slate-100 dark:text-slate-800/30 leading-none select-none transition-colors 
-                        ${index % 2 !== 0 ? '-left-8 lg:-left-16' : '-right-8 lg:-right-16'}`}>
+                      <div className={`absolute -top-16 text-[10rem] font-black text-slate-100 dark:text-slate-800/20 leading-none select-none transition-colors pointer-events-none
+                        ${index % 2 !== 0 ? '-left-8 lg:-left-24' : '-right-8 lg:-right-24'}`}>
                         {index + 1}
                       </div>
 
                       {/* Icon Box */}
-                      <div className={`relative z-10 w-24 h-24 sm:w-32 sm:h-32 rounded-[2.5rem] ${step.color} ${step.shadow} flex items-center justify-center transform transition-all duration-500 group-hover:scale-105 group-hover:-rotate-3`}>
+                      <div className={`relative z-10 w-24 h-24 sm:w-32 sm:h-32 rounded-[2.5rem] ${step.color} ${step.shadow} flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3`}>
                         {step.icon}
                       </div>
 
