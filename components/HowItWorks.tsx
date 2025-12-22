@@ -80,11 +80,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
                 <div className={`w-full lg:w-1/2 flex pl-20 lg:pl-0 ${index % 2 !== 0 ? 'lg:justify-start' : 'lg:justify-end'}`}>
                   <Reveal direction={index % 2 === 0 ? 'right' : 'left'} delay={100}>
                     <div className={`relative group`}>
-                      {/* Decorative Number */}
-                      <div className={`absolute -top-16 text-[10rem] font-black text-slate-100 dark:text-slate-800/20 leading-none select-none transition-colors pointer-events-none
-                        ${index % 2 !== 0 ? '-left-8 lg:-left-24' : '-right-8 lg:-right-24'}`}>
-                        {index + 1}
-                      </div>
+
 
                       {/* Icon Box */}
                       <div className={`relative z-10 w-24 h-24 sm:w-32 sm:h-32 rounded-[2.5rem] ${step.color} ${step.shadow} flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3`}>

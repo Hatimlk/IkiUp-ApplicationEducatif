@@ -232,23 +232,6 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
           ))}
         </div>
       </section>
-
-      {/* Closing Quote */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mt-40 pb-20 text-center">
-        <Reveal delay={400}>
-          <div className="text-slate-200 dark:text-slate-800 absolute -top-20 left-1/2 -translate-x-1/2 pointer-events-none -z-10">
-            <Zap size={250} strokeWidth={0.5} className="opacity-50" />
-          </div>
-          <blockquote className="relative">
-            <div className="text-6xl text-primary/20 font-serif absolute -top-8 -left-4">"</div>
-            <p className="text-3xl md:text-5xl font-serif italic font-medium text-slate-900 dark:text-slate-100 mb-8 leading-relaxed relative z-10">
-              L'éducation n'est pas la préparation à la vie ; <br />
-              <span className="text-primary">l'éducation est la vie même.</span>
-            </p>
-          </blockquote>
-          <div className="font-bold text-slate-400 tracking-widest uppercase text-sm mt-8 border-t border-slate-200 dark:border-slate-800 inline-block px-8 py-4">John Dewey</div>
-        </Reveal>
-      </section>
     </div>
   );
 };

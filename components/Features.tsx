@@ -83,15 +83,9 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
               <p className="text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-6">
                 {t.orientation.text}
               </p>
-              <div className="flex -space-x-3">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full border-[3px] border-emerald-50 dark:border-emerald-950 bg-slate-200 dark:bg-slate-700"></div>
-                ))}
-                <div className="h-10 px-3 rounded-full bg-white dark:bg-emerald-900 border-[3px] border-emerald-50 dark:border-emerald-950 flex items-center justify-center text-xs font-bold text-emerald-700 dark:text-emerald-300">
-                  +120
-                </div>
-              </div>
+
             </div>
+
           </Reveal>
 
           {/* 2. AGENDA CARD - Soft Blue/Indigo Theme (Study Planner Vibe) */}

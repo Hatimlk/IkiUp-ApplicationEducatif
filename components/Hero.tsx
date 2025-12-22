@@ -85,17 +85,6 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             </div>
           </Reveal>
 
-          {/* Trust Indicators */}
-          <div className="mt-12 flex items-center justify-center lg:justify-start gap-4 text-sm font-medium text-slate-500">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-950 bg-slate-200 dark:bg-slate-800"></div>
-              ))}
-            </div>
-            <p>Utilisé par +50 établissements</p>
-          </div>
-        </div>
-
         {/* Right: The Educational Composition */}
         <div className="hidden lg:flex flex-1 relative w-full h-[600px] items-center lg:justify-start justify-center pl-8">
           <Reveal delay={400} direction="left" className="relative w-full h-full flex items-center justify-center lg:justify-start">
