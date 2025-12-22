@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Reveal } from './Reveal';
-import { Shield, Heart, Zap, Users, Compass, Target, Sparkles, Lightbulb, GraduationCap } from 'lucide-react';
-import { Language } from '../translations';
+import { Shield, Heart, Target, Lightbulb, Users, GraduationCap, Compass } from 'lucide-react';
+import { Language, translations } from '../translations';
 
 interface AboutProps {
   lang: Language;
@@ -12,82 +12,22 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
     window.scrollTo(0, 0);
   }, []);
 
-  const content = {
-    fr: {
-      tag: "Notre ADN",
-      title: "Redéfinir l'horizon",
-      titleAccent: "éducatif.",
-      description: "IKIUP est né d'une conviction simple : chaque élève possède un potentiel unique qui ne demande qu'à être éclairé par la bonne direction.",
-      vision: "Notre Vision",
-      visionP1: "Nous aidons les élèves à mieux se connaître grâce à des tests de personnalité basés sur les sciences cognitives. Nous ne nous contentons pas de donner des réponses, nous traçons des chemins.",
-      visionP2: "Pour les parents, IKIUP est le pont qui manquait : une vision claire, sans stress, permettant de soutenir l'autonomie plutôt que de la surveiller.",
-      visionP3: "En connectant élèves, parents et écoles, nous créons un écosystème de réussite circulaire.",
-      philosophyTitle: "La Philosophie IkiUp",
-      philosophyDesc: "Inspiré du concept d'Ikigai, notre nom symbolise l'ascension vers sa raison d'être.",
-      storyTag: "À PROPOS",
-      storyTitle: "IkiUp est née d’un besoin réel.",
-      storyText: "Comme beaucoup de parents, j’ai cherché comment mieux accompagner mon enfant dans son parcours scolaire et ses choix d’orientation. Les solutions que j’ai trouvées étaient peu accessibles, contraignantes ou proposées trop tard.\n\nC’est ainsi qu’est née l’idée d’IkiUp : une application pensée pour être simple, accessible à tout moment et à portée de main. Elle accompagne les enfants dans leur réflexion, aide les parents à les soutenir avec plus de justesse, et permet aux écoles de mieux comprendre les besoins des élèves afin d’adapter leur accompagnement pédagogique. IkiUp a été conçue pour structurer le parcours scolaire, offrir des repères clairs et avancer pas à pas, ensemble, dans un cadre serein et humain.",
-      commitments: "Nos Engagements Piliers",
-      pillars: [
-        {
-          icon: <Shield size={24} />,
-          title: "Sécurité & Éthique",
-          desc: "Vos données scolaires sont sacrées. Nous garantissons une confidentialité totale et une conformité RGPD stricte.",
-          color: "teal"
-        },
-        {
-          icon: <Target size={24} />,
-          title: "Précision de l'IA",
-          desc: "Nos algorithmes sont entraînés pour guider, pas pour décider. Une IA éthique au service de l'humain.",
-          color: "primary"
-        },
-        {
-          icon: <Heart size={24} />,
-          title: "Bienveillance",
-          desc: "Nous luttons contre le stress scolaire en remplaçant l'incertitude par un plan d'action serein.",
-          color: "rose"
-        }
-      ]
-    },
-    en: {
-      tag: "Our DNA",
-      title: "Redefining the",
-      titleAccent: "educational horizon.",
-      description: "IKIUP was born from a simple conviction: every student possesses a unique potential that just needs to be enlightened by the right direction.",
-      vision: "Our Vision",
-      visionP1: "We help students know themselves better through personality tests based on cognitive sciences. We don't just give answers; we map out paths.",
-      visionP2: "For parents, IKIUP is the missing bridge: a clear, stress-free view that supports autonomy rather than monitoring it.",
-      visionP3: "By connecting students, parents, and schools, we create a circular success ecosystem.",
-      philosophyTitle: "The IkiUp Philosophy",
-      philosophyDesc: "Inspired by the concept of Ikigai, our name symbolizes the ascent towards one's reason for being.",
-      storyTag: "ABOUT US",
-      storyTitle: "IkiUp was born from a real need.",
-      storyText: "Like many parents, I looked for how to better support my child in their school journey and orientation choices. The solutions I found were inaccessible, restrictive, or proposed too late.\n\nThus was born the idea of IkiUp: an application designed to be simple, accessible at any time, and at hand. It supports children in their reflection, helps parents support them with greater accuracy, and allows schools to better understand the needs of students to adapt their pedagogical support. IkiUp was designed to structure the school journey, offer clear benchmarks, and move forward step by step, together, in a serene and human framework.",
-      commitments: "Our Core Commitments",
-      pillars: [
-        {
-          icon: <Shield size={24} />,
-          title: "Security & Ethics",
-          desc: "Your educational data is sacred. We guarantee total confidentiality and strict GDPR compliance.",
-          color: "teal"
-        },
-        {
-          icon: <Target size={24} />,
-          title: "AI Precision",
-          desc: "Our algorithms are trained to guide, not to decide. Ethical AI at the service of humans.",
-          color: "primary"
-        },
-        {
-          icon: <Heart size={24} />,
-          title: "Kindness",
-          desc: "We fight against school stress by replacing uncertainty with a serene action plan.",
-          color: "rose"
-        }
-      ]
-    }
-  };
+  const t = translations[lang].about;
 
-  const c = content[lang];
+  const pillarsConfig = [
+    {
+      icon: <Shield size={24} />,
+      color: "teal"
+    },
+    {
+      icon: <Target size={24} />,
+      color: "primary"
+    },
+    {
+      icon: <Heart size={24} />,
+      color: "rose"
+    }
+  ];
 
   return (
     <div className="pt-32 pb-24 bg-background min-h-screen transition-colors duration-500 overflow-hidden">
@@ -97,8 +37,6 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px]"></div>
       </div>
 
-
-
       {/* Story Section - Centered Glass Card */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-40">
         <Reveal>
@@ -107,15 +45,15 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 to-transparent pointer-events-none -z-10"></div>
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-              {c.storyTag}
+              {t.storyTag}
             </div>
 
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 dark:text-white mb-8">
-              {c.storyTitle}
+              {t.storyTitle}
             </h2>
 
             <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-400 font-light leading-relaxed mx-auto max-w-3xl">
-              {c.storyText.split('\n\n').map((paragraph, idx) => (
+              {t.story.split('\n\n').map((paragraph, idx) => (
                 <p key={idx} className="mb-6 last:mb-0 first-letter:text-5xl first-letter:font-serif first-letter:text-primary first-letter:font-bold first-letter:mr-2 list-none first-letter:float-left first-letter:leading-none">
                   {paragraph}
                 </p>
@@ -140,9 +78,9 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                     <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-8 rotate-3 group-hover:rotate-12 transition-transform duration-500">
                       <Compass size={32} />
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight">{c.philosophyTitle}</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight">{t.philosophyTitle}</h2>
                     <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-md">
-                      {c.philosophyDesc}
+                      {t.philosophyDesc}
                     </p>
                   </div>
                   {/* Decorative lines at bottom */}
@@ -164,7 +102,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                   <Lightbulb size={36} />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 relative z-10">Orientation Prédictive</h3>
-                <p className="text-slate-500 dark:text-slate-400 font-light relative z-10">{c.visionP1}</p>
+                <p className="text-slate-500 dark:text-slate-400 font-light relative z-10">{t.visionP1}</p>
               </div>
             </Reveal>
           </div>
@@ -177,7 +115,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                   <Users size={24} />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Harmonie</h3>
-                <p className="text-sm text-slate-500 font-light line-clamp-3">{c.visionP2}</p>
+                <p className="text-sm text-slate-500 font-light line-clamp-3">{t.visionP2}</p>
               </div>
             </Reveal>
           </div>
@@ -191,7 +129,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Écosystème Circulaire</h3>
-                  <p className="text-slate-500 dark:text-slate-400 font-light">{c.visionP3}</p>
+                  <p className="text-slate-500 dark:text-slate-400 font-light">{t.visionP3}</p>
                 </div>
               </div>
             </Reveal>
@@ -208,28 +146,31 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
               <Shield size={12} />
               Valeurs
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 dark:text-white mb-6">{c.commitments}</h2>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 dark:text-white mb-6">{t.commitments}</h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
               Des principes inébranlables pour construire un futur de confiance.
             </p>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-8">
-          {c.pillars.map((pillar, i) => (
-            <Reveal key={i} delay={i * 150} scale>
-              <div className="p-10 rounded-[3rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-100 dark:border-slate-800 shadow-xl shadow-indigo/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full group relative overflow-hidden">
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-${pillar.color}/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-150`}></div>
+          {t.pillars.map((pillar, i) => {
+            const config = pillarsConfig[i];
+            return (
+              <Reveal key={i} delay={i * 150} scale>
+                <div className="p-10 rounded-[3rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-100 dark:border-slate-800 shadow-xl shadow-indigo/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full group relative overflow-hidden">
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-${config.color}/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-150`}></div>
 
-                <div className={`w-16 h-16 rounded-2xl bg-${pillar.color}/10 dark:bg-${pillar.color}/20 flex items-center justify-center text-${pillar.color} mb-8 group-hover:rotate-6 transition-transform duration-300`}>
-                  {pillar.icon}
+                  <div className={`w-16 h-16 rounded-2xl bg-${config.color}/10 dark:bg-${config.color}/20 flex items-center justify-center text-${config.color} mb-8 group-hover:rotate-6 transition-transform duration-300`}>
+                    {config.icon}
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 dark:text-white">{pillar.title}</h3>
+                  <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">
+                    {pillar.desc}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 dark:text-white">{pillar.title}</h3>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">
-                  {pillar.desc}
-                </p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
     </div>

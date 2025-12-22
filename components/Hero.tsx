@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                   <span className="text-base font-bold">App Store</span>
                 </div>
               </Button>
-              <Button variant="white" size="lg" className="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 hover:border-slate-300 transition-all text-slate-700 dark:text-white" href="https://play.google.com" target="_blank">
+              <Button variant="white" size="lg" className="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 hover:border-slate-300 transition-all text-slate-700 dark:text-white dark:bg-slate-900" href="https://play.google.com" target="_blank">
                 <Play size={20} className="fill-current mb-0.5" />
                 <div className="flex flex-col items-start leading-none ml-2">
                   <span className="text-[9px] uppercase font-bold opacity-70">Get it on</span>
@@ -84,6 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
               </Button>
             </div>
           </Reveal>
+        </div>
 
         {/* Right: The Educational Composition */}
         <div className="hidden lg:flex flex-1 relative w-full h-[600px] items-center lg:justify-start justify-center pl-8">

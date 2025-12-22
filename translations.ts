@@ -102,6 +102,8 @@ export const translations = {
       visionP3: "En connectant élèves, parents et écoles, nous créons un écosystème de réussite circulaire.",
       philosophyTitle: "La Philosophie IkiUp",
       philosophyDesc: "Inspiré du concept d'Ikigai, notre nom symbolise l'ascension vers sa raison d'être.",
+      storyTag: "À PROPOS",
+      storyTitle: "IkiUp est née d’un besoin réel.",
       commitments: "Nos Engagements Piliers",
       pillars: [
         {
@@ -291,6 +293,8 @@ export const translations = {
       visionP3: "By connecting students, parents, and schools, we create a circular success ecosystem.",
       philosophyTitle: "The IkiUp Philosophy",
       philosophyDesc: "Inspired by the concept of Ikigai, our name symbolizes the ascent towards one's reason for being.",
+      storyTag: "ABOUT US",
+      storyTitle: "IkiUp was born from a real need.",
       commitments: "Our Core Commitments",
       pillars: [
         {
