@@ -22,7 +22,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
       title: t.steps[1].title,
       description: t.steps[1].description,
       icon: <Compass size={32} />,
-      color: "bg-secondary text-slate-900",
+      color: "bg-secondary text-text",
       shadow: "shadow-secondary/30",
     },
     {
@@ -37,13 +37,13 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
       description: t.steps[3].description,
       icon: <Users2 size={32} />,
       // Changed to secondary (Yellow) to maintain visual rhythm and visibility in dark mode
-      color: "bg-secondary text-slate-900",
+      color: "bg-secondary text-text",
       shadow: "shadow-secondary/30",
     }
   ];
 
   return (
-    <section id="howitworks" className="py-24 md:py-32 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 relative overflow-hidden">
+    <section id="howitworks" className="py-24 md:py-32 bg-background transition-colors duration-500 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <div className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
@@ -56,7 +56,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
               {t.tag}
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif font-black text-slate-900 dark:text-white mb-8 tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-serif font-black text-text dark:text-white mb-8 tracking-tight">
               {t.title} <span className="text-primary italic">{t.titleAccent}</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl mx-auto leading-relaxed opacity-80">
@@ -102,7 +102,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
                 <div className={`w-full lg:w-1/2 pl-20 lg:pl-0 text-left ${index % 2 !== 0 ? 'lg:text-right' : 'lg:text-left'}`}>
                   <Reveal direction={index % 2 === 0 ? 'left' : 'right'}>
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 dark:text-white mb-4">
+                      <h3 className="text-2xl md:text-3xl font-serif font-bold text-text dark:text-white mb-4">
                         {step.title}
                       </h3>
                       <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-md lg:mx-0 lg:inline-block">

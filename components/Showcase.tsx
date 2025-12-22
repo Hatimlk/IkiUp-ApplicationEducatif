@@ -27,7 +27,7 @@ const screenConfig = [
   {
     id: 2,
     color: "from-[#F6DE7A]/10 to-[#5A73E8]/10",
-    accent: "text-slate-900",
+    accent: "text-text",
     icon: <Search size={24} />,
   },
   {
@@ -106,7 +106,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
               <Sparkles size={14} />
               {t.tag}
             </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-text dark:text-white mb-6">
               {t.title} <span className="text-primary italic">{t.titleAccent}</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 font-normal max-w-2xl mx-auto">
@@ -123,14 +123,14 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
             className={`p-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all pointer-events-auto shadow-xl ${canScrollLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
               }`}
           >
-            <ArrowLeft size={20} className="text-slate-900 dark:text-white" />
+            <ArrowLeft size={20} className="text-text dark:text-white" />
           </button>
           <button
             onClick={() => scroll('right')}
             className={`p-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all pointer-events-auto shadow-xl ${canScrollRight ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
               }`}
           >
-            <ArrowRight size={20} className="text-slate-900 dark:text-white" />
+            <ArrowRight size={20} className="text-text dark:text-white" />
           </button>
         </div>
 
@@ -144,7 +144,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
                 <div className="relative aspect-[9/19.5] bg-slate-950 rounded-[3.2rem] p-2.5 shadow-2xl border border-white/10">
                   <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-5 bg-slate-950 rounded-full z-20"></div>
 
-                  <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-white dark:bg-slate-900 relative flex flex-col">
+                  <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-surface dark:bg-surface relative flex flex-col">
                     <div className="pt-12 px-6 pb-6 flex justify-between items-center">
                       <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${screen.color} flex items-center justify-center ${screen.accent}`}>
                         {screen.icon}
@@ -160,7 +160,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
                         <span className="text-[8px] bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full text-slate-500 font-bold">{t.active}</span>
                       </div>
 
-                      <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white leading-tight">
+                      <h3 className="text-xl font-serif font-bold text-text dark:text-white leading-tight">
                         {screen.title}
                       </h3>
 
@@ -177,7 +177,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
                       </div>
                     </div>
 
-                    <div className="h-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex items-center justify-around">
+                    <div className="h-20 bg-surface dark:bg-surface border-t border-slate-100 dark:border-slate-800 flex items-center justify-around">
                       <Search size={18} className="text-slate-300" />
                       <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                         {screen.icon}

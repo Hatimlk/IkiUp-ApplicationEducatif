@@ -4,7 +4,7 @@ import { Reveal } from './Reveal';
 
 export const Context = () => {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+    <section className="py-24 bg-background border-y border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8 relative z-10">
@@ -18,7 +18,7 @@ export const Context = () => {
                 <div className="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-900/20 text-red-500 flex items-center justify-center mb-6">
                   <Target size={28} />
                 </div>
-                <h3 className="text-xl font-serif font-black text-slate-900 dark:text-white mb-3">La dispersion</h3>
+                <h3 className="text-xl font-serif font-black text-text dark:text-white mb-3">La dispersion</h3>
                 <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                   Trop d'outils, trop de canaux, aucune vision d'ensemble. L'information se perd.
                 </p>
@@ -41,7 +41,7 @@ export const Context = () => {
                 <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 flex items-center justify-center mb-6">
                   <TrendingUp size={28} />
                 </div>
-                <h3 className="text-xl font-serif font-black text-slate-900 dark:text-white mb-3">La concentration</h3>
+                <h3 className="text-xl font-serif font-black text-text dark:text-white mb-3">La concentration</h3>
                 <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                   Tout centralisé. Notes, orientation, et communication en un seul endroit clair.
                 </p>

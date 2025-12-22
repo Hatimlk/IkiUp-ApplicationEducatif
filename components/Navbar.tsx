@@ -87,8 +87,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
-          ? 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 py-3'
-          : 'bg-transparent py-6'
+        ? 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 py-3'
+        : 'bg-transparent py-6'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,15 +104,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
             />
           </div>
 
-          <nav className="hidden lg:flex items-center gap-1.5 px-1.5 py-1.5 bg-slate-100/50 dark:bg-slate-900/50 rounded-2xl border border-slate-200/50 dark:border-white/5 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1.5 px-1.5 py-1.5 bg-gray-ui/50 dark:bg-slate-900/50 rounded-2xl border border-slate-200/50 dark:border-white/5 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-xl transition-all duration-200 ${(link.href === '/about' && currentPage === 'about')
-                    ? 'bg-primary text-white shadow-md'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white dark:hover:bg-slate-800'
+                  ? 'bg-primary text-white shadow-md'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white dark:hover:bg-slate-800'
                   }`}
               >
                 {link.name}
@@ -121,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center bg-slate-100/50 dark:bg-slate-900/50 rounded-xl p-1 border border-slate-200/50 dark:border-white/5">
+            <div className="flex items-center bg-gray-ui/50 dark:bg-slate-900/50 rounded-xl p-1 border border-slate-200/50 dark:border-white/5">
               <button
                 onClick={() => onLangChange('fr')}
                 className={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-lg transition-all ${currentLang === 'fr' ? 'bg-white dark:bg-slate-800 text-primary shadow-sm' : 'text-slate-400 hover:text-slate-600 dark:hover:text-slate-200'}`}
@@ -155,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white rounded-xl border border-slate-200 dark:border-slate-800"
+              className="p-2.5 bg-gray-ui dark:bg-slate-900 text-text dark:text-white rounded-xl border border-slate-200 dark:border-slate-800"
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -172,8 +172,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`text-base font-bold p-4 rounded-2xl transition-all ${(link.href === '/about' && currentPage === 'about')
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900'
+                  ? 'bg-primary/10 text-primary'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900'
                   }`}
               >
                 {link.name}

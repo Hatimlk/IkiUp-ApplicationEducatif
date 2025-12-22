@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
   const t = translations[lang].hero;
 
   return (
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-slate-50 dark:bg-slate-950">
+    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-background">
       {/* Educational Grid Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]"
         style={{ backgroundImage: 'linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
           {/* Title - Clean Academic Serif */}
           <Reveal delay={100} direction="up">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-text dark:text-white mb-8 leading-[1.1]">
               {lang === 'fr' ? (
                 <>
                   L'école, <br />
@@ -106,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Succès garanti</div>
-                  <div className="text-sm font-bold text-slate-900 dark:text-white">Apprendre devient un jeu</div>
+                  <div className="text-sm font-bold text-text dark:text-white">Apprendre devient un jeu</div>
                 </div>
               </div>
             </div>

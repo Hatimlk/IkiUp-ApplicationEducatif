@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
   const isFr = lang === 'fr';
 
   return (
-    <footer className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 pt-20 pb-10 border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
+    <footer className="bg-background text-slate-600 dark:text-slate-400 pt-20 pb-10 border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Column 2: Product */}
           <div>
-            <h4 className="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Produit" : "Product"}</h4>
+            <h4 className="font-bold text-text dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Produit" : "Product"}</h4>
             <ul className="space-y-4">
               <li><a href="#features" onClick={(e) => handleLinkClick(e as any, 'home', '#features')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Solution" : "Solution"}</a></li>
               <li><a href="#howitworks" onClick={(e) => handleLinkClick(e as any, 'home', '#howitworks')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Concept" : "Concept"}</a></li>
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Entreprise" : "Company"}</h4>
+            <h4 className="font-bold text-text dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Entreprise" : "Company"}</h4>
             <ul className="space-y-4">
               <li><a href="/about" onClick={(e) => handleLinkClick(e as any, 'about')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "À Propos" : "About Us"}</a></li>
               <li><a href="mailto:contact@ikiup.com" className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2">
@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Column 4: Social */}
           <div>
-            <h4 className="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Suivez-nous" : "Follow Us"}</h4>
+            <h4 className="font-bold text-text dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Suivez-nous" : "Follow Us"}</h4>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
                 <Twitter size={18} />

@@ -48,7 +48,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
               {t.storyTag}
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mb-8">
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-text dark:text-white mb-8">
               {t.storyTitle}
             </h2>
 
@@ -101,7 +101,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                 <div className="w-20 h-20 bg-white dark:bg-slate-900 rounded-full shadow-lg shadow-emerald/10 flex items-center justify-center text-emerald mb-8 relative z-10 group-hover:scale-110 transition-transform duration-300">
                   <Lightbulb size={36} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 relative z-10">Orientation Prédictive</h3>
+                <h3 className="text-2xl font-bold text-text dark:text-white mb-4 relative z-10">Orientation Prédictive</h3>
                 <p className="text-slate-500 dark:text-slate-400 font-light relative z-10">{t.visionP1}</p>
               </div>
             </Reveal>
@@ -114,7 +114,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                 <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-xl flex items-center justify-center text-amber-500 mb-4 group-hover:rotate-6 transition-transform">
                   <Users size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Harmonie</h3>
+                <h3 className="text-lg font-bold text-text dark:text-white mb-2">Harmonie</h3>
                 <p className="text-sm text-slate-500 font-light line-clamp-3">{t.visionP2}</p>
               </div>
             </Reveal>
@@ -128,7 +128,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                   <GraduationCap size={40} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Écosystème Circulaire</h3>
+                  <h3 className="text-xl font-bold text-text dark:text-white mb-2">Écosystème Circulaire</h3>
                   <p className="text-slate-500 dark:text-slate-400 font-light">{t.visionP3}</p>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
               <Shield size={12} />
               Valeurs
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif font-black text-slate-900 dark:text-white mb-6">{t.commitments}</h2>
+            <h2 className="text-4xl md:text-6xl font-serif font-black text-text dark:text-white mb-6">{t.commitments}</h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
               Des principes inébranlables pour construire un futur de confiance.
             </p>
@@ -163,7 +163,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                   <div className={`w-16 h-16 rounded-2xl bg-${config.color}/10 dark:bg-${config.color}/20 flex items-center justify-center text-${config.color} mb-8 group-hover:rotate-6 transition-transform duration-300`}>
                     {config.icon}
                   </div>
-                  <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 dark:text-white">{pillar.title}</h3>
+                  <h3 className="text-2xl font-serif font-bold mb-4 text-text dark:text-white">{pillar.title}</h3>
                   <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">
                     {pillar.desc}
                   </p>

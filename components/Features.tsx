@@ -39,7 +39,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
   ];
 
   return (
-    <section id="features" className="py-24 md:py-32 relative overflow-hidden bg-white dark:bg-slate-950">
+    <section id="features" className="py-24 md:py-32 relative overflow-hidden bg-surface dark:bg-background">
       {/* Educational Dot Pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]"
         style={{ backgroundImage: 'radial-gradient(#6366f1 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
@@ -52,7 +52,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
               <Sparkles size={14} />
               {t.title}
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-black text-slate-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-black text-text dark:text-white mb-6 leading-tight">
               Un écosystème <br />
               <span className="text-primary decoration-4 underline decoration-blue-200/50 dark:decoration-blue-900/50 underline-offset-4">complet.</span>
             </h2>
@@ -77,7 +77,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
                   <ArrowUpRight size={20} />
                 </div>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-4">
+              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-4">
                 {t.orientation.title}
               </h3>
               <p className="text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-6">
@@ -96,7 +96,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
               <div className="w-14 h-14 rounded-2xl bg-white dark:bg-indigo-900 text-indigo-600 flex items-center justify-center mb-10 shadow-md shadow-indigo-100 dark:shadow-none relative z-10">
                 <Calendar size={28} />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-8 relative z-10">
+              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-8 relative z-10">
                 {t.tracking.title}
               </h3>
               <div className="space-y-3 relative z-10">
@@ -120,7 +120,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
               <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center mb-10 shadow-md shadow-slate-200 dark:shadow-none relative z-10">
                 <Newspaper size={28} />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-4 relative z-10">
+              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-4 relative z-10">
                 {t.feed.title}
               </h3>
               <p className="text-base text-slate-600 dark:text-slate-400 mb-8 relative z-10 font-medium">
@@ -150,7 +150,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
                   <MapPin size={18} />
                 </div>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-4 relative z-10">
+              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-4 relative z-10">
                 {t.schools.title}
               </h3>
               <p className="text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-8 relative z-10">

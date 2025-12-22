@@ -31,24 +31,24 @@ export const Testimonials: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
-            <div className="text-center mb-16">
-               <h2 className="text-4xl md:text-5xl font-serif font-bold text-text dark:text-white mb-6">
-                 Ils ont réussi avec IkiUp
-               </h2>
-               <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl mx-auto">
-                 Rejoignez une communauté d'élèves et de parents plus sereins.
-               </p>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-text dark:text-white mb-6">
+              Ils ont réussi avec IkiUp
+            </h2>
+            <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl mx-auto">
+              Rejoignez une communauté d'élèves et de parents plus sereins.
+            </p>
+          </div>
         </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <Reveal key={i} delay={i * 200}>
-              <div className="h-full p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-500 hover:-translate-y-2 flex flex-col group cursor-default">
+              <div className="h-full p-8 rounded-[2rem] bg-surface dark:bg-surface border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-500 hover:-translate-y-2 flex flex-col group cursor-default">
                 <div className="mb-6 text-primary/80 dark:text-primary/60">
                   <Quote size={40} className="fill-current transform group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                
+
                 <p className="text-lg text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-8 flex-1">
                   "{t.content}"
                 </p>
