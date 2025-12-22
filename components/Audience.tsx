@@ -64,10 +64,7 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
                   {card.description}
                 </p>
 
-                <div className={`flex items-center gap-2 font-bold text-sm ${card.theme.text} group-hover:gap-3 transition-all`}>
-                  <span>En savoir plus</span>
-                  <ArrowRight size={16} />
-                </div>
+                
               </div>
             </Reveal>
           ))}
