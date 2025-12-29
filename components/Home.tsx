@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from './Hero';
+import { SEO } from './SEO';
 import { Context } from './Context';
 import { Features } from './Features';
 import { Audience } from './Audience';
@@ -18,6 +19,12 @@ interface HomeProps {
 export const Home: React.FC<HomeProps> = ({ lang }) => {
   return (
     <>
+      <SEO
+        title={lang === 'fr' ? "Accueil" : "Home"}
+        description={lang === 'fr'
+          ? "IkiUp est une application d’orientation et d’accompagnement qui connecte les élèves, parents et écoles."
+          : "IkiUp is an orientation and support app that connects students, parents, and schools."}
+      />
       <Hero lang={lang} />
       <Context />
       <Features lang={lang} />

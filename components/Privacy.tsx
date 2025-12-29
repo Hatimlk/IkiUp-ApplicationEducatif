@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Language } from '../translations';
 
+import { SEO } from './SEO';
+
 interface PrivacyProps {
   lang: Language;
 }
@@ -14,6 +16,11 @@ export const Privacy: React.FC<PrivacyProps> = ({ lang }) => {
 
   return (
     <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto bg-background min-h-screen">
+      <SEO
+        title={isFr ? "Politique de Confidentialité" : "Privacy Policy"}
+        description={isFr ? "Politique de confidentialité et protection des données IkiUp." : "IkiUp privacy policy and data protection."}
+        url="https://ikiup.com/privacy"
+      />
       <h1 className="text-4xl font-serif font-bold text-text dark:text-white mb-12">
         {isFr ? "Politique de Confidentialité" : "Privacy Policy"}
       </h1>

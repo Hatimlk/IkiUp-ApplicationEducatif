@@ -3,6 +3,8 @@ import { Reveal } from './Reveal';
 import { Shield, Heart, Target, Lightbulb, Users, GraduationCap, Compass } from 'lucide-react';
 import { Language, translations } from '../translations';
 
+import { SEO } from './SEO';
+
 interface AboutProps {
   lang: Language;
 }
@@ -31,6 +33,13 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
 
   return (
     <div className="pt-32 pb-24 bg-background min-h-screen transition-colors duration-500 overflow-hidden">
+      <SEO
+        title={lang === 'fr' ? "À Propos" : "About Us"}
+        description={lang === 'fr'
+          ? "Découvrez l'histoire et la mission d'IkiUp, la plateforme qui réinvente le parcours scolaire."
+          : "Discover the story and mission of IkiUp, the platform reinventing the educational journey."}
+        url="https://ikiup.com/about"
+      />
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Language } from '../translations';
 
+import { SEO } from './SEO';
+
 interface LegalProps {
   lang: Language;
 }
@@ -14,6 +16,11 @@ export const Legal: React.FC<LegalProps> = ({ lang }) => {
 
   return (
     <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto bg-background min-h-screen">
+      <SEO
+        title={isFr ? "Mentions Légales" : "Legal Notices"}
+        description={isFr ? "Mentions légales de l'application IkiUp." : "Legal notices for the IkiUp application."}
+        url="https://ikiup.com/legal"
+      />
       <h1 className="text-4xl font-serif font-bold text-text dark:text-white mb-12">
         {isFr ? "Mentions Légales" : "Legal Notices"}
       </h1>
