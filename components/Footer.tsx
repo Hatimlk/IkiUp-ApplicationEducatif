@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page } from '../App';
 import { Language } from '../translations';
-import { Github, Twitter, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, Instagram, Facebook } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: Page, targetId?: string) => void;
@@ -71,13 +71,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
           <div>
             <h4 className="font-bold text-text dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Suivez-nous" : "Follow Us"}</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
-                <Twitter size={18} />
+              <a href="https://www.facebook.com/share/17dgcaEBBw/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
+                <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
+              <a href="https://www.linkedin.com/in/ikiup-app-0303633a0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
+              <a href="https://www.instagram.com/ikiup.app/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
                 <Instagram size={18} />
               </a>
             </div>
