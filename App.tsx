@@ -15,6 +15,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [language, setLanguage] = useState<Language>('fr');
 
+  useEffect(() => {
+    // Remove trailing hash if present (fixes clean URL issue)
+    if (window.location.hash === '#') {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, []);
+
   const navigateTo = (page: Page, targetId?: string) => {
     setCurrentPage(page);
 
