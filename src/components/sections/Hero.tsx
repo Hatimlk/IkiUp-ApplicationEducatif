@@ -1,8 +1,8 @@
 import React from 'react';
 import { Apple, Play, Sparkles, Star, Zap, TrendingUp, CheckCircle2, BookOpen, Calendar, Bell, Users, Clock } from 'lucide-react';
-import { Button } from './Button';
-import { Reveal } from './Reveal';
-import { Language, translations } from '../translations';
+import { Button } from '../ui/Button';
+import { Reveal } from '../ui/Reveal';
+import { Language, translations } from '../../lib/translations';
 
 interface HeroProps {
   lang: Language;

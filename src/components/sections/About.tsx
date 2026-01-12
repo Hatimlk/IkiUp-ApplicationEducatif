@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Reveal } from './Reveal';
+import { Reveal } from '../ui/Reveal';
 import { Shield, Heart, Target, Lightbulb, Users, GraduationCap, Compass } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../../lib/translations';
 
-import { SEO } from './SEO';
+import { SEO } from '../ui/SEO';
 
 interface AboutProps {
   lang: Language;

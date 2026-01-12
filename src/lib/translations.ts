@@ -141,7 +141,8 @@ export const translations = {
         title: "Les Écoles & Enseignants",
         desc: "Communiquer, suivre, adapter l’accompagnement",
         items: ["Stats de réussite", "Gestion de classe", "Outils de communication"]
-      }
+      },
+      tag: "Notre Audience",
     },
     howitworks: {
       tag: "Le Parcours IkiUp",
@@ -332,7 +333,8 @@ export const translations = {
         title: "Schools & Teachers",
         desc: "Communicate, track, adapt support",
         items: ["Success stats", "Class management", "Communication tools"]
-      }
+      },
+      tag: "Our Audience",
     },
     howitworks: {
       tag: "The IkiUp Journey",

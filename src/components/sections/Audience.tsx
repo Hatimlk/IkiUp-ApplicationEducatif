@@ -1,7 +1,7 @@
 import React from 'react';
 import { GraduationCap, Users, School, ArrowRight } from 'lucide-react';
-import { Reveal } from './Reveal';
-import { translations, Language } from '../translations';
+import { Reveal } from '../ui/Reveal';
+import { translations, Language } from '../../lib/translations';
 
 interface AudienceProps {
   lang?: Language;
@@ -39,6 +39,10 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-blue-100 dark:border-blue-800">
+              <Users size={14} />
+              {t.tag}
+            </div>
             <h2 className="text-3xl md:text-5xl font-serif font-black text-text dark:text-white mb-6">
               Pensé pour <br />
               <span className="text-primary decoration-4 underline decoration-primary/20 underline-offset-4">chacun de vous.</span>

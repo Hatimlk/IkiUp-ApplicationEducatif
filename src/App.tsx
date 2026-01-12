@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { Home } from './components/Home';
-import { About } from './components/About';
-import { Legal } from './components/Legal';
-import { Privacy } from './components/Privacy';
-import { Footer } from './components/Footer';
-import { Language } from './translations';
+import { Navbar } from './components/layout/Navbar';
+import { Home } from './Home';
+import { About } from './components/sections/About';
+import { Legal } from './components/sections/Legal';
+import { Privacy } from './components/sections/Privacy';
+import { Footer } from './components/layout/Footer';
+import { Language } from './lib/translations';
 
 import { HelmetProvider } from 'react-helmet-async';
 

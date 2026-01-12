@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 interface RevealProps {
   children: React.ReactNode;
@@ -10,9 +10,9 @@ interface RevealProps {
   scale?: boolean;
 }
 
-export const Reveal: React.FC<RevealProps> = ({ 
-  children, 
-  delay = 0, 
+export const Reveal: React.FC<RevealProps> = ({
+  children,
+  delay = 0,
   className = '',
   direction = 'up',
   scale = false
@@ -23,7 +23,7 @@ export const Reveal: React.FC<RevealProps> = ({
   const getTransform = () => {
     if (!isVisible) {
       const scaleStr = scale ? 'scale-95' : '';
-      switch(direction) {
+      switch (direction) {
         case 'up': return `translate-y-12 opacity-0 ${scaleStr}`;
         case 'down': return `-translate-y-12 opacity-0 ${scaleStr}`;
         case 'left': return `-translate-x-12 opacity-0 ${scaleStr}`;

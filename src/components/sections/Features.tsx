@@ -1,5 +1,5 @@
 import React from 'react';
-import { Reveal } from './Reveal';
+import { Reveal } from '../ui/Reveal';
 import {
   Compass,
   Calendar,
@@ -14,7 +14,7 @@ import {
   MapPin,
   Clock
 } from 'lucide-react';
-import { translations, Language } from '../translations';
+import { translations, Language } from '../../lib/translations';
 
 interface FeaturesProps {
   lang?: Language;

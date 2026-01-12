@@ -1,8 +1,8 @@
 import React from 'react';
-import { Reveal } from './Reveal';
-import { Button } from './Button';
+import { Reveal } from '../ui/Reveal';
+import { Button } from '../ui/Button';
 import { Apple, Play, Mail, ArrowRight } from 'lucide-react';
-import { translations, Language } from '../translations';
+import { translations, Language } from '../../lib/translations';
 
 interface CTAProps {
   lang?: Language;
@@ -30,7 +30,7 @@ export const CTA: React.FC<CTAProps> = ({ lang = 'fr' }) => {
                     {t.tag}
                   </div>
                   <h2 className="text-3xl md:text-5xl font-serif font-black tracking-tight mb-8 leading-tight text-balance">
-                    {t.title} <span className="text-secondary italic">{t.titleAccent}</span>
+                    {t.title} <span className="text-secondary">{t.titleAccent}</span>
                   </h2>
                   <p className="text-base md:text-lg text-slate-400 mb-10 font-normal leading-relaxed max-w-xl">
                     {t.description}

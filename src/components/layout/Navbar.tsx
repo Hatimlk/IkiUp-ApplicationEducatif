@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
+import { Button } from '../ui/Button';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-import { Page } from '../App';
-import { Language, translations } from '../translations';
+import { Page } from '../../App';
+import { Language, translations } from '../../lib/translations';
 
 interface NavbarProps {
   currentPage: Page;

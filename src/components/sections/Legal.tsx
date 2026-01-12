@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Language } from '../translations';
+import { Language } from '../../lib/translations';
 
-import { SEO } from './SEO';
+import { SEO } from '../ui/SEO';
 
 interface LegalProps {
   lang: Language;

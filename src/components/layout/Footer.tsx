@@ -1,6 +1,6 @@
 import React from 'react';
-import { Page } from '../App';
-import { Language } from '../translations';
+import { Page } from '../../App';
+import { Language } from '../../lib/translations';
 import { Github, Twitter, Linkedin, Mail, Instagram, Facebook } from 'lucide-react';
 
 interface FooterProps {

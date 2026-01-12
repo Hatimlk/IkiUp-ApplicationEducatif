@@ -1,7 +1,7 @@
 import React from 'react';
-import { Reveal } from './Reveal';
+import { Reveal } from '../ui/Reveal';
 import { UserCircle2, Compass, GraduationCap, Users2, ArrowRight } from 'lucide-react';
-import { translations, Language } from '../translations';
+import { translations, Language } from '../../lib/translations';
 
 interface HowItWorksProps {
   lang?: Language;
@@ -57,7 +57,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
               {t.tag}
             </div>
             <h2 className="text-4xl md:text-6xl font-serif font-black text-text dark:text-white mb-8 tracking-tight">
-              {t.title} <span className="text-primary italic">{t.titleAccent}</span>
+              {t.title} <span className="text-primary">{t.titleAccent}</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl mx-auto leading-relaxed opacity-80">
               {t.subtitle}

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Reveal } from './Reveal';
+import { Reveal } from '../ui/Reveal';
 import {
   ArrowRight,
   ArrowLeft,
@@ -11,7 +11,7 @@ import {
   Search,
   Sparkles
 } from 'lucide-react';
-import { translations, Language } from '../translations';
+import { translations, Language } from '../../lib/translations';
 
 interface ShowcaseProps {
   lang?: Language;
@@ -107,7 +107,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
               {t.tag}
             </div>
             <h2 className="text-3xl md:text-5xl font-serif font-black text-text dark:text-white mb-6">
-              {t.title} <span className="text-primary italic">{t.titleAccent}</span>
+              {t.title} <span className="text-primary">{t.titleAccent}</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 font-normal max-w-2xl mx-auto">
               {t.description}

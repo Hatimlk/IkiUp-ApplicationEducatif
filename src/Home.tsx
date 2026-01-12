@@ -1,16 +1,16 @@
 import React from 'react';
-import { Hero } from './Hero';
-import { SEO } from './SEO';
-import { Context } from './Context';
-import { Features } from './Features';
-import { Audience } from './Audience';
-import { HowItWorks } from './HowItWorks';
-import { Showcase } from './Showcase';
-import { Pricing } from './Pricing';
+import { Hero } from './components/sections/Hero';
+import { SEO } from './components/ui/SEO';
+
+import { Features } from './components/sections/Features';
+import { Audience } from './components/sections/Audience';
+import { HowItWorks } from './components/sections/HowItWorks';
+import { Showcase } from './components/sections/Showcase';
+
 // import { Testimonials } from './Testimonials';
 
-import { CTA } from './CTA';
-import { Language } from '../translations';
+import { CTA } from './components/sections/CTA';
+import { Language } from './lib/translations';
 
 interface HomeProps {
   lang: Language;
@@ -26,12 +26,12 @@ export const Home: React.FC<HomeProps> = ({ lang }) => {
           : "IkiUp is an orientation and support app that connects students, parents, and schools."}
       />
       <Hero lang={lang} />
-      <Context />
+
       <Features lang={lang} />
       <Audience lang={lang} />
       <HowItWorks lang={lang} />
       <Showcase lang={lang} />
-      <Pricing lang={lang} />
+
       {/* <Testimonials /> */}
 
       <CTA lang={lang} />
