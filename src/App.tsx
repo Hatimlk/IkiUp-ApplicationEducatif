@@ -6,7 +6,7 @@ import { About } from './components/sections/About';
 import { Footer } from './components/layout/Footer';
 import { Language } from './lib/translations';
 
-import { HelmetProvider } from 'react-helmet-async';
+
 
 export type Page = 'home' | 'about';
 
@@ -58,20 +58,18 @@ function App() {
   };
 
   return (
-    <HelmetProvider>
-      <div className="min-h-screen bg-background">
-        <Navbar
-          currentPage={currentPage}
-          onNavigate={navigateTo}
-          currentLang={language}
-          onLangChange={toggleLanguage}
-        />
-        <main>
-          {renderPage()}
-        </main>
-        <Footer onNavigate={navigateTo} lang={language} />
-      </div>
-    </HelmetProvider>
+    <div className="min-h-screen bg-background">
+      <Navbar
+        currentPage={currentPage}
+        onNavigate={navigateTo}
+        currentLang={language}
+        onLangChange={toggleLanguage}
+      />
+      <main>
+        {renderPage()}
+      </main>
+      <Footer onNavigate={navigateTo} lang={language} />
+    </div>
   );
 }
 
