@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ikiup.com/sitemap.xml
+Sitemap: https://ikiup.app/sitemap.xml

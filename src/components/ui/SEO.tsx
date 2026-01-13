@@ -14,8 +14,8 @@ export const SEO: React.FC<SEOProps> = ({
   title,
   description,
   keywords = [],
-  image = 'https://ikiup.com/og-image.jpg', // Default OG Image
-  url = 'https://ikiup.com',
+  image = 'https://ikiup.app/og-image.jpg', // Default OG Image
+  url = 'https://ikiup.app',
   lang = 'fr'
 }) => {
   const siteTitle = 'IkiUp - Gestion Scolaire Intelligente';
