@@ -64,103 +64,96 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          {/* 1. ORIENTATION CARD - Fresh Green/Teal Theme */}
+          {/* 1. ORIENTATION CARD */}
           <Reveal delay={0} direction="up">
-            <div className="group h-full bg-emerald-50/50 dark:bg-emerald-950/20 rounded-[2.5rem] p-8 md:p-12 border border-emerald-100 dark:border-emerald-900/50 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-100/50 dark:bg-emerald-900/20 rounded-bl-[4rem] -mr-8 -mt-8"></div>
-
-              <div className="flex justify-between items-start mb-10 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-emerald-900 text-emerald-600 flex items-center justify-center shadow-md shadow-emerald-100 dark:shadow-none">
-                  <Compass size={28} />
-                </div>
-                <div className="p-2 rounded-full bg-white dark:bg-emerald-900 text-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0 duration-300 shadow-sm">
-                  <ArrowUpRight size={20} />
-                </div>
+            <div className="group h-full bg-gradient-to-br from-white to-blue-50/30 dark:from-slate-900 dark:to-slate-900/50 rounded-[2.5rem] p-8 md:p-10 border border-slate-200/60 dark:border-slate-800 hover:border-primary/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-none transition-all duration-300 relative overflow-hidden flex flex-col">
+              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-primary flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+                <Compass size={28} />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-4">
+              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
                 {t.orientation.title}
               </h3>
               <p className="text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-6">
                 {t.orientation.text}
               </p>
-
             </div>
-
           </Reveal>
 
-          {/* 2. AGENDA CARD - Soft Blue/Indigo Theme (Study Planner Vibe) */}
+          {/* 2. AGENDA CARD */}
           <Reveal delay={100} direction="up">
-            <div className="group h-full bg-indigo-50/50 dark:bg-indigo-950/20 rounded-[2.5rem] p-8 md:p-12 border border-indigo-100 dark:border-indigo-900/50 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-100/50 dark:bg-indigo-900/20 rounded-bl-[4rem] -mr-8 -mt-8"></div>
-
-              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-indigo-900 text-indigo-600 flex items-center justify-center mb-10 shadow-md shadow-indigo-100 dark:shadow-none relative z-10">
+            <div className="group h-full bg-gradient-to-br from-white to-blue-50/30 dark:from-slate-900 dark:to-slate-900/50 rounded-[2.5rem] p-8 md:p-10 border border-slate-200/60 dark:border-slate-800 hover:border-primary/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-none transition-all duration-300 relative overflow-hidden flex flex-col">
+              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-primary flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                 <Calendar size={28} />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-8 relative z-10">
+              <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white mb-8 group-hover:text-primary transition-colors">
                 {t.tracking.title}
               </h3>
-              <div className="space-y-3 relative z-10">
+              <div className="space-y-3 flex-grow">
                 {t.tracking.items.map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-indigo-900/40 border border-indigo-100 dark:border-indigo-800/50 shadow-sm">
-                    <div className="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-800 flex items-center justify-center text-indigo-600">
+                  <div key={i} className="flex items-center gap-4 p-3 rounded-xl bg-white/60 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/50 hover:border-primary/20 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 group/item backdrop-blur-sm">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-slate-400 group-hover/item:text-primary group-hover/item:bg-primary/5 transition-colors">
                       {agendaIcons[i]}
                     </div>
-                    <span className="text-sm font-bold text-slate-700 dark:text-indigo-200">{item}</span>
+                    <span className="text-sm font-bold text-slate-600 dark:text-slate-300">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
           </Reveal>
 
-          {/* 3. NEWS FEED CARD - Cool Grey/Newsprint Theme */}
+          {/* 3. NEWS FEED CARD */}
           <Reveal delay={200} direction="up">
-            <div className="group h-full bg-slate-100/50 dark:bg-slate-800/30 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/40 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-slate-200/50 dark:bg-slate-700/50 rounded-bl-[4rem] -mr-8 -mt-8"></div>
+            <div className="group h-full bg-gradient-to-br from-blue-50/80 to-indigo-50/80 dark:from-slate-800/40 dark:to-slate-900/40 rounded-[2.5rem] p-8 md:p-10 border border-blue-100 dark:border-slate-700 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 relative overflow-hidden flex flex-col">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/40 dark:bg-white/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
-              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center mb-10 shadow-md shadow-slate-200 dark:shadow-none relative z-10">
+              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 text-primary flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 relative z-10">
                 <Newspaper size={28} />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-4 relative z-10">
+              <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white mb-4 relative z-10 group-hover:text-primary transition-colors">
                 {t.feed.title}
               </h3>
-              <p className="text-base text-slate-600 dark:text-slate-400 mb-8 relative z-10 font-medium">
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-8 relative z-10 font-medium leading-relaxed">
                 {t.feed.intro}
               </p>
-              <div className="grid grid-cols-2 gap-3 relative z-10">
+              <div className="grid grid-cols-2 gap-3 relative z-10 mt-auto">
                 {t.feed.items.map((item, i) => (
-                  <div key={i} className="p-4 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 flex flex-col gap-3">
-                    <div className="text-blue-500">{feedIcons[i]}</div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">{item}</span>
+                  <div key={i} className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-blue-100/50 dark:border-slate-700/50 backdrop-blur-sm flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300">
+                    <div className="text-primary/80">{feedIcons[i]}</div>
+                    <div className="space-y-2">
+                      <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-700 rounded-full"></div>
+                      <div className="h-1.5 w-2/3 bg-slate-100 dark:bg-slate-700 rounded-full"></div>
+                    </div>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mt-1">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
           </Reveal>
 
-          {/* 4. SCHOOL SEARCH CARD - Warm Amber/Orange Theme (Discovery) */}
+          {/* 4. SCHOOL SEARCH CARD */}
           <Reveal delay={300} direction="up">
-            <div className="group h-full bg-orange-50/50 dark:bg-orange-950/20 rounded-[2.5rem] p-8 md:p-12 border border-orange-100 dark:border-orange-900/50 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100/50 dark:bg-orange-900/20 rounded-bl-[4rem] -mr-8 -mt-8"></div>
+            <div className="group h-full bg-gradient-to-br from-primary/[0.03] to-primary/[0.08] dark:from-primary/10 dark:to-primary/5 rounded-[2.5rem] p-8 md:p-10 border border-primary/10 dark:border-primary/20 hover:border-primary/20 hover:shadow-[0_8px_30px_rgb(90,115,232,0.1)] transition-all duration-300 relative overflow-hidden flex flex-col">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
 
-              <div className="flex justify-between items-start mb-10 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-orange-900 text-orange-500 flex items-center justify-center shadow-md shadow-orange-100 dark:shadow-none">
-                  <Search size={28} />
+              <div className="flex justify-between items-start mb-8 relative z-10">
+                <div className="w-14 h-14 rounded-full bg-white dark:bg-slate-800 text-primary flex items-center justify-center shadow-sm border border-primary/10 group-hover:scale-110 transition-transform duration-300">
+                  <Search size={24} />
                 </div>
-                <div className="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-orange-500 animate-pulse">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary animate-pulse">
                   <MapPin size={18} />
                 </div>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-text dark:text-white mb-4 relative z-10">
+              <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white mb-4 relative z-10 group-hover:text-primary transition-colors">
                 {t.schools.title}
               </h3>
-              <p className="text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-8 relative z-10">
+              <p className="text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-8 relative z-10">
                 {t.schools.text}
               </p>
-              <div className="p-4 rounded-xl bg-white dark:bg-orange-900/40 border border-orange-100 dark:border-orange-800 flex items-center gap-3 relative z-10 shadow-sm">
-                <div className="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center">
-                  <Search size={14} />
+              <div className="mt-auto p-1.5 rounded-2xl bg-white dark:bg-slate-800 border border-primary/10 dark:border-primary/20 flex items-center gap-2 relative z-10 shadow-sm cursor-pointer hover:shadow-md hover:border-primary/30 transition-all group/search">
+                <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center shadow-sm group-hover/search:scale-105 transition-transform">
+                  <Search size={18} />
                 </div>
-                <div className="text-sm font-bold text-slate-400 truncate">{t.schools.searchPlaceholder}</div>
+                <div className="px-2 text-xs font-bold text-slate-400 dark:text-slate-500 truncate">{t.schools.searchPlaceholder}</div>
               </div>
             </div>
           </Reveal>

@@ -19,15 +19,42 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
   const pillarsConfig = [
     {
       icon: <Shield size={24} />,
-      color: "teal"
+      color: "teal",
+      classes: {
+        bg: "bg-gradient-to-br from-teal-500 to-teal-600",
+        shadow: "shadow-teal-500/30",
+        overlay: "from-teal-500/5",
+        blur: "bg-teal-500/10",
+        iconBg: "bg-teal-50 dark:bg-teal-900/20",
+        iconText: "text-teal-600 dark:text-teal-400",
+        border: "border-teal-100 dark:border-teal-900/50"
+      }
     },
     {
       icon: <Target size={24} />,
-      color: "primary"
+      color: "primary",
+      classes: {
+        bg: "bg-gradient-to-br from-violet-500 to-violet-600",
+        shadow: "shadow-violet-500/30",
+        overlay: "from-violet-500/5",
+        blur: "bg-violet-500/10",
+        iconBg: "bg-violet-50 dark:bg-violet-900/20",
+        iconText: "text-violet-600 dark:text-violet-400",
+        border: "border-violet-100 dark:border-violet-900/50"
+      }
     },
     {
       icon: <Heart size={24} />,
-      color: "rose"
+      color: "rose",
+      classes: {
+        bg: "bg-gradient-to-br from-pink-500 to-pink-600",
+        shadow: "shadow-pink-500/30",
+        overlay: "from-pink-500/5",
+        blur: "bg-pink-500/10",
+        iconBg: "bg-pink-50 dark:bg-pink-900/20",
+        iconText: "text-pink-600 dark:text-pink-400",
+        border: "border-pink-100 dark:border-pink-900/50"
+      }
     }
   ];
 
@@ -39,6 +66,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
           ? "Découvrez l'histoire et la mission d'IkiUp, la plateforme qui réinvente le parcours scolaire."
           : "Discover the story and mission of IkiUp, the platform reinventing the educational journey."}
         url="https://ikiup.com/about"
+        lang={lang}
       />
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
@@ -49,21 +77,23 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       {/* Story Section - Centered Glass Card */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-40">
         <Reveal>
-          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden text-center">
+          <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl rounded-[3rem] p-6 sm:p-8 md:p-16 border border-white/20 dark:border-white/5 shadow-2xl shadow-indigo/5 relative overflow-hidden text-center group hover:shadow-indigo/10 transition-all duration-500">
 
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 to-transparent pointer-events-none -z-10"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none -z-10"></div>
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/15 transition-colors duration-700"></div>
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] group-hover:bg-secondary/15 transition-colors duration-700"></div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.2em] mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-black uppercase tracking-[0.2em] mb-10 border border-primary/20">
               {t.storyTag}
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-text dark:text-white mb-8">
+            <h1 className="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mb-10 tracking-tight">
               {t.storyTitle}
-            </h2>
+            </h1>
 
-            <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-400 font-light leading-relaxed mx-auto max-w-3xl">
+            <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-400 font-medium leading-relaxed mx-auto max-w-3xl">
               {t.story.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="mb-6 last:mb-0 first-letter:text-5xl first-letter:font-serif first-letter:text-primary first-letter:font-bold first-letter:mr-2 list-none first-letter:float-left first-letter:leading-none">
+                <p key={idx} className="mb-6 last:mb-0 first-letter:text-6xl first-letter:font-serif first-letter:text-primary first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8]">
                   {paragraph}
                 </p>
               ))}
@@ -72,79 +102,44 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         </Reveal>
       </section>
 
-      {/* Bento Grid: Philosophy & Vision */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-40">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+      {/* Philosophy & Vision - Centered Compact Card */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-40">
+        <Reveal>
+          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white p-6 sm:p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500">
 
-          {/* Philosophy - Spans 2 cols (or full on mobile) */}
-          <div className="md:col-span-2 row-span-2">
-            <Reveal className="h-full">
-              <div className="h-full bg-slate-900 text-white p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-700"></div>
+            {/* Dynamic Backgrounds */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors duration-700"></div>
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 group-hover:bg-blue-500/30 transition-colors duration-700"></div>
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 grayscale mix-blend-overlay"></div>
 
-                <div className="relative z-10 flex flex-col h-full justify-between">
-                  <div>
-                    <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-8 rotate-3 group-hover:rotate-12 transition-transform duration-500">
-                      <Compass size={32} />
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-serif font-black mb-6 leading-tight">{t.philosophyTitle}</h2>
-                    <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-md">
-                      {t.philosophyDesc}
-                    </p>
-                  </div>
-                  {/* Decorative lines at bottom */}
-                  <div className="mt-12 flex items-center gap-2 opacity-50">
-                    <div className="h-1 w-12 bg-white/20 rounded-full"></div>
-                    <div className="h-1 w-24 bg-primary rounded-full"></div>
-                  </div>
+            {/* Large Decorative Watermark */}
+            <div className="absolute -right-10 -bottom-20 text-white/5 rotate-12 transform scale-100 pointer-events-none group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 ease-out">
+              <Compass size={250} strokeWidth={0.5} />
+            </div>
+
+            <div className="relative z-10 flex flex-col h-full justify-between items-start gap-8">
+              <div className="w-full">
+                {/* Icon with smoother glass effect */}
+                <div className="w-16 h-16 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-2xl flex items-center justify-center text-white mb-8 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.1)] group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
+                  <Compass size={32} strokeWidth={1.5} />
+                </div>
+
+                {/* Title with better hierarchy */}
+                <h2 className="text-4xl md:text-6xl font-serif font-black mb-6 leading-[0.9] tracking-tighter text-white drop-shadow-sm">
+                  {t.philosophyTitle}
+                </h2>
+
+                {/* Description with improved readability and flow */}
+                <div className="flex gap-6 items-start">
+                  <div className="w-1 h-20 bg-gradient-to-b from-white/40 to-transparent rounded-full shrink-0 mt-2"></div>
+                  <p className="text-blue-50 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl text-shadow-sm opacity-90">
+                    {t.philosophyDesc}
+                  </p>
                 </div>
               </div>
-            </Reveal>
+            </div>
           </div>
-
-          {/* Vision Item 1: Orientation - Vertical block */}
-          <div className="md:col-span-1 row-span-2">
-            <Reveal delay={100} className="h-full" direction="left">
-              <div className="h-full bg-emerald/5 dark:bg-emerald/10 p-10 rounded-[2.5rem] flex flex-col items-center text-center justify-center border border-emerald/10 hover:border-emerald/30 transition-colors duration-500 relative group overflow-hidden">
-                <div className="absolute inset-0 bg-emerald/5 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-[3rem] origin-center"></div>
-                <div className="w-20 h-20 bg-white dark:bg-slate-900 rounded-full shadow-lg shadow-emerald/10 flex items-center justify-center text-emerald mb-8 relative z-10 group-hover:scale-110 transition-transform duration-300">
-                  <Lightbulb size={36} />
-                </div>
-                <h3 className="text-2xl font-bold text-text dark:text-white mb-4 relative z-10">Orientation Prédictive</h3>
-                <p className="text-slate-500 dark:text-slate-400 font-light relative z-10">{t.visionP1}</p>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Vision Item 2: Harmonie - Large horizonal or small square - keeping neat square */}
-          <div className="md:col-span-1">
-            <Reveal delay={200} className="h-full" direction="up">
-              <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl flex flex-col justify-center items-start hover:-translate-y-1 transition-transform duration-300 group">
-                <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-xl flex items-center justify-center text-amber-500 mb-4 group-hover:rotate-6 transition-transform">
-                  <Users size={24} />
-                </div>
-                <h3 className="text-lg font-bold text-text dark:text-white mb-2">Harmonie</h3>
-                <p className="text-sm text-slate-500 font-light line-clamp-3">{t.visionP2}</p>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Vision Item 3: Ecosystem - Fill remaining */}
-          <div className="md:col-span-2">
-            <Reveal delay={300} className="h-full" direction="up">
-              <div className="h-full bg-gradient-to-r from-indigo/5 to-purple-500/5 dark:from-indigo/10 dark:to-purple-900/10 p-8 rounded-[2.5rem] border border-indigo/10 flex items-center gap-8 group hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors">
-                <div className="shrink-0 w-20 h-20 bg-indigo text-white rounded-2xl flex items-center justify-center shadow-lg shadow-indigo/30 group-hover:scale-110 transition-transform duration-300">
-                  <GraduationCap size={40} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-text dark:text-white mb-2">Écosystème Circulaire</h3>
-                  <p className="text-slate-500 dark:text-slate-400 font-light">{t.visionP3}</p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-        </div>
+        </Reveal>
       </section>
 
       {/* Commitments Grid */}
@@ -165,15 +160,20 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
           {t.pillars.map((pillar, i) => {
             const config = pillarsConfig[i];
             return (
-              <Reveal key={i} delay={i * 150} scale>
-                <div className="p-10 rounded-[2.5rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-100 dark:border-slate-800 shadow-xl shadow-indigo/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full group relative overflow-hidden">
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-${config.color}/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-150`}></div>
+              <Reveal key={i} delay={i * 100} scale>
+                <div className="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-3 flex flex-col h-full group relative overflow-hidden">
 
-                  <div className={`w-16 h-16 rounded-2xl bg-${config.color}/10 dark:bg-${config.color}/20 flex items-center justify-center text-${config.color} mb-8 group-hover:rotate-6 transition-transform duration-300`}>
+                  {/* Hover Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${config.classes.overlay} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+
+                  <div className={`absolute top-0 right-0 w-48 h-48 ${config.classes.blur} rounded-full blur-3xl -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-150`}></div>
+
+                  <div className={`w-20 h-20 rounded-2xl ${config.classes.bg} flex items-center justify-center text-white mb-8 shadow-lg ${config.classes.shadow} group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 relative z-10`}>
                     {config.icon}
                   </div>
-                  <h3 className="text-2xl font-serif font-bold mb-4 text-text dark:text-white">{pillar.title}</h3>
-                  <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-light">
+
+                  <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors relative z-10">{pillar.title}</h3>
+                  <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-medium relative z-10">
                     {pillar.desc}
                   </p>
                 </div>
@@ -182,6 +182,6 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
           })}
         </div>
       </section>
-    </div>
+    </div >
   );
 };

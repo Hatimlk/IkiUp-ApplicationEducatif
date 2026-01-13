@@ -7,7 +7,7 @@ export const translations = {
       howitworks: "Concept",
       features: "Solution",
       showcase: "Aperçu",
-      pricing: "Tarifs",
+      audience: "Audience",
       faq: "FAQ",
       download: "Télécharger"
     },
@@ -199,7 +199,7 @@ export const translations = {
       howitworks: "Concept",
       features: "Solution",
       showcase: "Showcase",
-      pricing: "Pricing",
+      audience: "Audience",
       faq: "FAQ",
       download: "Download"
     },

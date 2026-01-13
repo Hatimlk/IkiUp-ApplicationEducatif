@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Home } from './Home';
 import { About } from './components/sections/About';
-import { Legal } from './components/sections/Legal';
-import { Privacy } from './components/sections/Privacy';
+
 import { Footer } from './components/layout/Footer';
 import { Language } from './lib/translations';
 
 import { HelmetProvider } from 'react-helmet-async';
 
-export type Page = 'home' | 'about' | 'legal' | 'privacy';
+export type Page = 'home' | 'about';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -53,8 +52,7 @@ function App() {
     switch (currentPage) {
       case 'home': return <Home lang={language} />;
       case 'about': return <About lang={language} />;
-      case 'legal': return <Legal lang={language} />;
-      case 'privacy': return <Privacy lang={language} />;
+
       default: return <Home lang={language} />;
     }
   };

@@ -24,6 +24,7 @@ export const Home: React.FC<HomeProps> = ({ lang }) => {
         description={lang === 'fr'
           ? "IkiUp est une application d’orientation et d’accompagnement qui connecte les élèves, parents et écoles."
           : "IkiUp is an orientation and support app that connects students, parents, and schools."}
+        lang={lang}
       />
       <Hero lang={lang} />
 

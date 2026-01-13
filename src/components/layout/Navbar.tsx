@@ -79,9 +79,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, current
 
   const navLinks = [
     { name: t.about, href: '/about' },
-    { name: t.howitworks, href: '#howitworks' },
     { name: t.features, href: '#features' },
-    { name: t.pricing, href: '#pricing' },
+    { name: t.audience, href: '#audience' },
+    { name: t.howitworks, href: '#howitworks' },
   ];
 
   return (

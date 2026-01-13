@@ -20,20 +20,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
   const isFr = lang === 'fr';
 
   return (
-    <footer className="bg-background text-slate-600 dark:text-slate-400 pt-20 pb-10 border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
+    <footer className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 pt-24 pb-12 border-t border-slate-200/60 dark:border-slate-800/60 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 mb-20">
 
           {/* Column 1: Brand */}
           <div className="md:col-span-1">
             <div
-              className="mb-8 cursor-pointer inline-block"
+              className="mb-8 cursor-pointer inline-block group"
               onClick={(e) => { e.preventDefault(); onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             >
               <img
                 src={LOGO_URL}
                 alt="IkiUp Logo"
-                className="h-10 w-auto object-contain dark:brightness-0 dark:invert opacity-90 hover:opacity-100 transition-opacity"
+                className="h-10 w-auto object-contain dark:brightness-0 dark:invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
                 onError={(e) => {
                   (e.target as any).style.display = 'none';
                   // Fallback text if image fails
@@ -41,27 +41,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
                 }}
               />
             </div>
-            <p className="text-slate-500 leading-relaxed font-light mb-8 max-w-sm">
+            <p className="text-black dark:text-white leading-relaxed font-medium mb-8 max-w-sm text-sm">
               {isFr ? "Redéfinir le parcours éducatif avec intelligence et bienveillance." : "Redefining the educational journey with intelligence and kindness."}
             </p>
           </div>
 
           {/* Column 2: Product */}
           <div>
-            <h4 className="font-bold text-text dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Produit" : "Product"}</h4>
+            <h4 className="font-serif font-bold text-slate-900 dark:text-white mb-8 text-lg tracking-tight">{isFr ? "Produit" : "Product"}</h4>
             <ul className="space-y-4">
-              <li><a href="#features" onClick={(e) => handleLinkClick(e as any, 'home', '#features')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Solution" : "Solution"}</a></li>
-              <li><a href="#howitworks" onClick={(e) => handleLinkClick(e as any, 'home', '#howitworks')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Concept" : "Concept"}</a></li>
-              <li><a href="#pricing" onClick={(e) => handleLinkClick(e as any, 'home', '#pricing')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "Tarifs" : "Pricing"}</a></li>
+              <li><a href="#features" onClick={(e) => handleLinkClick(e as any, 'home', '#features')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Solution" : "Solution"}</a></li>
+              <li><a href="#howitworks" onClick={(e) => handleLinkClick(e as any, 'home', '#howitworks')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Concept" : "Concept"}</a></li>
+              <li><a href="#pricing" onClick={(e) => handleLinkClick(e as any, 'home', '#pricing')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Tarifs" : "Pricing"}</a></li>
             </ul>
           </div>
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="font-bold text-text dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Entreprise" : "Company"}</h4>
+            <h4 className="font-serif font-bold text-slate-900 dark:text-white mb-8 text-lg tracking-tight">{isFr ? "Entreprise" : "Company"}</h4>
             <ul className="space-y-4">
-              <li><a href="/about" onClick={(e) => handleLinkClick(e as any, 'about')} className="hover:text-primary transition-colors cursor-pointer">{isFr ? "À Propos" : "About Us"}</a></li>
-              <li><a href="mailto:contact@ikiup.com" className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2">
+              <li><a href="/about" onClick={(e) => handleLinkClick(e as any, 'about')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "À Propos" : "About Us"}</a></li>
+              <li><a href="mailto:contact@ikiup.com" className="text-sm font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-300">
                 {isFr ? "Contactez-nous" : "Contact Us"}
               </a></li>
             </ul>
@@ -69,30 +69,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Column 4: Social */}
           <div>
-            <h4 className="font-bold text-text dark:text-white mb-6 uppercase tracking-wider text-sm">{isFr ? "Suivez-nous" : "Follow Us"}</h4>
+            <h4 className="font-serif font-bold text-slate-900 dark:text-white mb-8 text-lg tracking-tight">{isFr ? "Suivez-nous" : "Follow Us"}</h4>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/share/17dgcaEBBw/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
+              <a href="https://www.facebook.com/share/17dgcaEBBw/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Facebook size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/ikiup-app-0303633a0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
+              <a href="https://www.linkedin.com/in/ikiup-app-0303633a0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Linkedin size={18} />
               </a>
-              <a href="https://www.instagram.com/ikiup.app/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 text-slate-600 dark:text-slate-400">
+              <a href="https://www.instagram.com/ikiup.app/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Instagram size={18} />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-slate-200 dark:border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-light text-slate-500">
+        {/* Bottom Bar - Clean & Minimal */}
+        <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400 dark:text-slate-500">
           <p>
             © {new Date().getFullYear()} IkiUp Inc. {isFr ? "Tous droits réservés." : "All rights reserved."}
           </p>
-          <div className="flex gap-6">
-            <a href="/legal" onClick={(e) => handleLinkClick(e as any, 'legal')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">{isFr ? "Mentions Légales" : "Legal"}</a>
-            <a href="/privacy" onClick={(e) => handleLinkClick(e as any, 'privacy')} className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">{isFr ? "Confidentialité" : "Privacy"}</a>
-          </div>
         </div>
       </div>
     </footer>

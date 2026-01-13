@@ -7,6 +7,7 @@ interface SEOProps {
   keywords?: string[];
   image?: string;
   url?: string;
+  lang?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -14,12 +15,13 @@ export const SEO: React.FC<SEOProps> = ({
   description,
   keywords = [],
   image = 'https://ikiup.com/og-image.jpg', // Default OG Image
-  url = 'https://ikiup.com'
+  url = 'https://ikiup.com',
+  lang = 'fr'
 }) => {
   const siteTitle = 'IkiUp - Gestion Scolaire Intelligente';
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang }}>
       {/* Standard Metadata */}
       <title>{`${title} | IkiUp`}</title>
       <meta name="description" content={description} />

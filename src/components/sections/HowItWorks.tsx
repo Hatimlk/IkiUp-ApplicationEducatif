@@ -77,7 +77,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
               <div key={index} className={`relative flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
 
                 {/* Visual Side (Icon Box) */}
-                <div className={`w-full lg:w-1/2 flex pl-20 lg:pl-0 ${index % 2 !== 0 ? 'lg:justify-start' : 'lg:justify-end'}`}>
+                <div className={`w-full lg:w-1/2 flex pl-16 lg:pl-0 ${index % 2 !== 0 ? 'lg:justify-start' : 'lg:justify-end'}`}>
                   <Reveal direction={index % 2 === 0 ? 'right' : 'left'} delay={100}>
                     <div className={`relative group`}>
 
@@ -99,7 +99,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ lang = 'fr' }) => {
                 <div className="absolute left-8 lg:left-1/2 top-24 lg:top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-slate-950 border-4 border-primary z-20 shadow-lg"></div>
 
                 {/* Content Side */}
-                <div className={`w-full lg:w-1/2 pl-20 lg:pl-0 text-left ${index % 2 !== 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                <div className={`w-full lg:w-1/2 pl-16 lg:pl-0 text-left ${index % 2 !== 0 ? 'lg:text-right' : 'lg:text-left'}`}>
                   <Reveal direction={index % 2 === 0 ? 'left' : 'right'}>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-serif font-bold text-text dark:text-white mb-4">

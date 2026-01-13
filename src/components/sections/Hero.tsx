@@ -18,9 +18,9 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
         style={{ backgroundImage: 'linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
-      {/* Soft Ambient Blobs */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-400/10 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Soft Ambient Blobs - Centered/Balanced */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald-400/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
           {/* Title - Clean Academic Serif */}
           <Reveal delay={100} direction="up">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-text dark:text-white mb-8 leading-[1.1]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-text dark:text-white mb-8 leading-[1.1]">
               {lang === 'fr' ? (
                 <>
                   L'école, <br />

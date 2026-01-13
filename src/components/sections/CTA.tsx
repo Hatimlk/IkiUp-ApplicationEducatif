@@ -15,14 +15,14 @@ export const CTA: React.FC<CTAProps> = ({ lang = 'fr' }) => {
     <section id="download" className="py-20 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <Reveal>
-          <div className="relative rounded-[3rem] overflow-hidden bg-slate-950 text-slate-100 border border-white/5 shadow-2xl">
+          <div className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-blue-600 to-blue-900 text-slate-100 border border-white/10 shadow-2xl">
             {/* Background Accents Refined */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
               <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary rounded-full blur-[150px] opacity-20"></div>
               <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-sec rounded-full blur-[120px] opacity-10"></div>
             </div>
 
-            <div className="relative z-10 px-8 py-16 md:px-16 md:py-24">
+            <div className="relative z-10 px-6 py-12 md:px-16 md:py-24">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                 <div className="text-left">
@@ -32,7 +32,7 @@ export const CTA: React.FC<CTAProps> = ({ lang = 'fr' }) => {
                   <h2 className="text-3xl md:text-5xl font-serif font-black tracking-tight mb-8 leading-tight text-balance">
                     {t.title} <span className="text-secondary">{t.titleAccent}</span>
                   </h2>
-                  <p className="text-base md:text-lg text-slate-400 mb-10 font-normal leading-relaxed max-w-xl">
+                  <p className="text-base md:text-lg text-white mb-10 font-normal leading-relaxed max-w-xl">
                     {t.description}
                   </p>
 
@@ -54,12 +54,12 @@ export const CTA: React.FC<CTAProps> = ({ lang = 'fr' }) => {
                   </div>
                 </div>
 
-                <div className="lg:pl-12 lg:border-l lg:border-white/10">
-                  <div className="bg-white/5 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 border border-white/10">
-                    <h3 className="text-2xl font-serif font-bold text-white mb-4">
+                <div className="lg:pl-12 lg:border-l lg:border-white/10 mt-12 lg:mt-0">
+                  <div className="bg-white/10 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/20 shadow-lg">
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-4">
                       {t.questionTitle}
                     </h3>
-                    <p className="text-slate-400 mb-8 font-normal leading-relaxed">
+                    <p className="text-blue-100 mb-8 font-normal leading-relaxed">
                       {t.questionText}
                     </p>
 
