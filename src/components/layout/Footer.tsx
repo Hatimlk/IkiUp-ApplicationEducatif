@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
               <a href="https://www.linkedin.com/in/ikiup-app-0303633a0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Linkedin size={18} />
               </a>
-              <a href="https://www.instagram.com/ikiup.app/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+              <a href="https://www.instagram.com/ikiup.com/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Instagram size={18} />
               </a>
             </div>

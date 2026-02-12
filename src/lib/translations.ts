@@ -23,33 +23,49 @@ export const translations = {
       title: "LA SOLUTION IKIUP",
       intro: "IkiUp réunit en une seule plateforme les outils essentiels pour accompagner les parcours scolaires.",
       orientation: {
-        title: "Mieux se comprendre pour mieux s’orienter",
-        text: "Grâce à des tests de personnalité et d’orientation, IkiUp aide les élèves à identifier leurs centres d’intérêt, leurs forces et leurs modes de fonctionnement. L’application propose des pistes de métiers et de parcours scolaires adaptées, pour accompagner la réflexion et structurer les choix dans le temps."
+        title: "Orientez parfaitement vos enfants",
+        subtitle: "IKIUP est le meilleur choix pour leur avenir scolaire",
+        steps: [
+          {
+            title: "DÉCOUVRIR",
+            description: "TESTS : INTÉRETS & FORCES"
+          },
+          {
+            title: "ORIENTER",
+            description: "GUIDANCE PERSONNALISÉE"
+          },
+          {
+            title: "AVANCER",
+            description: "OBJECTIFS CLAIRS"
+          }
+        ]
       },
       tracking: {
         title: "Un agenda scolaire partagé",
+        subtitle: "Pour tout gérer, tout organiser au même endroit",
         items: [
-          "Emplois du temps",
-          "Notes & évaluations",
-          "Absences & présences",
-          "Remarques pédagogiques",
-          "Accès enseignants, parents et élèves"
+          "EMPLOIS DU TEMPS",
+          "NOTES & ÉVALUATIONS",
+          "ABSENCES & PRÉSENCES",
+          "REMARQUES PÉDAGOGIQUES",
+          "ACCÈS ENSEIGNANTS, PARENTS ET ÉLÈVES"
         ]
       },
       feed: {
         title: "Fil d’actualité & réseau éducatif",
         intro: "Un espace d’échange pour faire vivre l’écosystème éducatif.",
         items: [
-          "Actualités des écoles",
-          "Informations sur les formations",
-          "Publications & annonces",
-          "Découverte d’établissements"
+          "Actualités",
+          "Communauté",
+          "Publications",
+          "Partage"
         ]
       },
       schools: {
         title: "Explorer les établissements et les parcours scolaires",
-        text: "IkiUp permet de rechercher des écoles et des établissements selon différents critères (ville, type de formation, niveau). Les élèves peuvent explorer les parcours disponibles et les intégrer dans leur réflexion d’orientation.",
-        searchPlaceholder: "Rechercher une école..."
+        subtitle: "Orientation intelligente, Construire son parcours",
+        searchPlaceholder: "Écoles d'ingénieur à Casablanca",
+        items: ["Choix 1", "Choix 2"]
       }
     },
     pricing: {
@@ -215,33 +231,49 @@ export const translations = {
       title: "THE IKIUP SOLUTION",
       intro: "IkiUp brings together the essential tools for supporting academic journeys on a single platform.",
       orientation: {
-        title: "Understand yourself better to navigate better",
-        text: "Through personality and orientation tests, IkiUp helps students identify their interests, strengths, and ways of working. The app suggests career paths and academic tracks to structure choices over time."
+        title: "Guide your children perfectly",
+        subtitle: "IKIUP is the best choice for their academic future",
+        steps: [
+          {
+            title: "DISCOVER",
+            description: "TESTS: INTERESTS & STRENGTHS"
+          },
+          {
+            title: "GUIDE",
+            description: "PERSONALIZED GUIDANCE"
+          },
+          {
+            title: "ADVANCE",
+            description: "CLEAR OBJECTIVES"
+          }
+        ]
       },
       tracking: {
         title: "A shared school agenda",
+        subtitle: "To manage everything, organize everything in one place",
         items: [
-          "Schedules",
-          "Grades & assessments",
-          "Absences & attendance",
-          "Pedagogical remarks",
-          "Teacher, parent, and student access"
+          "SCHEDULES",
+          "GRADES & ASSESSMENTS",
+          "ABSENCES & ATTENDANCE",
+          "PEDAGOGICAL REMARKS",
+          "TEACHER, PARENT AND STUDENT ACCESS"
         ]
       },
       feed: {
         title: "News Feed & Educational Network",
         intro: "A space for exchange to bring the educational ecosystem to life.",
         items: [
-          "School news",
-          "Training info",
-          "Publications & announcements",
-          "Institution discovery"
+          "News",
+          "Community",
+          "Posts",
+          "Sharing"
         ]
       },
       schools: {
         title: "Explore institutions and academic paths",
-        text: "IkiUp allows searching for schools and institutions based on various criteria (city, training type, level). Students can explore available tracks and integrate them into their orientation thinking.",
-        searchPlaceholder: "Search for a school..."
+        subtitle: "Smart guidance, Build your path",
+        searchPlaceholder: "Engineering schools in Casablanca",
+        items: ["Choice 1", "Choice 2"]
       }
     },
     pricing: {

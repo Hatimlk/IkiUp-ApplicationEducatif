@@ -1,20 +1,14 @@
 import React from 'react';
 import { Reveal } from '../ui/Reveal';
-import {
-  Compass,
-  Calendar,
-  Newspaper,
-  Search,
-  Sparkles,
-  GraduationCap,
-  Users,
-  CheckCircle2,
-  BookOpen,
-  MapPin,
-  Clock,
-  ArrowRight
-} from 'lucide-react';
+import { Sparkles, Search, Lightbulb, Trophy } from 'lucide-react';
+import { FcNews, FcConferenceCall, FcAdvertising, FcShare } from 'react-icons/fc';
 import { translations, Language } from '../../lib/translations';
+
+// Images
+import feature01 from '../../assets/images/features/01.png';
+import feature02 from '../../assets/images/features/02.png';
+import feature03 from '../../assets/images/features/03.png';
+import feature04 from '../../assets/images/features/04.png';
 
 interface FeaturesProps {
   lang?: Language;
@@ -22,21 +16,6 @@ interface FeaturesProps {
 
 export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
   const t = translations[lang].features;
-
-  const agendaIcons = [
-    <Clock size={16} />,
-    <GraduationCap size={16} />,
-    <CheckCircle2 size={16} />,
-    <BookOpen size={16} />,
-    <Users size={16} />
-  ];
-
-  const feedIcons = [
-    <Search size={14} />,
-    <GraduationCap size={14} />,
-    <BookOpen size={14} />,
-    <Search size={14} />
-  ];
 
   return (
     <section id="features" className="py-24 md:py-32 relative overflow-hidden bg-surface dark:bg-background">
@@ -48,7 +27,7 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
-        <div className="text-center mb-24 max-w-3xl mx-auto">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-blue-100 dark:border-blue-800">
               <Sparkles size={14} />
@@ -64,155 +43,325 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
           </Reveal>
         </div>
 
-        {/* Connector Lines Layer (Visible on Desktop) */}
-        <div className="hidden md:block absolute top-[300px] left-0 right-0 h-[800px] pointer-events-none z-0">
-          <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
-            {/* Path connecting 1 -> 2 */}
-            <path d="M 300 200 Q 450 150 700 250" fill="none" stroke="#CBD5E1" strokeWidth="2" strokeDasharray="8 8" className="dark:stroke-slate-700" />
-            {/* Path connecting 2 -> 3 */}
-            <path d="M 850 400 Q 750 600 400 650" fill="none" stroke="#CBD5E1" strokeWidth="2" strokeDasharray="8 8" className="dark:stroke-slate-700" />
-            {/* Path connecting 3 -> 4 */}
-            <path d="M 450 750 Q 600 850 850 750" fill="none" stroke="#CBD5E1" strokeWidth="2" strokeDasharray="8 8" className="dark:stroke-slate-700" />
-          </svg>
-        </div>
+        {/* Features Stack */}
+        <div className="flex flex-col gap-12 md:gap-20">
 
-        {/* Cards Grid - Compact Gap */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20 md:gap-y-28 max-w-5xl mx-auto">
-
-          {/* 1. ORIENTATION CARD (Rotated Left) */}
+          {/* Feature 01 */}
           <Reveal delay={0} direction="up">
-            <div className="group md:-rotate-2 hover:rotate-0 transition-transform duration-500 relative">
-              <PinnedCard
-                number="01"
-                title={t.orientation.title}
-                description={t.orientation.text}
-                icon={<Compass size={28} />}
-              >
-                {/* Decor inside card */}
-                <div className="absolute -right-4 top-10 text-white/10 rotate-12">
-                  <ArrowRight size={56} strokeWidth={1} />
-                </div>
-              </PinnedCard>
-            </div>
-          </Reveal>
+            <div className="max-w-4xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[300px] md:h-[400px]">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img src={feature01} alt={t.orientation.title} className="w-full h-full object-cover" />
+                {/* Overlay for text readability */}
+                <div className="absolute inset-0 bg-white/40 dark:bg-black/20" />
+              </div>
 
-          {/* 2. AGENDA CARD (Rotated Right, Offset specific content) */}
-          <Reveal delay={200} direction="up">
-            <div className="group md:mt-12 md:rotate-3 hover:rotate-0 transition-transform duration-500 relative">
-              <PinnedCard
-                number="02"
-                title={t.tracking.title}
-                description={null} // Custom content below
-                icon={<Calendar size={28} />}
-              >
-                <div className="space-y-3 mt-2 relative z-10">
-                  <p className="text-base text-blue-50 font-medium leading-relaxed mb-6">
-                    Un agenda intelligent pour tout organiser.
-                  </p>
-                  {t.tracking.items.map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 p-2.5 rounded-xl bg-white/10 border border-white/20 group-hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
-                      <div className="text-white">{agendaIcons[i]}</div>
-                      <span className="text-sm font-bold text-white">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </PinnedCard>
-            </div>
-          </Reveal>
+              {/* Content Overlay */}
+              <div className="absolute inset-0 p-6 md:p-10 flex flex-col items-center justify-between text-center">
 
-          {/* 3. NEWS FEED CARD (Rotated Right) */}
-          <Reveal delay={400} direction="up">
-            <div className="group md:-mt-8 md:rotate-1 hover:rotate-0 transition-transform duration-500 relative">
-              <PinnedCard
-                number="03"
-                title={t.feed.title}
-                description={t.feed.intro}
-                icon={<Newspaper size={28} />}
-              >
-                <div className="grid grid-cols-2 gap-3 mt-6">
-                  {t.feed.items.map((item, i) => (
-                    <div key={i} className="p-3 rounded-xl bg-white/10 border border-white/20 flex flex-col gap-2 backdrop-blur-sm">
-                      <div className="text-white/90">{feedIcons[i]}</div>
-                      <div className="space-y-1.5 opacity-60">
-                        <div className="h-1 lg:h-1.5 w-full bg-white/30 rounded-full"></div>
-                        <div className="h-1 lg:h-1.5 w-2/3 bg-white/30 rounded-full"></div>
-                      </div>
-                      <span className="text-[9px] font-bold uppercase tracking-wider text-blue-100 mt-1">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </PinnedCard>
-            </div>
-          </Reveal>
-
-          {/* 4. SCHOOL SEARCH CARD (Rotated Left) */}
-          <Reveal delay={600} direction="up">
-            <div className="group md:mt-8 md:-rotate-2 hover:rotate-0 transition-transform duration-500 relative">
-              <PinnedCard
-                number="04"
-                title={t.schools.title}
-                description={t.schools.text}
-                icon={<Search size={28} />}
-              >
-                <div className="mt-8 p-1.5 rounded-full bg-white/10 border border-white/20 flex items-center gap-2 shadow-sm backdrop-blur-sm group-hover:bg-white/20 transition-colors">
-                  <div className="w-9 h-9 rounded-full bg-white text-primary flex items-center justify-center shadow-lg transform -rotate-12 group-hover:rotate-0 transition-transform">
-                    <Search size={16} />
+                {/* Top Section */}
+                <div className="w-full flex justify-between items-start">
+                  <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">01</div>
+                  <div className="flex-1 mt-2">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-2 max-w-2xl mx-auto leading-tight">
+                      {t.orientation.title}
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium">
+                      {t.orientation.subtitle}
+                    </p>
                   </div>
-                  <div className="px-2 text-xs font-bold text-blue-50 truncate">{t.schools.searchPlaceholder}</div>
+                  {/* Spacer to balance the 01 */}
+                  <div className="w-16 md:w-20"></div>
                 </div>
-              </PinnedCard>
+
+                {/* Bottom Steps Section */}
+                <div className="mt-auto w-full max-w-3xl glass-panel rounded-2xl p-4 md:p-6 backdrop-blur-md bg-blue-50/40 dark:bg-blue-900/20 border border-blue-100/50 dark:border-blue-700/30 shadow-lg">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative">
+
+                    {/* Connecting Line (Desktop) */}
+                    <div className="hidden md:block absolute top-1/2 left-10 right-10 h-0.5 bg-gradient-to-r from-blue-400/50 via-purple-400/50 to-blue-400/50 -z-10 transform -translate-y-1/2"></div>
+
+
+                    {/* Step 1 */}
+                    <div className="flex flex-col items-center gap-2 relative z-10 group">
+                      <div className="text-sm md:text-base font-black text-blue-900 dark:text-blue-100 uppercase tracking-wider">{t.orientation.steps[0].title}</div>
+                      <div className="h-1 w-12 bg-blue-500 rounded-full mb-1"></div>
+                      <div className="text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-tight bg-white dark:bg-blue-950 px-3 py-1 rounded-full shadow-sm border border-blue-100 dark:border-blue-800">
+                        {t.orientation.steps[0].description}
+                      </div>
+                    </div>
+
+                    {/* Icon 1 */}
+                    <div className="p-2 rounded-full bg-yellow-100/80 text-yellow-600 shadow-lg glow-yellow animate-pulse-slow">
+                      <Lightbulb size={20} className="fill-current" />
+                    </div>
+
+                    {/* Step 2 */}
+                    <div className="flex flex-col items-center gap-2 relative z-10 group">
+                      <div className="text-sm md:text-base font-black text-blue-900 dark:text-blue-100 uppercase tracking-wider">{t.orientation.steps[1].title}</div>
+                      <div className="h-1 w-12 bg-purple-500 rounded-full mb-1"></div>
+                      <div className="text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-tight bg-white dark:bg-blue-950 px-3 py-1 rounded-full shadow-sm border border-blue-100 dark:border-blue-800">
+                        {t.orientation.steps[1].description}
+                      </div>
+                    </div>
+
+                    {/* Icon 2 */}
+                    <div className="p-2 rounded-full bg-orange-100/80 text-orange-600 shadow-lg glow-orange">
+                      <Trophy size={20} />
+                    </div>
+
+                    {/* Step 3 */}
+                    <div className="flex flex-col items-center gap-2 relative z-10 group">
+                      <div className="text-sm md:text-base font-black text-blue-900 dark:text-blue-100 uppercase tracking-wider">{t.orientation.steps[2].title}</div>
+                      <div className="h-1 w-12 bg-emerald-500 rounded-full mb-1"></div>
+                      <div className="text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-tight bg-white dark:bg-blue-950 px-3 py-1 rounded-full shadow-sm border border-blue-100 dark:border-blue-800">
+                        {t.orientation.steps[2].description}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
             </div>
           </Reveal>
+
+          {/* Feature 02 */}
+          <Reveal delay={200} direction="up">
+            <div className="max-w-4xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[300px] md:h-[400px]">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img src={feature02} alt={t.tracking.title} className="w-full h-full object-cover" />
+                {/* Overlay - adjusting opacity for readability while keeping image visible */}
+                <div className="absolute inset-0 bg-blue-100/30 dark:bg-blue-900/20 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-white/40 dark:bg-black/10" />
+              </div>
+
+              {/* Content Overlay */}
+              <div className="absolute inset-0 p-6 md:p-8 flex flex-col">
+
+                {/* Header Section */}
+                <div className="flex items-start justify-between w-full mb-4">
+                  <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">02</div>
+                  <div className="flex-1 text-center mt-2 px-4">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-1 leading-tight">
+                      {t.tracking.title}
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium">
+                      {t.tracking.subtitle}
+                    </p>
+                  </div>
+                  {/* Spacer to balance the 02 */}
+                  <div className="w-16 md:w-20"></div>
+                </div>
+
+                {/* Badges Container - Using absolute positioning for 'scattered' look relative to container */}
+                <div className="relative flex-1 w-full">
+
+                  {/* Badge 1: Emplois du temps - Top Leftish */}
+                  <div className="absolute top-[10%] left-[5%] md:left-[10%] transform -rotate-2 hover:scale-105 transition-transform duration-300">
+                    <span className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-blue-500 text-white font-black text-[10px] md:text-sm shadow-lg border-2 border-white/50 backdrop-blur-sm whitespace-nowrap">
+                      {t.tracking.items[0]}
+                    </span>
+                  </div>
+
+                  {/* Badge 2: Notes & évaluations - Middle Left */}
+                  <div className="absolute top-[40%] left-[-2%] md:left-[2%] transform rotate-1 hover:scale-105 transition-transform duration-300">
+                    <span className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-slate-900 text-white font-black text-[10px] md:text-sm shadow-lg border-2 border-white/50 backdrop-blur-sm whitespace-nowrap">
+                      {t.tracking.items[1]}
+                    </span>
+                  </div>
+
+                  {/* Badge 3: Accès enseignants... - Bottom Left */}
+                  <div className="absolute bottom-[10%] left-[0%] md:left-[5%] transform -rotate-1 hover:scale-105 transition-transform duration-300">
+                    <span className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-blue-500 text-white font-black text-[10px] md:text-sm shadow-lg border-2 border-white/50 backdrop-blur-sm whitespace-nowrap">
+                      {t.tracking.items[4]} {/* Using item 4 (Acces) here for layout balance */}
+                    </span>
+                  </div>
+
+
+                  {/* Badge 4: Absences & Présences - Top Right */}
+                  <div className="absolute top-[15%] right-[2%] md:right-[10%] transform rotate-2 hover:scale-105 transition-transform duration-300">
+                    <span className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-blue-500 text-white font-black text-[10px] md:text-sm shadow-lg border-2 border-white/50 backdrop-blur-sm whitespace-nowrap">
+                      {t.tracking.items[2]}
+                    </span>
+                  </div>
+
+                  {/* Badge 5: Remarques pédagogiques - Middle Right */}
+                  <div className="absolute top-[50%] right-[-2%] md:right-[5%] transform -rotate-2 hover:scale-105 transition-transform duration-300">
+                    <span className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-slate-900 text-white font-black text-[10px] md:text-sm shadow-lg border-2 border-white/50 backdrop-blur-sm whitespace-nowrap">
+                      {t.tracking.items[3]}
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Feature 03 */}
+          <Reveal delay={400} direction="up">
+            <div className="max-w-4xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[300px] md:h-[400px]">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img src={feature03} alt={t.feed.title} className="w-full h-full object-cover" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-blue-100/30 dark:bg-blue-900/20 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-white/40 dark:bg-black/10" />
+              </div>
+
+              {/* Content Overlay */}
+              <div className="absolute inset-0 p-6 md:p-8 flex flex-col">
+
+                {/* Header Section */}
+                <div className="flex items-start justify-between w-full mb-4">
+                  <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">03</div>
+                  <div className="flex-1 text-center mt-2 px-4">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-1 leading-tight">
+                      {t.feed.title}
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium">
+                      {t.feed.intro}
+                    </p>
+                  </div>
+                  {/* Spacer to balance the 03 */}
+                  <div className="w-16 md:w-20"></div>
+                </div>
+
+
+                {/* Cards Container */}
+                <div className="relative flex-1 w-full grid grid-cols-2 md:grid-cols-4 gap-4 items-center justify-items-center content-center px-4">
+
+                  {/* Card 1: Actualités */}
+                  <div className="flex flex-col items-center gap-3 group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] bg-white dark:bg-slate-900 shadow-xl border border-slate-100 dark:border-slate-800 flex items-center justify-center relative overflow-hidden group-hover:shadow-2xl transition-shadow">
+                      {/* Subtle highlight */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-slate-100/50 opacity-50"></div>
+
+                      <FcNews size={56} className="relative z-10 drop-shadow-sm" />
+
+                      {/* Notification Badge */}
+                      <div className="absolute top-4 right-4 w-3.5 h-3.5 bg-red-500 rounded-full border-[3px] border-white dark:border-slate-800 shadow-sm z-20"></div>
+                    </div>
+                    <span className="text-sm font-black text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-black/40 px-3 py-1 rounded-full backdrop-blur-md shadow-sm border border-white/20">
+                      {t.feed.items[0]}
+                    </span>
+                  </div>
+
+                  {/* Card 2: Communauté */}
+                  <div className="flex flex-col items-center gap-3 group cursor-pointer hover:-translate-y-2 transition-transform duration-300 mt-8 md:mt-16">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] bg-white dark:bg-slate-900 shadow-xl border border-slate-100 dark:border-slate-800 flex items-center justify-center relative overflow-hidden group-hover:shadow-2xl transition-shadow">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-slate-100/50 opacity-50"></div>
+                      <FcConferenceCall size={56} className="relative z-10 drop-shadow-sm" />
+                    </div>
+                    <span className="text-sm font-black text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-black/40 px-3 py-1 rounded-full backdrop-blur-md shadow-sm border border-white/20">
+                      {t.feed.items[1]}
+                    </span>
+                  </div>
+
+                  {/* Card 3: Publications */}
+                  <div className="flex flex-col items-center gap-3 group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] bg-white dark:bg-slate-900 shadow-xl border border-slate-100 dark:border-slate-800 flex items-center justify-center relative overflow-hidden group-hover:shadow-2xl transition-shadow">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-slate-100/50 opacity-50"></div>
+                      <FcAdvertising size={56} className="relative z-10 drop-shadow-sm" />
+                    </div>
+                    <span className="text-sm font-black text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-black/40 px-3 py-1 rounded-full backdrop-blur-md shadow-sm border border-white/20">
+                      {t.feed.items[2]}
+                    </span>
+                  </div>
+
+                  {/* Card 4: Partage */}
+                  <div className="flex flex-col items-center gap-3 group cursor-pointer hover:-translate-y-2 transition-transform duration-300 mt-8 md:mt-16">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] bg-white dark:bg-slate-900 shadow-xl border border-slate-100 dark:border-slate-800 flex items-center justify-center relative overflow-hidden group-hover:shadow-2xl transition-shadow">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-slate-100/50 opacity-50"></div>
+                      <FcShare size={56} className="relative z-10 drop-shadow-sm" />
+                      {/* Notification Badge */}
+                      <div className="absolute top-3 rignt-3 w-6 h-6 bg-orange-400 rounded-full border-[3px] border-white dark:border-slate-800 flex items-center justify-center text-[10px] font-black text-white shadow-sm z-20 absolute top-3 right-3">
+                        1
+                      </div>
+                    </div>
+                    <span className="text-sm font-black text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-black/40 px-3 py-1 rounded-full backdrop-blur-md shadow-sm border border-white/20">
+                      {t.feed.items[3]}
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="max-w-4xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[300px] md:h-[400px]">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img src={feature04} alt={t.schools.title} className="w-full h-full object-cover" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-blue-100/30 dark:bg-blue-900/20 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-white/40 dark:bg-black/10" />
+            </div>
+
+            {/* Content Overlay */}
+            <div className="absolute inset-0 p-6 md:p-8 flex flex-col">
+
+              {/* Header Section */}
+              <div className="flex items-start justify-between w-full mb-4">
+                <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">04</div>
+                {/* Top Right Checkmark */}
+                <div className="w-12 h-12 bg-lime-500 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Central Content */}
+              <div className="flex-1 flex flex-col items-center justify-center text-center -mt-8">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-2 leading-tight max-w-2xl">
+                  {t.schools.title}
+                </h3>
+                <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium mb-8">
+                  {t.schools.subtitle}
+                </p>
+
+                {/* Search Interface Simulation */}
+                <div className="w-full max-w-lg relative group">
+
+                  {/* Search Bar */}
+                  <div className="bg-blue-500 rounded-full py-3 px-6 md:py-4 md:px-8 shadow-xl flex items-center relative z-20 transform group-hover:scale-105 transition-transform duration-300">
+                    <span className="text-white font-medium text-sm md:text-lg flex-1 text-center">
+                      {t.schools.searchPlaceholder}
+                    </span>
+                    {/* Floating Search Icon */}
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 bg-purple-400 p-2 rounded-full shadow-lg border-2 border-white/30">
+                      <Search className="text-white w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
+                    </div>
+                  </div>
+
+                  {/* Dropdown / Choices Simulation */}
+                  <div className="w-[90%] mx-auto -mt-4 pt-8 pb-4 bg-white/40 dark:bg-black/40 backdrop-blur-md rounded-b-3xl border border-white/20 shadow-lg flex flex-col gap-2 px-4 relative z-10">
+                    {t.schools.items.map((item, i) => (
+                      <div key={i} className="bg-blue-100/80 dark:bg-blue-900/60 py-2 px-4 rounded-full text-blue-900 dark:text-blue-100 text-sm font-medium text-left opacity-90">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Hand/Phone Decorative Element (Optional - simulated with icon if needed, but keeping generally clean) */}
+                  <div className="absolute -left-12 -bottom-10 rotate-12 bg-blue-600 w-24 h-40 rounded-3xl border-4 border-slate-800 shadow-2xl z-30 hidden md:flex items-center justify-center overflow-hidden">
+                    <div className="bg-slate-900 w-full h-full opacity-50"></div>
+                    <div className="absolute bg-orange-400 w-8 h-8 rounded-full -left-4 top-10 border-2 border-white"></div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
 
         </div>
+
       </div>
     </section>
-  );
-};
-
-// Reusable Pinned Card Component (Solid Blue Version + Fixed Pin)
-const PinnedCard = ({ number, title, description, icon, children }: any) => {
-  return (
-    <div className="h-full relative transition-all duration-500 hover:-translate-y-2">
-
-      {/* The Pin - Explicitly outside/top z-index to avoid clipping */}
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center">
-        {/* Pin Head */}
-        <div className="w-4 h-4 rounded-full bg-slate-200 shadow-[0_2px_4px_rgba(0,0,0,0.3)] border-2 border-slate-300"></div>
-        {/* Pin Shaft effect handled by shadow below */}
-      </div>
-
-      {/* Main Card Content Container - Clips internal background effects */}
-      <div className="h-full bg-primary rounded-[2rem] p-8 md:p-10 shadow-xl hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden flex flex-col border border-white/10 group-hover:border-white/20 transition-all">
-
-        {/* Glow Effect (Internal) */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none mix-blend-overlay"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/10 rounded-full blur-2xl -ml-10 -mb-10 pointer-events-none"></div>
-
-        {/* Number Watermark */}
-        <div className="absolute top-6 right-6 text-5xl font-black text-black/10 select-none font-serif z-0">
-          {number}
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 w-14 h-14 rounded-2xl bg-white/10 border border-white/20 text-white flex items-center justify-center mb-6 shadow-sm backdrop-blur-sm">
-          {React.cloneElement(icon, { size: 28 })}
-        </div>
-
-        <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-3 relative z-10">
-          {title}
-        </h3>
-
-        {description && (
-          <p className="text-sm md:text-base text-blue-50 font-medium leading-relaxed mb-6 relative z-10">
-            {description}
-          </p>
-        )}
-
-        <div className="relative z-10 mt-auto">
-          {children}
-        </div>
-      </div>
-    </div>
   );
 };
