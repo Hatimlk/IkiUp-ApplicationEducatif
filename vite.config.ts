@@ -8,5 +8,13 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-  }
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-helmet-async'],
+          ui: ['lucide-react', 'react-icons'],
+        },
+      },
+    },
+  },
 });

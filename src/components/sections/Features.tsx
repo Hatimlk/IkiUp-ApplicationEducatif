@@ -47,25 +47,25 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
 
           {/* Feature 01 */}
           <Reveal delay={0} direction="up">
-            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[280px] md:h-[350px]">
+            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative min-h-[400px] md:min-h-[450px] h-auto">
               {/* Background Image */}
               <div className="absolute inset-0">
-                <img src={feature01} alt={t.orientation.title} className="w-full h-full object-cover" />
+                <img src={feature01} alt={t.orientation.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 {/* Overlay for text readability */}
                 <div className="absolute inset-0 bg-white/40 dark:bg-black/20" />
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 p-6 md:p-10 flex flex-col items-center justify-between text-center">
+              <div className="relative z-10 p-6 md:p-10 flex flex-col items-center justify-between text-center h-full">
 
                 {/* Top Section */}
                 <div className="w-full flex justify-between items-start">
                   <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">01</div>
                   <div className="flex-1 mt-2">
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white mb-2 max-w-2xl mx-auto leading-tight">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 mb-2 max-w-2xl mx-auto leading-tight">
                       {t.orientation.title}
                     </h3>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium">
+                    <p className="text-slate-700 text-sm md:text-base font-medium">
                       {t.orientation.subtitle}
                     </p>
                   </div>
@@ -136,26 +136,26 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
 
           {/* Feature 02 */}
           <Reveal delay={200} direction="up">
-            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[280px] md:h-[350px]">
+            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative min-h-[400px] md:min-h-[450px] h-auto">
               {/* Background Image */}
               <div className="absolute inset-0">
-                <img src={feature02} alt={t.tracking.title} className="w-full h-full object-cover" />
+                <img src={feature02} alt={t.tracking.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 {/* Overlay - adjusting opacity for readability while keeping image visible */}
                 <div className="absolute inset-0 bg-blue-100/30 dark:bg-blue-900/20 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-white/40 dark:bg-black/10" />
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col">
+              <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
 
                 {/* Header Section */}
                 <div className="flex items-start justify-between w-full mb-4">
                   <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">02</div>
                   <div className="flex-1 text-center mt-2 px-4">
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white mb-1 leading-tight">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 mb-1 leading-tight">
                       {t.tracking.title}
                     </h3>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium">
+                    <p className="text-slate-700 text-sm md:text-base font-medium">
                       {t.tracking.subtitle}
                     </p>
                   </div>
@@ -210,26 +210,26 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
 
           {/* Feature 03 */}
           <Reveal delay={400} direction="up">
-            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[280px] md:h-[350px]">
+            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative min-h-[400px] md:min-h-[450px] h-auto">
               {/* Background Image */}
               <div className="absolute inset-0">
-                <img src={feature03} alt={t.feed.title} className="w-full h-full object-cover" />
+                <img src={feature03} alt={t.feed.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-blue-100/30 dark:bg-blue-900/20 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-white/40 dark:bg-black/10" />
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col">
+              <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
 
                 {/* Header Section */}
                 <div className="flex items-start justify-between w-full mb-4">
                   <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">03</div>
                   <div className="flex-1 text-center mt-2 px-4">
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white mb-1 leading-tight">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 mb-1 leading-tight">
                       {t.feed.title}
                     </h3>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium">
+                    <p className="text-slate-700 text-sm md:text-base font-medium">
                       {t.feed.intro}
                     </p>
                   </div>
@@ -302,27 +302,27 @@ export const Features: React.FC<FeaturesProps> = ({ lang = 'fr' }) => {
 
           {/* Feature 04 */}
           <Reveal delay={600} direction="up">
-            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative h-[280px] md:h-[350px]">
+            <div className="max-w-6xl mx-auto w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/10 hover:scale-[1.01] transition-transform duration-500 relative min-h-[400px] md:min-h-[450px] h-auto">
               {/* Background Image */}
               <div className="absolute inset-0">
-                <img src={feature04} alt={t.schools.title} className="w-full h-full object-cover" />
+                <img src={feature04} alt={t.schools.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-blue-100/30 dark:bg-blue-900/20 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-white/40 dark:bg-black/10" />
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col">
+              <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
 
                 {/* Header Section */}
                 <div className="flex items-start justify-between w-full mb-4">
                   <div className="text-5xl md:text-7xl font-black text-blue-600/80 font-serif">04</div>
 
                   <div className="flex-1 text-center mt-2 px-4">
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white mb-1 leading-tight max-w-full mx-auto whitespace-nowrap overflow-hidden text-ellipsis">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 mb-1 leading-tight max-w-full mx-auto">
                       {t.schools.title}
                     </h3>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base font-medium">
+                    <p className="text-slate-700 text-sm md:text-base font-medium">
                       {t.schools.subtitle}
                     </p>
                   </div>

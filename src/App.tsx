@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Home } from './Home';
-import { About } from './components/sections/About';
+// Lazy load the About page
+const About = lazy(() => import('./components/sections/About').then(module => ({ default: module.About })));
 
 import { Footer } from './components/layout/Footer';
 import { Language } from './lib/translations';
@@ -66,7 +67,9 @@ function App() {
         onLangChange={toggleLanguage}
       />
       <main>
-        {renderPage()}
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+          {renderPage()}
+        </Suspense>
       </main>
       <Footer onNavigate={navigateTo} lang={language} />
     </div>
