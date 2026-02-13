@@ -35,7 +35,7 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
   ];
 
   return (
-    <section id="audience" className="py-24 bg-surface dark:bg-background">
+    <section id="audience" className="py-16 bg-surface dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal>

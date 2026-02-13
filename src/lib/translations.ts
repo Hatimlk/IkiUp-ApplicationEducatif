@@ -274,6 +274,7 @@ export const translations = {
         subtitle: "Smart guidance, Build your path",
         searchPlaceholder: "Engineering schools in Casablanca",
         items: ["Choice 1", "Choice 2"]
+
       }
     },
     pricing: {

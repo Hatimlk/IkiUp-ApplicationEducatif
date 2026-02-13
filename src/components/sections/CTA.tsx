@@ -12,7 +12,7 @@ export const CTA: React.FC<CTAProps> = ({ lang = 'fr' }) => {
   const t = translations[lang].cta;
 
   return (
-    <section id="download" className="py-20 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+    <section className="py-16 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-blue-600 to-blue-900 text-slate-100 border border-white/10 shadow-2xl">

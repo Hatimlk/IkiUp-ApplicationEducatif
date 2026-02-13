@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
   const t = translations[lang].hero;
 
   return (
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-background">
+    <section className="relative pt-24 pb-24 lg:pt-36 lg:pb-36 overflow-hidden bg-background">
       {/* Educational Grid Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]"
         style={{ backgroundImage: 'linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)', backgroundSize: '40px 40px' }}>

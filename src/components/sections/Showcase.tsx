@@ -98,7 +98,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
   };
 
   return (
-    <section id="showcase" className="relative py-24 overflow-hidden bg-background">
+    <section id="showcase" className="relative py-16 overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <Reveal>
