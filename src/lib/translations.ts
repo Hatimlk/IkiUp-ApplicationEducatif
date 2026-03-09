@@ -6,9 +6,7 @@ export const translations = {
       about: "À propos",
       howitworks: "Concept",
       features: "Solution",
-      showcase: "Aperçu",
       audience: "Audience",
-      faq: "FAQ",
       download: "Télécharger"
     },
     hero: {
@@ -26,18 +24,9 @@ export const translations = {
         title: "Orientez parfaitement vos enfants",
         subtitle: "IKIUP est le meilleur choix pour leur avenir scolaire",
         steps: [
-          {
-            title: "DÉCOUVRIR",
-            description: "TESTS : INTÉRETS & FORCES"
-          },
-          {
-            title: "ORIENTER",
-            description: "GUIDANCE PERSONNALISÉE"
-          },
-          {
-            title: "AVANCER",
-            description: "OBJECTIFS CLAIRS"
-          }
+          { title: "DÉCOUVRIR", description: "TESTS : INTÉRETS & FORCES" },
+          { title: "ORIENTER", description: "GUIDANCE PERSONNALISÉE" },
+          { title: "AVANCER", description: "OBJECTIFS CLAIRS" }
         ]
       },
       tracking: {
@@ -67,44 +56,6 @@ export const translations = {
         searchPlaceholder: "Écoles d'ingénieur à Casablanca",
         items: ["Choix 1", "Choix 2"]
       }
-    },
-    pricing: {
-      intro: "IkiUp propose différentes formules pour les familles et les établissements, afin de rendre l'accompagnement éducatif accessible et évolutif. Les détails des offres sont disponibles directement dans l'application.",
-      contactTitle: "Envie d'en savoir plus ?",
-      contactText: "Vous êtes parent, élève ou établissement et souhaitez découvrir IkiUp ? Contactez-nous pour échanger.",
-      monthly: "Mensuel",
-      yearly: "Annuel",
-      perMonth: "mois",
-      perYear: "an",
-      choosePlan: "Choisir ce plan",
-      mostPopular: "Le plus populaire",
-      plans: [
-        {
-          name: "IkiUp Famille",
-          description: "L'essentiel pour un foyer serein.",
-          accounts: "1 Parent + 2 Enfants",
-          features: [
-            "Tests de personnalité illimités",
-            "Tableau de bord partagé",
-            "Suivi des notes & devoirs",
-            "Orientation assistée par IA",
-            "Support standard"
-          ]
-        },
-        {
-          name: "IkiUp Famille XL",
-          description: "Le pack complet pour toute la tribu.",
-          accounts: "2 Parents + 4 Enfants",
-          features: [
-            "Toutes les fonctions Famille",
-            "Profils IA personnalisés",
-            "Analytics avancés par élève",
-            "Agenda de liaison prioritaire",
-            "Conseils d'experts mensuels",
-            "Support VIP 24/7"
-          ]
-        }
-      ]
     },
     about: {
       tag: "Notre ADN",
@@ -207,6 +158,48 @@ export const translations = {
       questionText: "Parent, élève ou établissement scolaire : contactez-nous pour découvrir comment IkiUp peut vous accompagner.",
       contactBtn: "Nous écrire",
       email: "contact@ikiup.com"
+    },
+    privacy: {
+      title: "Politique de Confidentialité",
+      subtitle: "Mentions Légales & Protection des Données",
+      lastUpdated: "Dernière mise à jour :",
+      sections: [
+        {
+          title: "Données Collectées",
+          content: "IkiUp collecte uniquement les données nécessaires au bon fonctionnement du service : nom, prénom, adresse e-mail, données scolaires (notes, emploi du temps), et données d'utilisation anonymisées via Google Analytics."
+        },
+        {
+          title: "Utilisation des Données",
+          content: "Vos données sont utilisées exclusivement pour : fournir les services de la plateforme, personnaliser votre expérience, améliorer nos fonctionnalités, et communiquer avec vous concernant votre compte."
+        },
+        {
+          title: "Cookies",
+          content: "Nous utilisons des cookies essentiels pour le fonctionnement du site et des cookies analytiques (Google Analytics) pour comprendre comment vous utilisez notre plateforme. Vous pouvez gérer vos préférences via la bannière de consentement."
+        },
+        {
+          title: "Services Tiers",
+          content: "Nous utilisons Google Analytics pour analyser le trafic. Ces données sont anonymisées et ne permettent pas de vous identifier personnellement. Aucune donnée n'est vendue à des tiers."
+        },
+        {
+          title: "Vos Droits (RGPD)",
+          content: "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression, de portabilité et d'opposition concernant vos données personnelles. Vous pouvez exercer ces droits en nous contactant."
+        },
+        {
+          title: "Contact",
+          content: "Pour toute question relative à vos données personnelles, contactez-nous à : contact@ikiup.com"
+        }
+      ]
+    },
+    notFound: {
+      title: "Page introuvable",
+      description: "La page que vous cherchez n'existe pas ou a été déplacée.",
+      backHome: "Retour à l'accueil"
+    },
+    cookie: {
+      message: "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site.",
+      accept: "Accepter",
+      decline: "Refuser",
+      learnMore: "En savoir plus"
     }
   },
   en: {
@@ -214,9 +207,7 @@ export const translations = {
       about: "About",
       howitworks: "Concept",
       features: "Solution",
-      showcase: "Showcase",
       audience: "Audience",
-      faq: "FAQ",
       download: "Download"
     },
     hero: {
@@ -231,21 +222,12 @@ export const translations = {
       title: "THE IKIUP SOLUTION",
       intro: "IkiUp brings together the essential tools for supporting academic journeys on a single platform.",
       orientation: {
-        title: "Guide your children perfectly",
+        title: "Perfectly guide your children",
         subtitle: "IKIUP is the best choice for their academic future",
         steps: [
-          {
-            title: "DISCOVER",
-            description: "TESTS: INTERESTS & STRENGTHS"
-          },
-          {
-            title: "GUIDE",
-            description: "PERSONALIZED GUIDANCE"
-          },
-          {
-            title: "ADVANCE",
-            description: "CLEAR OBJECTIVES"
-          }
+          { title: "DISCOVER", description: "TESTS: INTERESTS & STRENGTHS" },
+          { title: "GUIDE", description: "PERSONALIZED GUIDANCE" },
+          { title: "ADVANCE", description: "CLEAR OBJECTIVES" }
         ]
       },
       tracking: {
@@ -276,44 +258,6 @@ export const translations = {
         items: ["Choice 1", "Choice 2"]
 
       }
-    },
-    pricing: {
-      intro: "IkiUp offers different packages for families and schools to make educational support accessible and scalable. Plan details are available directly in the app.",
-      contactTitle: "Want to know more?",
-      contactText: "Are you a parent, student, or school wanting to discover IkiUp? Contact us to chat.",
-      monthly: "Monthly",
-      yearly: "Yearly",
-      perMonth: "month",
-      perYear: "year",
-      choosePlan: "Choose plan",
-      mostPopular: "Most Popular",
-      plans: [
-        {
-          name: "IkiUp Family",
-          description: "Essentials for a peaceful home.",
-          accounts: "1 Parent + 2 Children",
-          features: [
-            "Unlimited personality tests",
-            "Shared dashboard",
-            "Grades & homework tracking",
-            "AI-assisted orientation",
-            "Standard support"
-          ]
-        },
-        {
-          name: "IkiUp Family XL",
-          description: "The complete pack for the whole tribe.",
-          accounts: "2 Parents + 4 Children",
-          features: [
-            "All Family features",
-            "Personalized AI profiles",
-            "Advanced student analytics",
-            "Priority liaison agenda",
-            "Monthly expert advice",
-            "24/7 VIP Support"
-          ]
-        }
-      ]
     },
     about: {
       tag: "Our DNA",
@@ -416,6 +360,48 @@ export const translations = {
       questionText: "Parent, student, or school: contact us to discover how IkiUp can support you.",
       contactBtn: "Write to us",
       email: "contact@ikiup.com"
+    },
+    privacy: {
+      title: "Privacy Policy",
+      subtitle: "Legal Notices & Data Protection",
+      lastUpdated: "Last updated:",
+      sections: [
+        {
+          title: "Data Collected",
+          content: "IkiUp only collects data necessary for the proper functioning of the service: name, email address, academic data (grades, schedules), and anonymized usage data via Google Analytics."
+        },
+        {
+          title: "Use of Data",
+          content: "Your data is used exclusively to: provide platform services, personalize your experience, improve our features, and communicate with you about your account."
+        },
+        {
+          title: "Cookies",
+          content: "We use essential cookies for website functionality and analytical cookies (Google Analytics) to understand how you use our platform. You can manage your preferences via the consent banner."
+        },
+        {
+          title: "Third-Party Services",
+          content: "We use Google Analytics for traffic analysis. This data is anonymized and cannot personally identify you. No data is sold to third parties."
+        },
+        {
+          title: "Your Rights (GDPR)",
+          content: "Under GDPR, you have the right to access, rectify, delete, port, and object to the processing of your personal data. You can exercise these rights by contacting us."
+        },
+        {
+          title: "Contact",
+          content: "For any questions about your personal data, contact us at: contact@ikiup.com"
+        }
+      ]
+    },
+    notFound: {
+      title: "Page Not Found",
+      description: "The page you're looking for doesn't exist or has been moved.",
+      backHome: "Back to Home"
+    },
+    cookie: {
+      message: "We use cookies to improve your experience and analyze site traffic.",
+      accept: "Accept",
+      decline: "Decline",
+      learnMore: "Learn more"
     }
   }
 };

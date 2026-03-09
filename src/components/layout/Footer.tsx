@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page } from '../../App';
 import { Language } from '../../lib/translations';
-import { Github, Twitter, Linkedin, Mail, Instagram, Facebook } from 'lucide-react';
+import { Linkedin, Mail, Instagram, Facebook } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: Page, targetId?: string) => void;
@@ -52,7 +52,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
             <ul className="space-y-4">
               <li><a href="#features" onClick={(e) => handleLinkClick(e as any, 'home', '#features')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Solution" : "Solution"}</a></li>
               <li><a href="#howitworks" onClick={(e) => handleLinkClick(e as any, 'home', '#howitworks')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Concept" : "Concept"}</a></li>
-              <li><a href="#pricing" onClick={(e) => handleLinkClick(e as any, 'home', '#pricing')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Tarifs" : "Pricing"}</a></li>
             </ul>
           </div>
 
@@ -61,6 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
             <h4 className="font-serif font-bold text-slate-900 dark:text-white mb-8 text-lg tracking-tight">{isFr ? "Entreprise" : "Company"}</h4>
             <ul className="space-y-4">
               <li><a href="/about" onClick={(e) => handleLinkClick(e as any, 'about')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "À Propos" : "About Us"}</a></li>
+              <li><a href="/privacy" onClick={(e) => { e.preventDefault(); onNavigate('privacy' as any); }} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Politique de confidentialité" : "Privacy Policy"}</a></li>
               <li><a href="mailto:contact@ikiup.com" className="text-sm font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-300">
                 {isFr ? "Contactez-nous" : "Contact Us"}
               </a></li>

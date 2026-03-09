@@ -19,41 +19,41 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
   const pillarsConfig = [
     {
       icon: <Shield size={24} />,
-      color: "teal",
+      color: "emerald",
       classes: {
-        bg: "bg-gradient-to-br from-teal-500 to-teal-600",
-        shadow: "shadow-teal-500/30",
-        overlay: "from-teal-500/5",
-        blur: "bg-teal-500/10",
-        iconBg: "bg-teal-50 dark:bg-teal-900/20",
-        iconText: "text-teal-600 dark:text-teal-400",
-        border: "border-teal-100 dark:border-teal-900/50"
+        bg: "bg-gradient-to-br from-emerald to-emerald/80",
+        shadow: "shadow-emerald/30",
+        overlay: "from-emerald/5",
+        blur: "bg-emerald/10",
+        iconBg: "bg-emerald/5 dark:bg-emerald/20",
+        iconText: "text-emerald",
+        border: "border-emerald/20 dark:border-emerald/50"
       }
     },
     {
       icon: <Target size={24} />,
       color: "primary",
       classes: {
-        bg: "bg-gradient-to-br from-violet-500 to-violet-600",
-        shadow: "shadow-violet-500/30",
-        overlay: "from-violet-500/5",
-        blur: "bg-violet-500/10",
-        iconBg: "bg-violet-50 dark:bg-violet-900/20",
-        iconText: "text-violet-600 dark:text-violet-400",
-        border: "border-violet-100 dark:border-violet-900/50"
+        bg: "bg-gradient-to-br from-indigo to-indigo/80",
+        shadow: "shadow-indigo/30",
+        overlay: "from-indigo/5",
+        blur: "bg-indigo/10",
+        iconBg: "bg-indigo/5 dark:bg-indigo/20",
+        iconText: "text-indigo",
+        border: "border-indigo/20 dark:border-indigo/50"
       }
     },
     {
       icon: <Heart size={24} />,
       color: "rose",
       classes: {
-        bg: "bg-gradient-to-br from-pink-500 to-pink-600",
-        shadow: "shadow-pink-500/30",
-        overlay: "from-pink-500/5",
-        blur: "bg-pink-500/10",
-        iconBg: "bg-pink-50 dark:bg-pink-900/20",
-        iconText: "text-pink-600 dark:text-pink-400",
-        border: "border-pink-100 dark:border-pink-900/50"
+        bg: "bg-gradient-to-br from-rose to-rose/80",
+        shadow: "shadow-rose/30",
+        overlay: "from-rose/5",
+        blur: "bg-rose/10",
+        iconBg: "bg-rose/5 dark:bg-rose/20",
+        iconText: "text-rose",
+        border: "border-rose/20 dark:border-rose/50"
       }
     }
   ];
@@ -105,11 +105,11 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       {/* Philosophy & Vision - Centered Compact Card */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-40">
         <Reveal>
-          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white p-6 sm:p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500">
+          <div className="bg-gradient-to-br from-primary via-primary/90 to-dark-blue text-white p-6 sm:p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
 
             {/* Dynamic Backgrounds */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors duration-700"></div>
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 group-hover:bg-blue-500/30 transition-colors duration-700"></div>
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-sec/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 group-hover:bg-blue-sec/30 transition-colors duration-700"></div>
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 grayscale mix-blend-overlay"></div>
 
             {/* Large Decorative Watermark */}
@@ -129,10 +129,9 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                   {t.philosophyTitle}
                 </h2>
 
-                {/* Description with improved readability and flow */}
                 <div className="flex gap-6 items-start">
-                  <div className="w-1 h-20 bg-gradient-to-b from-white/40 to-transparent rounded-full shrink-0 mt-2"></div>
-                  <p className="text-blue-50 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl text-shadow-sm opacity-90">
+                  <div className="w-1 h-20 bg-gradient-to-b from-white/40 to-transparent rounded-full shrink-0 mt-2 hidden sm:block"></div>
+                  <p className="text-white/90 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl text-shadow-sm opacity-90">
                     {t.philosophyDesc}
                   </p>
                 </div>

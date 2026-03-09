@@ -15,7 +15,7 @@ export const CTA: React.FC<CTAProps> = ({ lang = 'fr' }) => {
     <section className="py-16 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <Reveal>
-          <div className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-blue-600 to-blue-900 text-slate-100 border border-white/10 shadow-2xl">
+          <div className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-dark-blue text-slate-100 border border-white/10 shadow-2xl">
             {/* Background Accents Refined */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
               <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary rounded-full blur-[150px] opacity-20"></div>

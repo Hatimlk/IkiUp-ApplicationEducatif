@@ -16,21 +16,21 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
       title: t.students.title,
       description: t.students.desc,
       icon: <GraduationCap size={32} />,
-      theme: { bg: 'bg-blue-600', text: 'text-blue-600', light: 'bg-blue-50', border: 'border-blue-100' }
+      theme: { bg: 'bg-primary', text: 'text-primary', light: 'bg-blue-sec/10', border: 'border-blue-sec/20' }
     },
     {
       key: 'parents',
       title: t.parents.title,
       description: t.parents.desc,
       icon: <Users size={32} />,
-      theme: { bg: 'bg-amber-400', text: 'text-amber-700', light: 'bg-amber-50', border: 'border-amber-100' }
+      theme: { bg: 'bg-secondary', text: 'text-dark-blue', light: 'bg-secondary/10', border: 'border-secondary/20' }
     },
     {
       key: 'schools',
       title: t.schools.title,
       description: t.schools.desc,
       icon: <School size={32} />,
-      theme: { bg: 'bg-slate-800', text: 'text-slate-800', light: 'bg-gray-ui', border: 'border-slate-200' }
+      theme: { bg: 'bg-dark-blue', text: 'text-dark-blue', light: 'bg-gray-ui/40', border: 'border-slate-200' }
     }
   ];
 
@@ -39,7 +39,7 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-blue-100 dark:border-blue-800">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-sec/10 dark:bg-primary/20 text-primary dark:text-blue-sec text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-blue-sec/20 dark:border-primary/30">
               <Users size={14} />
               {t.tag}
             </div>

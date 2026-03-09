@@ -1,15 +1,19 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Home } from './Home';
-// Lazy load the About page
+// Lazy load secondary pages
 const About = lazy(() => import('./components/sections/About').then(module => ({ default: module.About })));
+const PrivacyPolicy = lazy(() => import('./components/sections/PrivacyPolicy').then(module => ({ default: module.PrivacyPolicy })));
+const NotFound = lazy(() => import('./components/sections/NotFound').then(module => ({ default: module.NotFound })));
 
 import { Footer } from './components/layout/Footer';
 import { Language } from './lib/translations';
+import { LoadingSkeleton } from './components/ui/LoadingSkeleton';
+import { BackToTop } from './components/ui/BackToTop';
+import { CookieConsent } from './components/ui/CookieConsent';
 
 
-
-export type Page = 'home' | 'about';
+export type Page = 'home' | 'about' | 'privacy' | '404';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -53,7 +57,8 @@ function App() {
     switch (currentPage) {
       case 'home': return <Home lang={language} />;
       case 'about': return <About lang={language} />;
-
+      case 'privacy': return <PrivacyPolicy lang={language} />;
+      case '404': return <NotFound lang={language} onGoHome={() => navigateTo('home')} />;
       default: return <Home lang={language} />;
     }
   };
@@ -67,11 +72,13 @@ function App() {
         onLangChange={toggleLanguage}
       />
       <main>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+        <Suspense fallback={<LoadingSkeleton />}>
           {renderPage()}
         </Suspense>
       </main>
       <Footer onNavigate={navigateTo} lang={language} />
+      <BackToTop />
+      <CookieConsent lang={language} onNavigatePrivacy={() => navigateTo('privacy')} />
     </div>
   );
 }

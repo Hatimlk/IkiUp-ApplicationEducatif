@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apple, Play, Sparkles, Star, Zap, TrendingUp, CheckCircle2, BookOpen, Calendar, Bell, Users, Clock } from 'lucide-react';
+import { Apple, Play, Sparkles } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Reveal } from '../ui/Reveal';
 import { Language, translations } from '../../lib/translations';
@@ -19,8 +19,8 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
       </div>
 
       {/* Soft Ambient Blobs - Centered/Balanced */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-sec/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
           {/* Badge */}
           <Reveal delay={0} scale>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm mb-8 transition-transform hover:scale-105 cursor-default">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald animate-pulse"></div>
               <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
                 {lang === 'fr' ? 'La référence scolaire' : 'The School Standard'}
               </span>
@@ -112,8 +112,8 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             </div>
 
             {/* Background Glows */}
-            <div className="absolute top-[20%] left-[20%] w-72 h-72 bg-indigo-500/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
-            <div className="absolute bottom-[20%] right-[20%] w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
+            <div className="absolute top-[20%] left-[20%] w-72 h-72 bg-indigo/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
+            <div className="absolute bottom-[20%] right-[20%] w-72 h-72 bg-emerald/10 rounded-full blur-[100px] -z-10"></div>
           </Reveal>
         </div>
 

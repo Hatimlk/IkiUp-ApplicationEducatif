@@ -6,9 +6,6 @@ import { Features } from './components/sections/Features';
 import { Audience } from './components/sections/Audience';
 import { HowItWorks } from './components/sections/HowItWorks';
 import { Showcase } from './components/sections/Showcase';
-
-// import { Testimonials } from './Testimonials';
-
 import { CTA } from './components/sections/CTA';
 import { Language } from './lib/translations';
 
@@ -32,9 +29,6 @@ export const Home: React.FC<HomeProps> = ({ lang }) => {
       <Audience lang={lang} />
       <HowItWorks lang={lang} />
       <Showcase lang={lang} />
-
-      {/* <Testimonials /> */}
-
       <CTA lang={lang} />
     </>
   );
