@@ -75,10 +75,10 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
               <Sparkles size={14} />
               {t.tag}
             </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-text mb-6">
               {t.title} <span className="text-primary">{t.titleAccent}</span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 font-normal max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 font-normal max-w-2xl mx-auto">
               {t.description}
             </p>
           </Reveal>
@@ -89,17 +89,17 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
         <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 z-20 flex justify-between px-6 lg:px-12 pointer-events-none hidden lg:flex">
           <button
             onClick={() => scroll('left')}
-            className={`p-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all pointer-events-auto shadow-xl ${canScrollLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+            className={`p-4 rounded-full bg-white border border-slate-200 transition-all pointer-events-auto shadow-xl ${canScrollLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
               }`}
           >
-            <ArrowLeft size={20} className="text-text dark:text-white" />
+            <ArrowLeft size={20} className="text-text" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className={`p-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all pointer-events-auto shadow-xl ${canScrollRight ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+            className={`p-4 rounded-full bg-white border border-slate-200 transition-all pointer-events-auto shadow-xl ${canScrollRight ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
               }`}
           >
-            <ArrowRight size={20} className="text-text dark:text-white" />
+            <ArrowRight size={20} className="text-text" />
           </button>
         </div>
 
@@ -129,7 +129,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
       </div>
 
       <div className="max-w-[240px] mx-auto flex flex-col items-center gap-6">
-        <div className="w-full h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+        <div className="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
           <div
             className="h-full bg-primary transition-all duration-300 ease-out"
             style={{ width: `${Math.max(10, scrollProgress)}%` }}
@@ -141,7 +141,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ lang = 'fr' }) => {
               key={i}
               className={`h-1.5 transition-all duration-300 rounded-full ${Math.abs(scrollProgress - (i / (screens.length - 1)) * 100) < 15
                 ? 'w-6 bg-primary'
-                : 'w-1.5 bg-slate-200 dark:bg-slate-800'
+                : 'w-1.5 bg-slate-200'
                 }`}
             ></div>
           ))}

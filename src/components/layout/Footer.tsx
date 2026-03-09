@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
   const isFr = lang === 'fr';
 
   return (
-    <footer className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 pt-24 pb-12 border-t border-slate-200/60 dark:border-slate-800/60 transition-colors duration-500">
+    <footer className="bg-slate-50 text-slate-600 pt-24 pb-12 border-t border-slate-200/60 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 mb-20">
 
@@ -33,22 +33,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
               <img
                 src={LOGO_URL}
                 alt="IkiUp Logo"
-                className="h-10 w-auto object-contain dark:brightness-0 dark:invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                className="h-10 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
                 onError={(e) => {
                   (e.target as any).style.display = 'none';
                   // Fallback text if image fails
-                  (e.target as any).parentNode.innerHTML = '<span class="text-3xl font-serif font-bold text-slate-900 dark:text-white">iki<span class="text-primary italic">up</span></span>';
+                  (e.target as any).parentNode.innerHTML = '<span class="text-3xl font-serif font-bold text-slate-900">iki<span class="text-primary italic">up</span></span>';
                 }}
               />
             </div>
-            <p className="text-black dark:text-white leading-relaxed font-medium mb-8 max-w-sm text-sm">
+            <p className="text-black leading-relaxed font-medium mb-8 max-w-sm text-sm">
               {isFr ? "Redéfinir le parcours éducatif avec intelligence et bienveillance." : "Redefining the educational journey with intelligence and kindness."}
             </p>
           </div>
 
           {/* Column 2: Product */}
           <div>
-            <h4 className="font-serif font-bold text-slate-900 dark:text-white mb-8 text-lg tracking-tight">{isFr ? "Produit" : "Product"}</h4>
+            <h4 className="font-serif font-bold text-slate-900 mb-8 text-lg tracking-tight">{isFr ? "Produit" : "Product"}</h4>
             <ul className="space-y-4">
               <li><a href="#features" onClick={(e) => handleLinkClick(e as any, 'home', '#features')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Solution" : "Solution"}</a></li>
               <li><a href="#howitworks" onClick={(e) => handleLinkClick(e as any, 'home', '#howitworks')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Concept" : "Concept"}</a></li>
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="font-serif font-bold text-slate-900 dark:text-white mb-8 text-lg tracking-tight">{isFr ? "Entreprise" : "Company"}</h4>
+            <h4 className="font-serif font-bold text-slate-900 mb-8 text-lg tracking-tight">{isFr ? "Entreprise" : "Company"}</h4>
             <ul className="space-y-4">
               <li><a href="/about" onClick={(e) => handleLinkClick(e as any, 'about')} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "À Propos" : "About Us"}</a></li>
               <li><a href="/privacy" onClick={(e) => { e.preventDefault(); onNavigate('privacy' as any); }} className="text-sm font-medium hover:text-primary transition-colors cursor-pointer block hover:translate-x-1 duration-300">{isFr ? "Politique de confidentialité" : "Privacy Policy"}</a></li>
@@ -69,15 +69,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Column 4: Social */}
           <div>
-            <h4 className="font-serif font-bold text-slate-900 dark:text-white mb-8 text-lg tracking-tight">{isFr ? "Suivez-nous" : "Follow Us"}</h4>
+            <h4 className="font-serif font-bold text-slate-900 mb-8 text-lg tracking-tight">{isFr ? "Suivez-nous" : "Follow Us"}</h4>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/share/17dgcaEBBw/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+              <a href="https://www.facebook.com/share/17dgcaEBBw/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-slate-500 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Facebook size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/ikiup-app-0303633a0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+              <a href="https://www.linkedin.com/in/ikiup-app-0303633a0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-slate-500 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Linkedin size={18} />
               </a>
-              <a href="https://www.instagram.com/ikiup.com/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-all duration-300 text-slate-500 dark:text-slate-400 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+              <a href="https://www.instagram.com/ikiup.com/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-slate-500 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                 <Instagram size={18} />
               </a>
             </div>
@@ -85,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
         </div>
 
         {/* Bottom Bar - Clean & Minimal */}
-        <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400 dark:text-slate-500">
+        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400">
           <p>
             © {new Date().getFullYear()} IkiUp Inc. {isFr ? "Tous droits réservés." : "All rights reserved."}
           </p>

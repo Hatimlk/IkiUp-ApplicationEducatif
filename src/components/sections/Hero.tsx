@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
   return (
     <section className="relative pt-24 pb-24 lg:pt-36 lg:pb-36 overflow-hidden bg-background">
       {/* Educational Grid Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]"
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{ backgroundImage: 'linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
@@ -28,9 +28,9 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
         <div className="flex-1 text-center lg:text-left relative z-20">
           {/* Badge */}
           <Reveal delay={0} scale>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm mb-8 transition-transform hover:scale-105 cursor-default">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8 transition-transform hover:scale-105 cursor-default">
               <div className="w-2 h-2 rounded-full bg-emerald animate-pulse"></div>
-              <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
+              <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">
                 {lang === 'fr' ? 'La référence scolaire' : 'The School Standard'}
               </span>
             </div>
@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
           {/* Title - Clean Academic Serif */}
           <Reveal delay={100} direction="up">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-text dark:text-white mb-8 leading-[1.1]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-text mb-8 leading-[1.1]">
               {lang === 'fr' ? (
                 <>
                   L'école, <br />
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
           {/* Description */}
           <Reveal delay={200} direction="up">
-            <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-medium">
+            <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-medium">
               {t.description}
             </p>
           </Reveal>
@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                   <span className="text-base font-bold">App Store</span>
                 </div>
               </Button>
-              <Button variant="white" size="lg" className="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 hover:border-slate-300 transition-all text-slate-700 dark:text-white dark:bg-slate-900" href="https://play.google.com" target="_blank">
+              <Button variant="white" size="lg" className="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all text-slate-700" href="https://play.google.com" target="_blank">
                 <Play size={20} className="fill-current mb-0.5" />
                 <div className="flex flex-col items-start leading-none ml-2">
                   <span className="text-[9px] uppercase font-bold opacity-70">Get it on</span>
@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
         {/* Right: The Educational Composition */}
         <div className="hidden lg:flex flex-1 relative w-full h-[600px] items-center lg:justify-start justify-center pl-8">
           <Reveal delay={400} direction="left" className="relative w-full h-full flex items-center justify-center lg:justify-start">
-            <div className="relative w-[380px] sm:w-[450px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-black/50 border-8 border-white dark:border-slate-800 rotate-2 hover:rotate-0 transition-transform duration-700 ease-out z-20">
+            <div className="relative w-[380px] sm:w-[450px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 border-8 border-white rotate-2 hover:rotate-0 transition-transform duration-700 ease-out z-20">
               <img
                 src="/hero-child.png"
                 alt="Student using IkiUp"
@@ -100,13 +100,13 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
 
               {/* Floating Badge on Image */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 flex items-center gap-4">
+              <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                   <Sparkles size={20} className="fill-current" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Succès garanti</div>
-                  <div className="text-sm font-bold text-text dark:text-white">Apprendre devient un jeu</div>
+                  <div className="text-sm font-bold text-text">Apprendre devient un jeu</div>
                 </div>
               </div>
             </div>

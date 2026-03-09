@@ -40,7 +40,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ lang, onNavigatePr
 
     return (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 will-change-transform animate-fade-in-up">
-            <div className="max-w-4xl mx-auto bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl shadow-slate-200/50 dark:shadow-black/50 p-5 sm:p-6">
+            <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-xl rounded-2xl border border-slate-200 shadow-2xl shadow-slate-200/50 p-5 sm:p-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
 
                     {/* Icon + Text */}
@@ -49,7 +49,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ lang, onNavigatePr
                             <Cookie size={20} />
                         </div>
                         <div className="flex-1">
-                            <p className="text-sm font-medium text-slate-700 dark:text-slate-300 leading-relaxed">
+                            <p className="text-sm font-medium text-slate-700 leading-relaxed">
                                 {t.message}{' '}
                                 {onNavigatePrivacy && (
                                     <button
@@ -67,7 +67,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ lang, onNavigatePr
                     <div className="flex items-center gap-2 flex-shrink-0 w-full sm:w-auto">
                         <button
                             onClick={handleDecline}
-                            className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-all duration-200 active:scale-95"
+                            className="flex-1 sm:flex-none px-5 py-2.5 text-sm font-bold text-slate-600 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-xl transition-all duration-200 active:scale-95"
                         >
                             {t.decline}
                         </button>

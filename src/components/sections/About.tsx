@@ -25,9 +25,9 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         shadow: "shadow-emerald/30",
         overlay: "from-emerald/5",
         blur: "bg-emerald/10",
-        iconBg: "bg-emerald/5 dark:bg-emerald/20",
+        iconBg: "bg-emerald/5",
         iconText: "text-emerald",
-        border: "border-emerald/20 dark:border-emerald/50"
+        border: "border-emerald/20"
       }
     },
     {
@@ -38,9 +38,9 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         shadow: "shadow-indigo/30",
         overlay: "from-indigo/5",
         blur: "bg-indigo/10",
-        iconBg: "bg-indigo/5 dark:bg-indigo/20",
+        iconBg: "bg-indigo/5",
         iconText: "text-indigo",
-        border: "border-indigo/20 dark:border-indigo/50"
+        border: "border-indigo/20"
       }
     },
     {
@@ -51,9 +51,9 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
         shadow: "shadow-rose/30",
         overlay: "from-rose/5",
         blur: "bg-rose/10",
-        iconBg: "bg-rose/5 dark:bg-rose/20",
+        iconBg: "bg-rose/5",
         iconText: "text-rose",
-        border: "border-rose/20 dark:border-rose/50"
+        border: "border-rose/20"
       }
     }
   ];
@@ -77,7 +77,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       {/* Story Section - Centered Glass Card */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-40">
         <Reveal>
-          <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl rounded-[3rem] p-6 sm:p-8 md:p-16 border border-white/20 dark:border-white/5 shadow-2xl shadow-indigo/5 relative overflow-hidden text-center group hover:shadow-indigo/10 transition-all duration-500">
+          <div className="bg-white/60 backdrop-blur-2xl rounded-[3rem] p-6 sm:p-8 md:p-16 border border-white/20 shadow-2xl shadow-indigo/5 relative overflow-hidden text-center group hover:shadow-indigo/10 transition-all duration-500">
 
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none -z-10"></div>
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/15 transition-colors duration-700"></div>
@@ -87,11 +87,11 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
               {t.storyTag}
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mb-10 tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-serif font-black text-slate-900 mb-10 tracking-tight">
               {t.storyTitle}
             </h1>
 
-            <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-400 font-medium leading-relaxed mx-auto max-w-3xl">
+            <div className="prose prose-lg text-slate-600 font-medium leading-relaxed mx-auto max-w-3xl">
               {t.story.split('\n\n').map((paragraph, idx) => (
                 <p key={idx} className="mb-6 last:mb-0 first-letter:text-6xl first-letter:font-serif first-letter:text-primary first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8]">
                   {paragraph}
@@ -145,11 +145,11 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Reveal>
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
               <Shield size={12} />
               Valeurs
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif font-black text-text dark:text-white mb-6">{t.commitments}</h2>
+            <h2 className="text-4xl md:text-6xl font-serif font-black text-text mb-6">{t.commitments}</h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
               Des principes inébranlables pour construire un futur de confiance.
             </p>
@@ -160,7 +160,7 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
             const config = pillarsConfig[i];
             return (
               <Reveal key={i} delay={i * 100} scale>
-                <div className="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-3 flex flex-col h-full group relative overflow-hidden">
+                <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3 flex flex-col h-full group relative overflow-hidden">
 
                   {/* Hover Gradient Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${config.classes.overlay} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
@@ -171,8 +171,8 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                     {config.icon}
                   </div>
 
-                  <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors relative z-10">{pillar.title}</h3>
-                  <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-medium relative z-10">
+                  <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900 group-hover:text-primary transition-colors relative z-10">{pillar.title}</h3>
+                  <p className="text-slate-500 leading-relaxed font-medium relative z-10">
                     {pillar.desc}
                   </p>
                 </div>

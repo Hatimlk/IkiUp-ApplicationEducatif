@@ -21,7 +21,7 @@ export const NotFound: React.FC<NotFoundProps> = ({ lang, onGoHome }) => {
             <div className="text-center px-4 relative z-10">
                 {/* 404 Number */}
                 <div className="relative mb-8">
-                    <span className="text-[10rem] sm:text-[14rem] font-serif font-black text-slate-100 dark:text-slate-900 leading-none select-none">
+                    <span className="text-[10rem] sm:text-[14rem] font-serif font-black text-slate-100 leading-none select-none">
                         404
                     </span>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -32,10 +32,10 @@ export const NotFound: React.FC<NotFoundProps> = ({ lang, onGoHome }) => {
                 </div>
 
                 {/* Text */}
-                <h1 className="text-3xl md:text-4xl font-serif font-black text-text dark:text-white mb-4">
+                <h1 className="text-3xl md:text-4xl font-serif font-black text-text mb-4">
                     {t.title}
                 </h1>
-                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium mb-10 max-w-md mx-auto">
+                <p className="text-lg text-slate-500 font-medium mb-10 max-w-md mx-auto">
                     {t.description}
                 </p>
 

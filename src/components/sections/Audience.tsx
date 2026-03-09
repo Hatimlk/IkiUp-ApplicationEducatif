@@ -35,15 +35,15 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
   ];
 
   return (
-    <section id="audience" className="py-16 bg-surface dark:bg-background">
+    <section id="audience" className="py-16 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-sec/10 dark:bg-primary/20 text-primary dark:text-blue-sec text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-blue-sec/20 dark:border-primary/30">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-sec/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-blue-sec/20">
               <Users size={14} />
               {t.tag}
             </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-text mb-6">
               Pensé pour <br />
               <span className="text-primary decoration-4 underline decoration-primary/20 underline-offset-4">chacun de vous.</span>
             </h2>
@@ -53,7 +53,7 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
             <Reveal key={index} delay={index * 100} direction="up" className="h-full">
-              <div className={`group h-full flex flex-col p-8 rounded-[2.5rem] ${card.theme.light} dark:bg-surface border-2 ${card.theme.border} dark:border-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
+              <div className={`group h-full flex flex-col p-8 rounded-[2.5rem] ${card.theme.light} border-2 ${card.theme.border} hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden`}>
 
                 {/* Colored Header Bar */}
                 <div className={`h-2 w-full absolute top-0 left-0 ${card.theme.bg}`}></div>
@@ -62,9 +62,9 @@ export const Audience: React.FC<AudienceProps> = ({ lang = 'fr' }) => {
                   {card.icon}
                 </div>
 
-                <h3 className={`text-2xl font-serif font-bold text-text dark:text-white mb-4`}>{card.title}</h3>
+                <h3 className={`text-2xl font-serif font-bold text-text mb-4`}>{card.title}</h3>
 
-                <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-8 flex-grow">
+                <p className="text-slate-600 font-medium leading-relaxed mb-8 flex-grow">
                   {card.description}
                 </p>
               </div>

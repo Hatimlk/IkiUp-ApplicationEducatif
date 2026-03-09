@@ -9,13 +9,6 @@
   --text-main: #111111;
 }
 
-.dark {
-  --bg-background: #0F172A;
-  --bg-surface: #1E293B;
-  --bg-surface-soft: #334155;
-  --text-main: #F1F5F9;
-}
-
 @layer base {
   body {
     @apply bg-background text-text selection:bg-primary/20;
@@ -25,19 +18,23 @@
     transition: background-color 0.4s ease, color 0.4s ease;
     line-height: 1.6;
   }
-  
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
+
   .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   /* Premium Card Effects */
@@ -46,19 +43,16 @@
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.4);
   }
-  .dark .glass-card {
-    background: rgba(30, 41, 59, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
+
 
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .perspective-2000 {
     perspective: 2000px;
   }
+
   .transform-3d {
     transform-style: preserve-3d;
   }
@@ -69,9 +63,11 @@
     transform: translateZ(0);
     backface-visibility: hidden;
   }
+
   .will-change-transform {
     will-change: transform;
   }
+
   .will-change-opacity {
     will-change: opacity;
   }
@@ -81,9 +77,11 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   @apply bg-primary rounded-[20px] border-2 border-background bg-clip-padding;
 }
